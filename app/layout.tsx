@@ -15,10 +15,13 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Nexiora — AI Website Agency | Websites That Convert',
+  title: 'Nexiora Ltd — High-Converting Websites for Service Businesses',
   description:
     'Nexiora builds high-converting websites and smart systems for service businesses. Book a free design consultation and get a response within 24 hours.',
   generator: 'v0.app',
+  icons: {
+    icon: "/favicon1.png",
+  },
 }
 
 export const viewport: Viewport = {
