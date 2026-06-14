@@ -1,9 +1,10 @@
 import { Target, Clock, Layers, ShieldCheck } from 'lucide-react'
 
 const stats = [
-  { value: '3x', label: 'Higher Conversion Rates' },
-  { value: '50+', label: 'Websites Delivered' },
   { value: '100%', label: 'Client Satisfaction' },
+  { value: '5+', label: 'Years of Experience' },
+  { value: '20+', label: 'Websites Delivered' },
+  { value: '3x', label: 'Higher Conversion Rates' },
 ]
 
 const benefits = [
@@ -37,7 +38,7 @@ export function WhyChooseUs() {
   return (
     <section id="why-us" className="bg-navy text-navy-foreground">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
