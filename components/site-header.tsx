@@ -6,13 +6,12 @@ import { Menu, X } from 'lucide-react'
 import { Logo } from '@/components/logo'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Process', href: '#process' },
-  { label: 'Services', href: '#services' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Process', href: '/process' },
+  { label: 'Why Us', href: '/why-us' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export function SiteHeader() {

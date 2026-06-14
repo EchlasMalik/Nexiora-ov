@@ -2,11 +2,11 @@ import Link from 'next/link'
 import { Logo } from '@/components/logo'
 
 const quickLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Process', href: '#process' },
-  { label: 'Reviews', href: '#reviews' },
+  { label: 'Home', href: '/home' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Why Us', href: '/why-us' },
+  { label: 'Process', href: '/process' },
+  { label: 'Services', href: '/services' },
 ]
 
 const services = [
@@ -66,9 +66,9 @@ export function SiteFooter() {
               Contact
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm text-navy-foreground/70">
-              <li>hello@nexiora.com</li>
-              <li>+1 (780) 555-0192</li>
-              <li>Remote-first · Worldwide</li>
+              <li>echlas@nexioratalent.com</li>
+              <li>+44 7835 385 699</li>
+              <li>London Based · Serving clients worldwide</li>
             </ul>
             <a
               href="#contact"

@@ -16,12 +16,12 @@ export function Hero() {
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-primary shadow-sm">
             <MapPin className="size-3.5" />
-            AI Website Agency · Serving clients worldwide
+            Based in London · Serving clients worldwide
           </span>
 
           <h1 className="mt-6 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl">
             Websites That Convert.{' '}
-            <span className="text-primary">Systems That Scale.</span>
+            <span className="text-primary">Systems That Perform.</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">

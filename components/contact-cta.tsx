@@ -49,15 +49,15 @@ export function ContactCta() {
             <div className="mt-10 space-y-3 text-sm text-navy-foreground/80">
               <p className="flex items-center gap-2.5">
                 <Mail className="size-4 text-primary" />
-                hello@nexiora.com
+                echlas@nexioratalent.com
               </p>
               <p className="flex items-center gap-2.5">
                 <Phone className="size-4 text-primary" />
-                +1 (780) 555-0192
+                +44 7835 385 699
               </p>
               <p className="flex items-center gap-2.5">
                 <MapPin className="size-4 text-primary" />
-                Remote-first · Serving clients worldwide
+                London Based · Serving clients worldwide
               </p>
             </div>
           </div>
