@@ -25,8 +25,8 @@ export function SiteFooter() {
           <div>
             <Logo variant="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/70">
-              An AI website agency building high-converting websites and smart
-              systems for service businesses everywhere.
+              A website agency building high-converting websites and smart
+              AI systems for service businesses everywhere.
             </p>
           </div>
 
