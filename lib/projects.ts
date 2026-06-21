@@ -13,46 +13,47 @@ export const featuredProjects: Project[] = [
     category: 'Recruitement & Staffing',
     location: 'London, UK',
     description:
-      'A calm, trust-building site that made it effortless for businesses to find qualified employees.',
+    'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
     image: '/portfolio/Nexiora-talentt.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
-  },
-  {
+    },
+    {
     title: 'Yasmin Tutors',
     category: 'Tutoring & Education',
     location: 'London, UK',
     description:
-      'A bold, quote-focused website that turns seasonal traffic into booked jobs and steady inbound leads.',
+    'A modern education website crafted to showcase expertise, increase student enrollments, and drive consistent inquiry submissions.',
     image: '/portfolio/Yasmin-tutors.png',
     tags: ['Website Design', 'Lead Forms', 'Branding', 'Local SEO'],
-  },
-  {
+    },
+    {
     title: 'Falconis Group',
     category: 'Recruitement & Staffing',
     location: 'London, UK',
     description:
-      'An elegant listings experience built for credibility, fast search, and high-intent buyer inquiries.',
+    'A credibility-focused recruitment website built to attract top talent, simplify hiring workflows, and convert visitors into qualified leads.',
     image: '/portfolio/falconis-group.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
-  },
-  {
+    },
+    {
     title: 'Modest Moves',
     category: 'Fitness & Coaching',
     location: 'London, UK',
     description:
-      'A high-energy funnel that converts cold visitors into free-trial sign-ups and recurring members.',
+    'A results-driven fitness website designed to increase memberships, automate bookings, and turn visitors into long-term clients.',
     image: '/portfolio/Modestmoves.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
-  },
-  {
+    },
+    {
     title: 'Echlas Malik',
     category: 'Personal Project Portfolio',
     location: 'London, UK',
     description:
-      'A polished, authority-first website that earns trust and drives qualified consultation requests.',
+    'A personal brand website built to establish authority, showcase expertise, and generate high-value consultation opportunities.',
     image: '/portfolio/echlasmalik.png',
     tags: ['Website Design', 'Branding', 'Lead Gen', 'Local SEO'],
-  },
+    },
+
   {
     title: 'Roast & Ritual Coffee',
     category: 'Hospitality',
