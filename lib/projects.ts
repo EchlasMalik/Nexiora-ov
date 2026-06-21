@@ -45,18 +45,18 @@ export const featuredProjects: Project[] = [
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
   },
   {
-    title: 'Harbor & Co. Law',
-    category: 'Professional Services',
-    location: 'Chicago, IL',
+    title: 'Echlas Malik',
+    category: 'Personal Project Portfolio',
+    location: 'London, UK',
     description:
       'A polished, authority-first website that earns trust and drives qualified consultation requests.',
-    image: '/portfolio/lawfirm.png',
-    tags: ['Website Design', 'Branding', 'Lead Gen'],
+    image: '/portfolio/echlasmalik.png',
+    tags: ['Website Design', 'Branding', 'Lead Gen', 'Local SEO'],
   },
   {
     title: 'Roast & Ritual Coffee',
     category: 'Hospitality',
-    location: 'Portland, OR',
+    location: 'London, UK',
     description:
       'A warm, conversion-driven storefront with online ordering that grew repeat visits month over month.',
     image: '/portfolio/cafe.png',
