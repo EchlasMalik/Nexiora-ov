@@ -41,7 +41,7 @@ export const featuredProjects: Project[] = [
     location: 'London, UK',
     description:
       'A high-energy funnel that converts cold visitors into free-trial sign-ups and recurring members.',
-    image: '/portfolio/modestmoves.png',
+    image: '/portfolio/Modestmoves.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
   },
   {
