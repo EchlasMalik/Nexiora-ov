@@ -21,7 +21,7 @@ export function Logo({
           variant === 'light' ? 'text-navy-foreground' : 'text-foreground',
         )}
       >
-        Nexiora
+        Nexiora Studio
       </span>
     </div>
   )
