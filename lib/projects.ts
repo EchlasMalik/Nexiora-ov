@@ -9,40 +9,40 @@ export type Project = {
 
 export const featuredProjects: Project[] = [
   {
-    title: 'BrightSmile Dental',
-    category: 'Healthcare',
-    location: 'Toronto, ON',
+    title: 'Nexiora Talent',
+    category: 'Recruitement & Staffing',
+    location: 'London, UK',
     description:
-      'A calm, trust-building site that made it effortless for new patients to book online and find clear answers.',
-    image: '/portfolio/dental-clinic.png',
-    tags: ['Website Design', 'Booking System', 'Local SEO'],
+      'A calm, trust-building site that made it effortless for businesses to find qualified employees.',
+    image: '/portfolio/Nexiora-talentt.png',
+    tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
   },
   {
-    title: 'GreenLeaf Landscaping',
-    category: 'Home Services',
-    location: 'Calgary, AB',
+    title: 'Yasmin Tutors',
+    category: 'Tutoring & Education',
+    location: 'London, UK',
     description:
       'A bold, quote-focused website that turns seasonal traffic into booked jobs and steady inbound leads.',
-    image: '/portfolio/landscaping.png',
-    tags: ['Website Design', 'Lead Forms', 'Branding'],
+    image: '/portfolio/Yasmin-tutors.png',
+    tags: ['Website Design', 'Lead Forms', 'Branding', 'Local SEO'],
   },
   {
-    title: 'Summit Realty Group',
-    category: 'Real Estate',
-    location: 'Vancouver, BC',
+    title: 'Falconis Group',
+    category: 'Recruitement & Staffing',
+    location: 'London, UK',
     description:
       'An elegant listings experience built for credibility, fast search, and high-intent buyer inquiries.',
-    image: '/portfolio/realestate.png',
-    tags: ['Website Design', 'CRM Setup', 'SEO'],
+    image: '/portfolio/falconis-group.png',
+    tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
   },
   {
-    title: 'Apex Performance',
+    title: 'Modest Moves',
     category: 'Fitness & Coaching',
-    location: 'Austin, TX',
+    location: 'London, UK',
     description:
       'A high-energy funnel that converts cold visitors into free-trial sign-ups and recurring members.',
-    image: '/portfolio/fitness.png',
-    tags: ['Landing Page', 'Automation', 'Advertising'],
+    image: '/portfolio/modestmoves.png',
+    tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
   },
   {
     title: 'Harbor & Co. Law',
