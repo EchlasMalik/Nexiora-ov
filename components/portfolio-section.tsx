@@ -28,7 +28,7 @@ export function PortfolioSection() {
 
         <div className="mt-12 flex justify-center">
           <Link
-            href="/portfolio"
+             href="/portfolio"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary shadow-sm transition-colors hover:bg-primary/5"
           >
             View Public Portfolio
