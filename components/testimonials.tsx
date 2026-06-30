@@ -3,21 +3,21 @@ import { Star, Quote } from 'lucide-react'
 const reviews = [
   {
     quote:
-      'Nexiora rebuilt our site and inquiries doubled within the first month. The booking flow is so smooth our front desk barely fields calls anymore.',
-    name: 'Dr. Amara Patel',
-    role: 'BrightSmile Dental',
+      'Really impressed with the website made for me by Nexiora, they took their time and was attentive to my vision and made it into a reality exceeding my initial expectations.',
+    name: 'Faizan Razzaq',
+    role: 'Managing Director of Falconis Group',
   },
   {
     quote:
       'I am not tech savvy at all, and they walked me through everything patiently. My new site looks incredible and new clients are already finding us.',
-    name: 'Marcus Reed',
-    role: 'GreenLeaf Landscaping',
+    name: 'Taseen Hussain',
+    role: 'Founder of Yasmin Tutors',
   },
   {
     quote:
       'The automations alone gave me hours back every week. Leads get followed up instantly and nothing slips through the cracks anymore.',
     name: 'Sofia Alvarez',
-    role: 'Summit Realty Group',
+    role: 'Founder of Modest Moves',
   },
   {
     quote:

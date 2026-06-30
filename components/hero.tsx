@@ -66,7 +66,7 @@ export function Hero() {
             </span>
             <span className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
               <BadgeCheck className="size-4 text-primary" />
-              50+ Sites Delivered
+              20+ Sites Delivered
             </span>
           </div>
         </div>
