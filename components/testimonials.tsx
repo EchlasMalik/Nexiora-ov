@@ -2,21 +2,32 @@ import { Star, Quote } from 'lucide-react'
 
 const reviews = [
   {
-    quote:
-      'Really impressed with the website made for me by Nexiora, they took their time and was attentive to my vision and made it into a reality exceeding my initial expectations.',
+    quote: `Really impressed with the website made for me by Nexiora.
+
+They took their time and were attentive to my vision, turning it into a reality that exceeded my initial expectations.`,
     name: 'Faizan Razzaq',
     role: 'Managing Director of Falconis Group',
   },
   {
-    quote:
-      'I am not tech savvy at all, and they walked me through everything patiently. My new site looks incredible and new clients are already finding us.',
+    quote: `Done an amazing job building my website for a tutoring company.
+
+They suggested really good ideas that I hadn't even thought of.
+
+Having a website made by Echlas allowed me to organise and grow my business much more effectively.`,
     name: 'Taseen Hussain',
     role: 'Founder of Yasmin Tutors',
   },
   {
-    quote:
-      'The automations alone gave me hours back every week. Leads get followed up instantly and nothing slips through the cracks anymore.',
-    name: 'Sofia Alvarez',
+    quote: `Thank you for creating the website. I found it personally too difficult to manage it, and you made the entire process very easy.
+
+You really understood what we wanted and turned our ideas into a website that perfectly reflects what we do.
+
+You were easy to work with and kept us updated throughout the process. Nothing ever felt like too much trouble, and the end result honestly exceeded our expectations.
+
+We're really happy with the website and would definitely recommend you to anyone looking for a reliable web designer.
+
+Thanks again for all your hard work!`,
+    name: 'Athena Bashar',
     role: 'Founder of Modest Moves',
   },
   {
