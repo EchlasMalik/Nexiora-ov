@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
+import { ContactForm } from '@/components/contact-form'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact — Nexiora',
@@ -49,39 +50,7 @@ export default function ContactPage() {
                 Send a Message
               </h2>
 
-              <form className="mt-6 space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary"
-                />
-
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary"
-                />
-
-                <input
-                  type="text"
-                  placeholder="Service you're interested in"
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary"
-                />
-
-                <textarea
-                  placeholder="Tell us about your project..."
-                  rows={5}
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary"
-                />
-
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
-                >
-                  Send Message
-                  <ArrowRight className="size-4" />
-                </button>
-              </form>
+              <ContactForm />
             </div>
 
             {/* INFO + MAP */}
