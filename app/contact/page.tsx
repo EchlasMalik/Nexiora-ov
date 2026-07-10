@@ -96,7 +96,7 @@ export default function ContactPage() {
                 <div className="mt-6 space-y-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-3">
                     <Mail className="size-4 text-primary" />
-                    echlas@nexioratalent.com
+                    echlas@nexiorastudio.com
                   </div>
 
                   <div className="flex items-center gap-3">

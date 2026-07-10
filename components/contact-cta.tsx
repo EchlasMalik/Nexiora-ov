@@ -80,7 +80,7 @@ export function ContactCta() {
             <div className="mt-10 space-y-3 text-sm text-navy-foreground/80">
               <p className="flex items-center gap-2.5">
                 <Mail className="size-4 text-primary" />
-                echlas@nexioratalent.com
+                echlas@nexiorastudio.com
               </p>
 
               <p className="flex items-center gap-2.5">

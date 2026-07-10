@@ -16,7 +16,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: 'Nexiora Studio <info@nexiorastudio.com>',
-      to: 'echlas@nexioratalent.com',
+      to: 'echlas@nexiorastudio.com',
       replyTo: email,
       subject: `New Website Enquiry • ${name}`,
 
