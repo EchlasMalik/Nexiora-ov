@@ -1,7 +1,12 @@
 const items = ['Websites', 'Automations', 'SEO', 'Advertising', 'Landing Pages', 'CRM Systems']
 
+// Repeat the base items so a single "half" of the loop is always wider than
+// the viewport — otherwise the marquee runs out of content and leaves a gap
+// before the second half scrolls in.
+const half = [...items, ...items, ...items, ...items]
+
 export function MarqueeStrip() {
-  const loop = [...items, ...items]
+  const loop = [...half, ...half]
   return (
     <div className="overflow-hidden border-y border-border bg-navy py-4">
       <div className="flex w-max animate-marquee items-center gap-10 whitespace-nowrap">
