@@ -16,7 +16,7 @@ const reviews = [
 
     They suggested really good ideas that I hadn't even thought of.
 
-    Having a website made by Echlas allowed me to organise and grow my business much more effectively.`,
+    Having a website made by Nexiora allowed me to organise and grow my business much more effectively.`,
     name: 'Taseen Hussain',
     role: 'Founder of Yasmin Tutors',
   },
