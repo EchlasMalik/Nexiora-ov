@@ -15,8 +15,10 @@ export default function Page() {
     <>
       <SiteHeader />
       <main>
-        <Hero />
-        <MarqueeStrip />
+        <div className="flex min-h-[calc(100svh-4.3rem)] flex-col">
+          <Hero />
+          <MarqueeStrip />
+        </div>
         <PortfolioSection />
         <WhyChooseUs />
         <Comparison />
