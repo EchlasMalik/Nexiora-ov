@@ -44,6 +44,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        <script src="https://nexiora-ai-agent.vercel.app/widget.js" data-chatbot-id="bot_b31bh7tlkw" async></script>
       </body>
     </html>
   )
