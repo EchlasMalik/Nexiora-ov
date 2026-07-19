@@ -62,10 +62,10 @@ export const featuredProjects: Project[] = [
     'A personal brand website built to establish authority, showcase expertise, and generate high-value consultation opportunities.',
     image: '/portfolio/echlasmalik.png',
     tags: ['Website Design', 'Branding', 'Lead Gen', 'Local SEO'],
-    
+
     },
 
-  
+
 ]
 
 export const moreProjects: Project[] = [

@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ProjectCard } from '@/components/project-card'
+import { ComingSoonProjectCard } from '@/components/coming-soon-project-card'
 import { featuredProjects, moreProjects } from '@/lib/projects'
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   const allProjects = [...featuredProjects, ...moreProjects]
+  const isComingSoonAlone = allProjects.length % 3 === 0
 
   return (
     <>
@@ -53,6 +55,13 @@ export default function PortfolioPage() {
                   project={project}
                 />
               ))}
+              {isComingSoonAlone ? (
+                <div className="sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-sm lg:col-span-1 lg:col-start-2 lg:mx-0 lg:max-w-none">
+                  <ComingSoonProjectCard />
+                </div>
+              ) : (
+                <ComingSoonProjectCard />
+              )}
             </div>
 
             {/* CTA */}

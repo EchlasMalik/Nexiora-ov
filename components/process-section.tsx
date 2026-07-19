@@ -45,12 +45,12 @@ export function ProcessSection() {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="relative rounded-2xl border border-border bg-card p-7 shadow-sm"
+              className="group relative rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
             >
               <span className="absolute right-6 top-6 font-heading text-4xl font-extrabold text-primary/15">
                 {step.number}
               </span>
-              <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform group-hover:scale-110">
                 <step.icon className="size-6" />
               </span>
               <h3 className="mt-5 font-heading text-xl font-bold text-foreground">

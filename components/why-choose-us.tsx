@@ -38,23 +38,7 @@ export function WhyChooseUs() {
   return (
     <section id="why-us" className="bg-navy text-navy-foreground">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-4">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border border-white/10 bg-white/5 p-7 text-center"
-            >
-              <p className="font-heading text-4xl font-extrabold text-gold sm:text-5xl">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-sm font-medium text-navy-foreground/70">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mx-auto mt-16 max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Why Us
           </p>
@@ -70,14 +54,30 @@ export function WhyChooseUs() {
           {benefits.map((b) => (
             <div
               key={b.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:bg-white/10"
+              className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:-translate-y-1 hover:border-white/20 hover:bg-white/10 hover:shadow-lg hover:shadow-black/20"
             >
-              <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/20 text-primary">
+              <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/20 text-primary transition-transform group-hover:scale-110">
                 <b.icon className="size-5" />
               </span>
               <h3 className="mt-4 font-heading text-lg font-bold">{b.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-foreground/70">
                 {b.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-white/10 bg-white/5 p-7 text-center transition-all hover:-translate-y-1 hover:border-white/20 hover:bg-white/10 hover:shadow-lg hover:shadow-black/20"
+            >
+              <p className="font-heading text-4xl font-extrabold text-gold sm:text-5xl">
+                {stat.value}
+              </p>
+              <p className="mt-2 text-sm font-medium text-navy-foreground/70">
+                {stat.label}
               </p>
             </div>
           ))}
