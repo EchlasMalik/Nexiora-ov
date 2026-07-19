@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ContactForm } from '@/components/contact-form'
@@ -93,10 +94,28 @@ export default function ContactPage() {
 
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199192.83829522418!2d-0.2664029591612803!3d51.52873980508483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e1!3m2!1sen!2suk!4v1781395404409!5m2!1sen!2suk"
-                  className="h-[320px] w-full"
+                  className="h-65 w-full"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
+
+                <div className="border-t border-border p-4">
+                  <a
+                    href="https://maps.app.goo.gl/E4tK7XdXhYahi9Zy9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
+                  >
+                    <Image
+                      src="/google-maps.png"
+                      alt=""
+                      width={20}
+                      height={20}
+                      className="size-5"
+                    />
+                    View on Google Maps
+                  </a>
+                </div>
               </div>
             </div>
           </div>

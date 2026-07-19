@@ -164,7 +164,7 @@ export function Testimonials() {
           </a>
 
           <a
-            href="/contact"
+            href="https://maps.app.goo.gl/E4tK7XdXhYahi9Zy9"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3.5 text-sm font-semibold text-primary transition-all hover:-translate-y-1 hover:bg-primary/5"
