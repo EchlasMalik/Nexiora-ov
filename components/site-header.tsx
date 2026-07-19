@@ -37,7 +37,7 @@ export function SiteHeader() {
         </nav>
 
         <a
-          href="#contact"
+          href="/contact"
           className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
         >
           Get Free Quote
