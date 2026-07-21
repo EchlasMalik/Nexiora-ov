@@ -13,79 +13,71 @@ export const featuredProjects: Project[] = [
     category: 'Gaming & Entertainment',
     location: 'England, UK',
     description:
-    'A premium gaming utility platform built for competitive players, featuring instant downloads, secure licensing, and a user experience designed to maximize performance.',
+      'A premium gaming utility platform built for competitive players, featuring instant downloads, secure licensing, and a user experience designed to maximize performance.',
     image: '/portfolio/OmniControl.png',
     tags: ['Gaming Platform', 'Dashboard Design', 'License Management', 'Secure Downloads', 'Performance Analytics',],
-    },
-    {
+  },
+  {
     title: 'Yasmin Tutors',
     category: 'Tutoring & Education',
     location: 'London, UK',
     description:
-    'A modern education website crafted to showcase expertise, increase student enrollments, and drive consistent inquiry submissions.',
+      'A modern education website crafted to showcase expertise, increase student enrollments, and drive consistent inquiry submissions.',
     image: '/portfolio/Yasmin-tutors.png',
     tags: ['Website Design', 'Lead Forms', 'Branding', 'Local SEO'],
-    },
-    {
+  },
+  {
     title: 'Falconis Group',
     category: 'Recruitement & Staffing',
     location: 'London, UK',
     description:
-    'A credibility-focused recruitment website built to attract top talent, simplify hiring workflows, and convert visitors into qualified leads.',
+      'A credibility-focused recruitment website built to attract top talent, simplify hiring workflows, and convert visitors into qualified leads.',
     image: '/portfolio/falconis-group.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
-    },
-    {
+  },
+  {
     title: 'Modest Moves',
     category: 'Fitness & Coaching',
     location: 'London, UK',
     description:
-    'A results-driven fitness website designed to increase memberships, automate bookings, and turn visitors into long-term clients.',
+      'A results-driven fitness website designed to increase memberships, automate bookings, and turn visitors into long-term clients.',
     image: '/portfolio/Modestmoves.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
-    },
-    {
+  },
+  {
     title: 'FJ Property Services',
     category: 'Property Renovation & Maintenance',
     location: 'London, UK',
     description:
-  'A conversion-focused website designed to showcase property renovation expertise, simplify quote bookings, and attract high-quality local leads.',
+      'A conversion-focused website designed to showcase property renovation expertise, simplify quote bookings, and attract high-quality local leads.',
     image: '/portfolio/fjpropertyservices.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
-    },
+  },
   {
     title: 'Nexiora Talent',
     category: 'Recruitement & Staffing',
     location: 'London, UK',
     description:
-    'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
+      'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
     image: '/portfolio/Nexiora-talentt.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
-    },
-    {
-    title: 'Echlas Malik',
-    category: 'Personal Project Portfolio',
-    location: 'London, UK',
-    description:
-    'A personal brand website built to establish authority, showcase expertise, and generate high-value consultation opportunities.',
-    image: '/portfolio/echlasmalik.png',
-    tags: ['Website Design', 'Branding', 'Lead Gen', 'Local SEO'],
+  },
 
-    },
 
 
 ]
 
 export const moreProjects: Project[] = [
-  // {
-  //   title: 'Northwind HVAC',
-  //   category: 'Home Services',
-  //   location: 'Denver, CO',
-  //   description:
-  //     'Emergency-ready service site with click-to-call and instant quote requests for busy homeowners.',
-  //   image: '/portfolio/landscaping.png',
-  //   tags: ['Website Design', 'Local SEO'],
-  // },
+  {
+    title: 'Echlas Malik',
+    category: 'Personal Project Portfolio',
+    location: 'London, UK',
+    description:
+      'A personal brand website built to establish authority, showcase expertise, and generate high-value consultation opportunities.',
+    image: '/portfolio/echlasmalik.png',
+    tags: ['Website Design', 'Branding', 'Lead Gen', 'Local SEO'],
+
+  },
   // {
   //   title: 'Lumen Skincare Clinic',
   //   category: 'Healthcare',
