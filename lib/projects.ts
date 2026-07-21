@@ -9,13 +9,13 @@ export type Project = {
 
 export const featuredProjects: Project[] = [
   {
-    title: 'Nexiora Talent',
-    category: 'Recruitement & Staffing',
-    location: 'London, UK',
+    title: 'OmniControl - SAAS',
+    category: 'Gaming & Entertainment',
+    location: 'England, UK',
     description:
-    'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
-    image: '/portfolio/Nexiora-talentt.png',
-    tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
+    'A premium gaming utility platform built for competitive players, featuring instant downloads, secure licensing, and a user experience designed to maximize performance.',
+    image: '/portfolio/OmniControl.png',
+    tags: ['Gaming Platform', 'Dashboard Design', 'License Management', 'Secure Downloads', 'Performance Analytics',],
     },
     {
     title: 'Yasmin Tutors',
@@ -27,15 +27,6 @@ export const featuredProjects: Project[] = [
     tags: ['Website Design', 'Lead Forms', 'Branding', 'Local SEO'],
     },
     {
-    title: 'FJ Property Services',
-    category: 'Property Renovation & Maintenance',
-    location: 'London, UK',
-    description:
-  'A conversion-focused website designed to showcase property renovation expertise, simplify quote bookings, and attract high-quality local leads.',
-    image: '/portfolio/fjpropertyservices.png',
-    tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
-    },
-    {
     title: 'Falconis Group',
     category: 'Recruitement & Staffing',
     location: 'London, UK',
@@ -44,7 +35,24 @@ export const featuredProjects: Project[] = [
     image: '/portfolio/falconis-group.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
     },
-    
+  {
+    title: 'Nexiora Talent',
+    category: 'Recruitement & Staffing',
+    location: 'London, UK',
+    description:
+    'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
+    image: '/portfolio/Nexiora-talentt.png',
+    tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
+    },
+    {
+    title: 'FJ Property Services',
+    category: 'Property Renovation & Maintenance',
+    location: 'London, UK',
+    description:
+  'A conversion-focused website designed to showcase property renovation expertise, simplify quote bookings, and attract high-quality local leads.',
+    image: '/portfolio/fjpropertyservices.png',
+    tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
+    },
     {
     title: 'Modest Moves',
     category: 'Fitness & Coaching',
