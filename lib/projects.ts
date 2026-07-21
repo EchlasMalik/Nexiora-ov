@@ -35,14 +35,14 @@ export const featuredProjects: Project[] = [
     image: '/portfolio/falconis-group.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
     },
-  {
-    title: 'Nexiora Talent',
-    category: 'Recruitement & Staffing',
+    {
+    title: 'Modest Moves',
+    category: 'Fitness & Coaching',
     location: 'London, UK',
     description:
-    'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
-    image: '/portfolio/Nexiora-talentt.png',
-    tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
+    'A results-driven fitness website designed to increase memberships, automate bookings, and turn visitors into long-term clients.',
+    image: '/portfolio/Modestmoves.png',
+    tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
     },
     {
     title: 'FJ Property Services',
@@ -53,14 +53,14 @@ export const featuredProjects: Project[] = [
     image: '/portfolio/fjpropertyservices.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
     },
-    {
-    title: 'Modest Moves',
-    category: 'Fitness & Coaching',
+  {
+    title: 'Nexiora Talent',
+    category: 'Recruitement & Staffing',
     location: 'London, UK',
     description:
-    'A results-driven fitness website designed to increase memberships, automate bookings, and turn visitors into long-term clients.',
-    image: '/portfolio/Modestmoves.png',
-    tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
+    'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
+    image: '/portfolio/Nexiora-talentt.png',
+    tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
     },
     {
     title: 'Echlas Malik',
