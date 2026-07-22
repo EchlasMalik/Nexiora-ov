@@ -6,7 +6,7 @@ const services = [
     icon: LayoutTemplate,
     title: 'Single Landing Page',
     description:
-      'A focused, high-converting page built around one goal — capturing leads for a specific offer or campaign.',
+      'A focused, high-converting page built around one goal - capturing leads for a specific offer or campaign.',
     points: ['Conversion-optimized layout', 'Fast, mobile-first build', 'Lead capture & tracking'],
   },
   {

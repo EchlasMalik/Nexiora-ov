@@ -8,7 +8,7 @@ import { ComingSoonProjectCard } from '@/components/coming-soon-project-card'
 import { featuredProjects, moreProjects } from '@/lib/projects'
 
 export const metadata: Metadata = {
-  title: 'Portfolio — Nexiora',
+  title: 'Portfolio - Nexiora',
   description:
     'Explore high-converting websites and systems Nexiora has built for service businesses across industries.',
 }

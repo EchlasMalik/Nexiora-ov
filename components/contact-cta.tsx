@@ -62,7 +62,7 @@ export function ContactCta() {
 
             <p className="mt-4 max-w-lg text-base leading-relaxed text-navy-foreground/70">
               Tell us a bit about your business and we'll put together a free
-              strategic plan. No cost, no obligation — just a clearer path to
+              strategic plan. No cost, no obligation - just a clearer path to
               more inquiries.
             </p>
 
@@ -180,7 +180,7 @@ export function ContactCta() {
                     <option>A single landing page</option>
                     <option>Marketing & automations</option>
                     <option>SEO & local search</option>
-                    <option>Not sure yet — need advice</option>
+                    <option>Not sure yet - need advice</option>
                   </select>
                 </div>
 

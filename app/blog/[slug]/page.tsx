@@ -27,11 +27,11 @@ export async function generateMetadata({
   const post = getPostBySlug(slug)
 
   if (!post) {
-    return { title: 'Article Not Found — Nexiora' }
+    return { title: 'Article Not Found - Nexiora' }
   }
 
   return {
-    title: `${post.title} — Nexiora Blog`,
+    title: `${post.title} - Nexiora Blog`,
     description: post.excerpt,
   }
 }

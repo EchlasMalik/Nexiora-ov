@@ -12,7 +12,7 @@ const benefits = [
     icon: Target,
     title: 'Pre-Qualifying Leads',
     description:
-      'Clear structure and smart forms qualify inquiries early, so you spend time on real opportunities — not tire-kickers.',
+      'Clear structure and smart forms qualify inquiries early, so you spend time on real opportunities - not tire-kickers.',
   },
   {
     icon: Clock,

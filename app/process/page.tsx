@@ -5,7 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
 export const metadata: Metadata = {
-  title: 'How It Works — Nexiora',
+  title: 'How It Works - Nexiora',
   description:
     'A simple, proven 3-step process from discovery to launch and growth with Nexiora.',
 }
@@ -15,7 +15,7 @@ const steps = [
     icon: Search,
     title: 'Discover & Strategize',
     description:
-      'We learn your business, your goals, and your customers — then map a clear plan for a site that actually converts.',
+      'We learn your business, your goals, and your customers - then map a clear plan for a site that actually converts.',
   },
   {
     icon: PencilRuler,
@@ -42,7 +42,7 @@ const systems = [
     icon: Star,
     title: 'Smart Review Routing',
     description:
-      'We set up automated review flows that engage customers at the right moment — while the experience is still fresh, helping you generate more Google reviews and manage feedback privately.',
+      'We set up automated review flows that engage customers at the right moment - while the experience is still fresh, helping you generate more Google reviews and manage feedback privately.',
   },
   {
     icon: MessageSquare,
@@ -61,7 +61,7 @@ const systems = [
 const outcomes = [
   {
     title: 'A Lighter Day-to-Day Workflow',
-    text: 'All enquiries are organised in one place with clear next steps — no more scattered messages across texts, emails, and DMs.',
+    text: 'All enquiries are organised in one place with clear next steps - no more scattered messages across texts, emails, and DMs.',
   },
   {
     title: 'Better-Prepared Clients',
@@ -95,7 +95,7 @@ export default function ProcessPage() {
               </h1>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                From first call to a website that works while you sleep — we
+                From first call to a website that works while you sleep - we
                 handle everything end-to-end with clarity and precision.
               </p>
             </div>
@@ -195,7 +195,7 @@ export default function ProcessPage() {
                 {/* FINAL LINE */}
                 <div className="mt-14 rounded-2xl border border-border bg-primary/5 p-8 text-center">
                   <p className="text-base font-medium text-foreground">
-                    The goal isn’t more enquiries — it’s better enquiries, smoother operations, and a business that feels organised and predictable.
+                    The goal isn’t more enquiries - it’s better enquiries, smoother operations, and a business that feels organised and predictable.
                   </p>
                 </div>
               </div>
@@ -208,7 +208,7 @@ export default function ProcessPage() {
               </h2>
 
               <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-                Let’s map out your website, leads, and growth system — in one simple conversation.
+                Let’s map out your website, leads, and growth system - in one simple conversation.
               </p>
 
               <div className="mt-6">

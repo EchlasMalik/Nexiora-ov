@@ -3,8 +3,8 @@ import { Check, X } from 'lucide-react'
 const rows = [
   {
     label: 'Load Time',
-    standard: 'Slow — 5s+ and visitors bounce',
-    high: 'Lightning fast — under 2 seconds',
+    standard: 'Slow - 5s+ and visitors bounce',
+    high: 'Lightning fast - under 2 seconds',
     standardGood: false,
   },
   {

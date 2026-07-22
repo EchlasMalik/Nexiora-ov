@@ -26,7 +26,7 @@ export function AiComingSoonBanner() {
 
         <p className="text-center text-sm leading-snug text-muted-foreground sm:text-base">
           <span className="font-semibold text-foreground">Nexiora AI</span>
-          {' '}— A smart AI chatbot built right into your website.{' '}
+          {' '}- A smart AI chatbot built right into your website.{' '}
           <span className="inline-flex items-center gap-1 font-semibold text-primary">
             Try it now
             <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />

@@ -14,7 +14,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
 export const metadata: Metadata = {
-  title: 'Services — Nexiora',
+  title: 'Services - Nexiora',
   description:
     'Web design, marketing systems, SEO, automation, and ongoing support to help your business grow online.',
 }
@@ -24,7 +24,7 @@ const services = [
     icon: LayoutTemplate,
     title: 'Single Landing Page',
     description:
-      'A focused, high-converting page built around one goal — capturing leads for a specific offer or campaign.',
+      'A focused, high-converting page built around one goal - capturing leads for a specific offer or campaign.',
     points: [
       'Conversion-optimized layout',
       'Fast, mobile-first build',
@@ -126,7 +126,7 @@ export default function ServicesPage() {
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 From high-converting websites to automated systems that work
-                while you sleep — everything is built to generate real growth,
+                while you sleep - everything is built to generate real growth,
                 not just traffic.
               </p>
             </div>

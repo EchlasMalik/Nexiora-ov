@@ -15,7 +15,7 @@ export function PortfolioSection() {
             Recent Projects
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Real results for real service businesses — built to look sharp and
+            Real results for real service businesses - built to look sharp and
             convert visitors into inquiries.
           </p>
         </div>

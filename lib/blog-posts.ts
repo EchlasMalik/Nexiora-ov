@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: 'p',
-        text: "For most service businesses, your website is the first real interaction a potential client has with your brand — before a phone call, before a quote, before they ever meet you. If that first impression is slow, confusing, or generic, they won't tell you why they left. They'll just leave. After auditing hundreds of business websites, we keep finding the same costly mistakes on repeat. Here are the ten that quietly do the most damage — and what a fix actually looks like.",
+        text: "For most service businesses, your website is the first real interaction a potential client has with your brand - before a phone call, before a quote, before they ever meet you. If that first impression is slow, confusing, or generic, they won't tell you why they left. They'll just leave. After auditing hundreds of business websites, we keep finding the same costly mistakes on repeat. Here are the ten that quietly do the most damage - and what a fix actually looks like.",
       },
       { type: 'h3', text: '1. Slow Load Times' },
       {
@@ -49,17 +49,17 @@ export const blogPosts: BlogPost[] = [
       { type: 'h3', text: '2. Designed for Desktop, Broken on Mobile' },
       {
         type: 'p',
-        text: "More than half of your traffic is almost certainly arriving on a phone. A mobile friendly website design isn't a nice-to-have anymore — it's the baseline. Tiny tap targets, text that requires zooming, and forms that are painful to fill out on a small screen are some of the fastest ways to lose a ready-to-book client.",
+        text: "More than half of your traffic is almost certainly arriving on a phone. A mobile friendly website design isn't a nice-to-have anymore - it's the baseline. Tiny tap targets, text that requires zooming, and forms that are painful to fill out on a small screen are some of the fastest ways to lose a ready-to-book client.",
       },
       { type: 'h3', text: '3. No Clear Call to Action' },
       {
         type: 'p',
-        text: "Visitors shouldn't have to hunt for how to contact you. Every page should have one obvious next step — book a call, request a quote, send a message — repeated at logical points as someone scrolls. Sites that bury contact details in a footer or hide them behind three clicks are leaving enquiries on the table.",
+        text: "Visitors shouldn't have to hunt for how to contact you. Every page should have one obvious next step - book a call, request a quote, send a message - repeated at logical points as someone scrolls. Sites that bury contact details in a footer or hide them behind three clicks are leaving enquiries on the table.",
       },
       { type: 'h3', text: '4. Generic, Templated Design' },
       {
         type: 'p',
-        text: "A website that looks like every other business in your industry does nothing to build trust or set you apart. Custom website development doesn't have to mean an enormous budget — but it does mean a layout, message, and visual identity built around your business, not a stock template with your logo swapped in.",
+        text: "A website that looks like every other business in your industry does nothing to build trust or set you apart. Custom website development doesn't have to mean an enormous budget - but it does mean a layout, message, and visual identity built around your business, not a stock template with your logo swapped in.",
       },
       { type: 'h3', text: '5. Confusing Navigation' },
       {
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h3', text: '6. Weak or Missing SEO Foundations' },
       {
         type: 'p',
-        text: 'Plenty of good-looking websites are invisible on Google because the technical SEO underneath was never set up properly — missing page titles, no structured headings, slow indexing, or duplicate content. Without this foundation, even great design will not bring in organic leads.',
+        text: 'Plenty of good-looking websites are invisible on Google because the technical SEO underneath was never set up properly - missing page titles, no structured headings, slow indexing, or duplicate content. Without this foundation, even great design will not bring in organic leads.',
       },
       { type: 'h3', text: '7. No Social Proof' },
       {
@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h3', text: '9. Ignoring Website Security' },
       {
         type: 'p',
-        text: "An expired SSL certificate, an outdated plugin, or no monitoring in place puts both your data and your visitors' trust at risk. Website security is invisible when it's working — and very visible the moment it isn't.",
+        text: "An expired SSL certificate, an outdated plugin, or no monitoring in place puts both your data and your visitors' trust at risk. Website security is invisible when it's working - and very visible the moment it isn't.",
       },
       { type: 'h3', text: '10. No System for Following Up With Leads' },
       {
@@ -94,7 +94,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'The Real Cost of These Mistakes' },
       {
         type: 'p',
-        text: "None of these mistakes look dramatic on their own. That's exactly why they're so expensive — they quietly chip away at your conversion rate every single day, and most business owners never see the leads that walked away.",
+        text: "None of these mistakes look dramatic on their own. That's exactly why they're so expensive - they quietly chip away at your conversion rate every single day, and most business owners never see the leads that walked away.",
       },
       {
         type: 'quote',
@@ -103,7 +103,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'How to Fix It' },
       {
         type: 'p',
-        text: "Start with a proper website audit — a clear-eyed look at speed, mobile experience, SEO, security, and conversion paths. From there, prioritise the issues actually costing you leads rather than chasing every trend at once. If your site is ticking more than two or three of the boxes above, it's likely underperforming for your business right now, not just in theory.",
+        text: "Start with a proper website audit - a clear-eyed look at speed, mobile experience, SEO, security, and conversion paths. From there, prioritise the issues actually costing you leads rather than chasing every trend at once. If your site is ticking more than two or three of the boxes above, it's likely underperforming for your business right now, not just in theory.",
       },
     ],
   },
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: 'p',
-        text: 'Ask most service business owners where their time actually goes and admin is rarely the plan — but it is almost always the reality. Answering the same questions, chasing quotes, rebooking missed appointments, following up on enquiries that went cold. AI automation for businesses has moved from an interesting idea to a genuinely practical tool, and for service businesses specifically, the time savings are significant.',
+        text: 'Ask most service business owners where their time actually goes and admin is rarely the plan - but it is almost always the reality. Answering the same questions, chasing quotes, rebooking missed appointments, following up on enquiries that went cold. AI automation for businesses has moved from an interesting idea to a genuinely practical tool, and for service businesses specifically, the time savings are significant.',
       },
       { type: 'h2', text: 'Where the Hours Actually Disappear' },
       {
@@ -129,7 +129,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'An AI Business Assistant Covers the First Response' },
       {
         type: 'p',
-        text: 'An AI business assistant — whether that is a chatbot on your site or an automated messaging flow — can answer common questions instantly, any hour of the day, and hand off to a human only when needed. For service businesses that rely on fast response times to win work, this alone can be the difference between booking a client and losing them to a competitor who replied first.',
+        text: 'An AI business assistant - whether that is a chatbot on your site or an automated messaging flow - can answer common questions instantly, any hour of the day, and hand off to a human only when needed. For service businesses that rely on fast response times to win work, this alone can be the difference between booking a client and losing them to a competitor who replied first.',
       },
       { type: 'h2', text: 'AI Appointment Booking Removes the Back-and-Forth' },
       {
@@ -139,12 +139,12 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'AI Lead Generation Keeps the Pipeline Warm' },
       {
         type: 'p',
-        text: 'Most businesses lose leads not because the interest was not there, but because nobody followed up quickly or consistently enough. AI lead generation tools can qualify new enquiries, send instant confirmation, and trigger a structured follow-up sequence — so a lead from Friday evening is not stone cold by Monday morning.',
+        text: 'Most businesses lose leads not because the interest was not there, but because nobody followed up quickly or consistently enough. AI lead generation tools can qualify new enquiries, send instant confirmation, and trigger a structured follow-up sequence - so a lead from Friday evening is not stone cold by Monday morning.',
       },
       { type: 'h2', text: 'Business Process Automation Connects the Dots' },
       {
         type: 'p',
-        text: 'The biggest gains usually come from workflow automation that connects the pieces already listed — a new enquiry automatically creates a record in your CRM development system, triggers a welcome message, notifies the right team member, and schedules a follow-up if there is no response. This is business process automation doing the coordinating work a person would otherwise have to do manually, every single time.',
+        text: 'The biggest gains usually come from workflow automation that connects the pieces already listed - a new enquiry automatically creates a record in your CRM development system, triggers a welcome message, notifies the right team member, and schedules a follow-up if there is no response. This is business process automation doing the coordinating work a person would otherwise have to do manually, every single time.',
       },
       { type: 'h2', text: 'What 20+ Hours a Week Actually Looks Like' },
       {
@@ -157,7 +157,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'For a small team, that is the equivalent of hiring a part-time assistant — without the payroll.',
+        text: 'For a small team, that is the equivalent of hiring a part-time assistant - without the payroll.',
       },
       {
         type: 'quote',
@@ -166,7 +166,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Where to Start' },
       {
         type: 'p',
-        text: "You don't need to automate everything at once. Start with whichever bottleneck costs you the most time today — usually first response or booking — and build outward from there. A well-built AI automation agency partner can map your specific workflow rather than dropping in a generic chatbot and hoping it fits.",
+        text: "You don't need to automate everything at once. Start with whichever bottleneck costs you the most time today - usually first response or booking - and build outward from there. A well-built AI automation agency partner can map your specific workflow rather than dropping in a generic chatbot and hoping it fits.",
       },
     ],
   },
@@ -197,7 +197,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'What Custom Software Actually Solves' },
       {
         type: 'p',
-        text: 'Business software development built specifically around your workflow removes the workarounds entirely. A custom client portal development project, for example, can give your clients one place to see project status, invoices, and documents — instead of stitching together three separate tools that were never designed to work as one system. The same logic applies to booking system development or CRM development built around exactly how your team actually sells and delivers.',
+        text: 'Business software development built specifically around your workflow removes the workarounds entirely. A custom client portal development project, for example, can give your clients one place to see project status, invoices, and documents - instead of stitching together three separate tools that were never designed to work as one system. The same logic applies to booking system development or CRM development built around exactly how your team actually sells and delivers.',
       },
       { type: 'h2', text: 'MVP Development: The Middle Ground' },
       {
@@ -207,7 +207,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Weighing the Investment' },
       {
         type: 'p',
-        text: "Custom software costs more upfront than a subscription. But subscriptions compound quietly over years, and they still do not fit your process. A software development agency worth working with will tell you honestly when off-the-shelf is still the right call — the goal is not to sell you custom software, it is to solve the actual bottleneck.",
+        text: "Custom software costs more upfront than a subscription. But subscriptions compound quietly over years, and they still do not fit your process. A software development agency worth working with will tell you honestly when off-the-shelf is still the right call - the goal is not to sell you custom software, it is to solve the actual bottleneck.",
       },
       {
         type: 'quote',
@@ -252,7 +252,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h3', text: '4. Audit Mobile Experience Separately' },
       {
         type: 'p',
-        text: 'Do not just check that the mobile version "works." Test it as a real visitor would — tap targets, form fields, menu behaviour, load time on a mid-range phone on mobile data.',
+        text: 'Do not just check that the mobile version "works." Test it as a real visitor would - tap targets, form fields, menu behaviour, load time on a mid-range phone on mobile data.',
       },
       { type: 'h3', text: '5. Review Branding and Web Design Consistency' },
       {
@@ -262,7 +262,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h3', text: '6. Evaluate UX and UI Design' },
       {
         type: 'p',
-        text: 'Good UX design is about the path a visitor takes to get what they need. Good UI design is about how that path feels. Both matter — a beautiful site with a confusing structure still underperforms.',
+        text: 'Good UX design is about the path a visitor takes to get what they need. Good UI design is about how that path feels. Both matter - a beautiful site with a confusing structure still underperforms.',
       },
       { type: 'h3', text: '7. Check Website Accessibility' },
       {
@@ -272,12 +272,12 @@ export const blogPosts: BlogPost[] = [
       { type: 'h3', text: '8. Review Technical and Local SEO' },
       {
         type: 'p',
-        text: 'A redesign is the riskiest time for SEO if it is handled carelessly — broken redirects and lost pages can hurt rankings overnight. Technical SEO and local SEO structure should be mapped before launch, not patched afterwards.',
+        text: 'A redesign is the riskiest time for SEO if it is handled carelessly - broken redirects and lost pages can hurt rankings overnight. Technical SEO and local SEO structure should be mapped before launch, not patched afterwards.',
       },
       { type: 'h3', text: '9. Plan Your Content and Conversion Paths' },
       {
         type: 'p',
-        text: 'Every key page should have a clear purpose and a clear next step. This is where conversion focused web design comes in — the redesign should be judged by whether it converts better, not just whether it looks newer.',
+        text: 'Every key page should have a clear purpose and a clear next step. This is where conversion focused web design comes in - the redesign should be judged by whether it converts better, not just whether it looks newer.',
       },
       { type: 'h3', text: '10. Confirm Hosting, Security, and Maintenance' },
       {
@@ -307,17 +307,17 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: 'p',
-        text: 'Most small business owners assume a quiet contact form means they need more visitors. In reality, the majority of small business websites we review already get reasonable traffic — the site simply is not built to turn that traffic into enquiries. That is a conversion problem, not a visibility problem.',
+        text: 'Most small business owners assume a quiet contact form means they need more visitors. In reality, the majority of small business websites we review already get reasonable traffic - the site simply is not built to turn that traffic into enquiries. That is a conversion problem, not a visibility problem.',
       },
       { type: 'h2', text: 'The Website Was Built to Look Good, Not to Convert' },
       {
         type: 'p',
-        text: 'Plenty of small business web design focuses entirely on aesthetics — a nice hero image, a clean layout — with no real strategy behind where the calls to action sit, what objections need addressing, or what a visitor actually needs to see before they trust you enough to reach out. Conversion focused web design starts from the opposite direction: what does this visitor need to believe before they will contact us, and how do we get them there.',
+        text: 'Plenty of small business web design focuses entirely on aesthetics - a nice hero image, a clean layout - with no real strategy behind where the calls to action sit, what objections need addressing, or what a visitor actually needs to see before they trust you enough to reach out. Conversion focused web design starts from the opposite direction: what does this visitor need to believe before they will contact us, and how do we get them there.',
       },
       { type: 'h2', text: "There's No Single Clear Offer" },
       {
         type: 'p',
-        text: 'Sites that try to be everything to everyone often convert worse than sites with one focused offer. A high converting website usually leads with a specific, clear promise — not a general "welcome to our business" message that could apply to any competitor in the same field.',
+        text: 'Sites that try to be everything to everyone often convert worse than sites with one focused offer. A high converting website usually leads with a specific, clear promise - not a general "welcome to our business" message that could apply to any competitor in the same field.',
       },
       { type: 'h2', text: 'The Path to Contact Is Too Long' },
       {
@@ -327,7 +327,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'No Trust Signals Where They Are Needed' },
       {
         type: 'p',
-        text: 'Reviews, results, and credentials work best placed right where doubt naturally shows up — near a price, before a form, alongside a bold claim. Scattering testimonials on a separate reviews page nobody visits wastes their impact entirely.',
+        text: 'Reviews, results, and credentials work best placed right where doubt naturally shows up - near a price, before a form, alongside a bold claim. Scattering testimonials on a separate reviews page nobody visits wastes their impact entirely.',
       },
       { type: 'h2', text: 'Landing Pages Are Underused' },
       {
@@ -346,7 +346,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Fixing It' },
       {
         type: 'p',
-        text: 'Start by mapping your current site against these six points honestly. In most cases, the fix is not a full rebuild — it is tightening the offer, shortening the path to contact, and putting trust signals exactly where hesitation happens.',
+        text: 'Start by mapping your current site against these six points honestly. In most cases, the fix is not a full rebuild - it is tightening the offer, shortening the path to contact, and putting trust signals exactly where hesitation happens.',
       },
     ],
   },
@@ -354,7 +354,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'website-speed-seo-conversions',
     title: 'How Website Speed Impacts SEO and Conversions',
     excerpt:
-      'Page speed affects more than user patience — it directly shapes your search rankings and how many visitors convert. Here is how the two connect.',
+      'Page speed affects more than user patience - it directly shapes your search rankings and how many visitors convert. Here is how the two connect.',
     category: 'SEO & Performance',
     date: '2026-05-07',
     readTime: '6 min read',
@@ -362,7 +362,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: 'p',
-        text: "Search engines factor page speed and core web vitals directly into how sites are ranked. Website speed optimisation is not a peripheral technical task anymore — it's part of technical SEO, and it affects whether your site shows up at all before a visitor even has the chance to judge your design.",
+        text: "Search engines factor page speed and core web vitals directly into how sites are ranked. Website speed optimisation is not a peripheral technical task anymore - it's part of technical SEO, and it affects whether your site shows up at all before a visitor even has the chance to judge your design.",
       },
       { type: 'h2', text: 'The Direct Link to Conversions' },
       {
@@ -385,7 +385,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        text: 'A page that jumps around while loading — buttons moving right as someone tries to tap them — hurts both usability and rankings.',
+        text: 'A page that jumps around while loading - buttons moving right as someone tries to tap them - hurts both usability and rankings.',
       },
       { type: 'h2', text: 'Mobile Speed Deserves Its Own Attention' },
       {
@@ -399,7 +399,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        text: "A fast website doesn't just rank better. It respects your visitor's time — and that respect shows up directly in your conversion rate.",
+        text: "A fast website doesn't just rank better. It respects your visitor's time - and that respect shows up directly in your conversion rate.",
       },
       { type: 'h2', text: 'Making Speed a Habit, Not a One-Off Fix' },
       {
@@ -428,7 +428,7 @@ export const blogPosts: BlogPost[] = [
         items: [
           'The number of pages and complexity of content',
           'Whether the design is custom or template-based',
-          'The level of custom functionality — booking systems, portals, integrations',
+          'The level of custom functionality - booking systems, portals, integrations',
           'Copywriting and content creation',
           'Ongoing website hosting and maintenance',
           'How much strategy and conversion planning goes in before design starts',
@@ -437,12 +437,12 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Template Sites vs Custom Website Development' },
       {
         type: 'p',
-        text: 'A best website builder for businesses can be a sensible, low-cost starting point for a very early-stage business. But template limitations show up quickly — restricted customisation, weaker performance, and a design that looks the same as thousands of other sites using the same theme. Custom website development costs more because it is built around your business specifically, not adapted from something generic.',
+        text: 'A best website builder for businesses can be a sensible, low-cost starting point for a very early-stage business. But template limitations show up quickly - restricted customisation, weaker performance, and a design that looks the same as thousands of other sites using the same theme. Custom website development costs more because it is built around your business specifically, not adapted from something generic.',
       },
       { type: 'h2', text: 'What a Landing Page Costs vs a Full Website' },
       {
         type: 'p',
-        text: 'A single, focused landing page design is typically the most affordable option, built around one offer or campaign. A full business website with multiple service pages, a portfolio, and lead capture across the site is a bigger investment because it is doing considerably more work. Neither is automatically the right choice, it depends on what you are trying to achieve — we cover that decision in more depth in our landing pages versus full websites breakdown.',
+        text: 'A single, focused landing page design is typically the most affordable option, built around one offer or campaign. A full business website with multiple service pages, a portfolio, and lead capture across the site is a bigger investment because it is doing considerably more work. Neither is automatically the right choice, it depends on what you are trying to achieve - we cover that decision in more depth in our landing pages versus full websites breakdown.',
       },
       { type: 'h2', text: 'The Real Cost of Going Cheap' },
       {
@@ -461,7 +461,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'How to Budget Sensibly' },
       {
         type: 'p',
-        text: 'Get specific about what the site needs to do — capture leads, support bookings, showcase past work — before comparing quotes. A professional web design agency should be able to explain clearly what is driving your price, not just hand you a number.',
+        text: 'Get specific about what the site needs to do - capture leads, support bookings, showcase past work - before comparing quotes. A professional web design agency should be able to explain clearly what is driving your price, not just hand you a number.',
       },
     ],
   },
@@ -477,7 +477,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: 'p',
-        text: 'Service businesses live or die on response time. A visitor with a question at 9pm on a Sunday is not going to wait until Monday morning for an answer — they will message the next business on their list instead. AI chatbot development has matured to the point where a well-built assistant can genuinely hold that first conversation, any hour of the day.',
+        text: 'Service businesses live or die on response time. A visitor with a question at 9pm on a Sunday is not going to wait until Monday morning for an answer - they will message the next business on their list instead. AI chatbot development has matured to the point where a well-built assistant can genuinely hold that first conversation, any hour of the day.',
       },
       { type: 'h2', text: '1. The FAQ Responder' },
       {
@@ -487,7 +487,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: '2. The Booking Assistant' },
       {
         type: 'p',
-        text: 'Built for AI appointment booking, this type checks your real calendar availability and lets visitors book directly in the conversation — no back-and-forth, no missed slots, no manual entry into your calendar afterwards.',
+        text: 'Built for AI appointment booking, this type checks your real calendar availability and lets visitors book directly in the conversation - no back-and-forth, no missed slots, no manual entry into your calendar afterwards.',
       },
       { type: 'h2', text: '3. The Lead Qualifier' },
       {
@@ -502,7 +502,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: '5. The Full Business Assistant' },
       {
         type: 'p',
-        text: 'The most advanced option combines all of the above into one AI business assistant connected to your CRM development and calendar — answering questions, qualifying leads, booking appointments, and logging everything automatically.',
+        text: 'The most advanced option combines all of the above into one AI business assistant connected to your CRM development and calendar - answering questions, qualifying leads, booking appointments, and logging everything automatically.',
       },
       { type: 'h2', text: 'What to Look for Before Choosing One' },
       {
@@ -516,7 +516,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Getting Started' },
       {
         type: 'p',
-        text: 'You do not need the most advanced option on day one. Start with whichever gap costs you the most leads right now — usually first response or booking — and work with an AI automation agency that can build around your actual workflow rather than a one-size-fits-all script.',
+        text: 'You do not need the most advanced option on day one. Start with whichever gap costs you the most leads right now - usually first response or booking - and work with an AI automation agency that can build around your actual workflow rather than a one-size-fits-all script.',
       },
     ],
   },
@@ -537,7 +537,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'What a Landing Page Does Best' },
       {
         type: 'p',
-        text: 'A landing page design is built around a single goal — one offer, one audience, one call to action, with every distraction removed. That focus is exactly why they tend to produce a high converting websites result for paid ad campaigns, a specific promotion, or a single service push. There is nowhere else for the visitor to go, so more of them take the one action available.',
+        text: 'A landing page design is built around a single goal - one offer, one audience, one call to action, with every distraction removed. That focus is exactly why they tend to produce a high converting websites result for paid ad campaigns, a specific promotion, or a single service push. There is nowhere else for the visitor to go, so more of them take the one action available.',
       },
       { type: 'h2', text: 'What a Full Website Does Best' },
       {
@@ -557,7 +557,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Why Many Businesses Need Both' },
       {
         type: 'p',
-        text: 'The strongest setup usually combines the two — a full website building general trust and visibility, paired with dedicated landing pages for each specific campaign or offer. Each one is optimised for what it is actually meant to do, rather than asking one page to do both jobs at once.',
+        text: 'The strongest setup usually combines the two - a full website building general trust and visibility, paired with dedicated landing pages for each specific campaign or offer. Each one is optimised for what it is actually meant to do, rather than asking one page to do both jobs at once.',
       },
       {
         type: 'quote',
@@ -566,7 +566,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Making the Right Call' },
       {
         type: 'p',
-        text: 'Start with the goal, not the format. If you are driving traffic toward one specific action, build a landing page for it. If you are building long-term presence and credibility, invest in a full, well-structured website — ideally both, working together.',
+        text: 'Start with the goal, not the format. If you are driving traffic toward one specific action, build a landing page for it. If you are building long-term presence and credibility, invest in a full, well-structured website - ideally both, working together.',
       },
     ],
   },

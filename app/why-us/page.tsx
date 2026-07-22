@@ -5,7 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
 export const metadata: Metadata = {
-  title: 'Why Us — Nexiora',
+  title: 'Why Us - Nexiora',
   description:
     'See why Nexiora builds high-converting websites that outperform standard designs and generate more leads.',
 }
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 const comparisons = [
   {
     feature: 'Load Time',
-    standard: 'Slow — 5s+ and visitors bounce',
-    pro: 'Lightning fast — under 2 seconds',
+    standard: 'Slow - 5s+ and visitors bounce',
+    pro: 'Lightning fast - under 2 seconds',
   },
   {
     feature: 'Mobile Optimized',
@@ -63,7 +63,7 @@ export default function WhyUsPage() {
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 The difference between a standard website and a high-converting
-                system isn’t design — it’s strategy, speed, and psychology.
+                system isn’t design - it’s strategy, speed, and psychology.
               </p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function WhyUsPage() {
                 Same traffic. 2–3x more conversions.
               </h3>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                We don’t just build websites — we build systems designed to turn
+                We don’t just build websites - we build systems designed to turn
                 visitors into booked clients and keep your pipeline consistent.
               </p>
 

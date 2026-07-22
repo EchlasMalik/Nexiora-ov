@@ -123,7 +123,7 @@ export function ContactForm() {
           <option>A single landing page</option>
           <option>Marketing & automations</option>
           <option>SEO & local search</option>
-          <option>Not sure yet — need advice</option>
+          <option>Not sure yet - need advice</option>
         </select>
       </div>
 

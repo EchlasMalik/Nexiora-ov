@@ -6,7 +6,7 @@ const steps = [
     icon: Search,
     title: 'Discover & Strategize',
     description:
-      'We learn your business, your goals, and your customers — then map a clear plan for a site that actually converts.',
+      'We learn your business, your goals, and your customers - then map a clear plan for a site that actually converts.',
   },
   {
     number: '02',

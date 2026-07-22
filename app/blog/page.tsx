@@ -8,9 +8,9 @@ import { BlogCard } from '@/components/blog-card'
 import { blogPosts, formatBlogDate } from '@/lib/blog-posts'
 
 export const metadata: Metadata = {
-  title: 'Blog — Web Design, SEO & AI Automation Insights | Nexiora',
+  title: 'Blog - Web Design, SEO & AI Automation Insights | Nexiora',
   description:
-    'Practical guides on web design, website conversion optimisation, SEO, and AI automation for service businesses — from the team building high-converting websites at Nexiora.',
+    'Practical guides on web design, website conversion optimisation, SEO, and AI automation for service businesses - from the team building high-converting websites at Nexiora.',
 }
 
 export default function BlogPage() {
@@ -38,7 +38,7 @@ export default function BlogPage() {
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 Practical, no-fluff guides on web design, conversion, SEO, and
-                automation — written for service businesses that want a
+                automation - written for service businesses that want a
                 website and systems that actually generate leads.
               </p>
             </div>
@@ -90,7 +90,7 @@ export default function BlogPage() {
                 <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-border shadow-md transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-xl">
                   <Image
                     src="/Nexiora-Medium.png"
-                    alt={`${featured.title} — Nexiora blog`}
+                    alt={`${featured.title} - Nexiora blog`}
                     fill
                     sizes="(max-width: 768px) 320px, 384px"
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
@@ -124,7 +124,7 @@ export default function BlogPage() {
               </h2>
 
               <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-                Let&apos;s put these ideas to work for your business — starting
+                Let&apos;s put these ideas to work for your business - starting
                 with a free design consultation.
               </p>
 

@@ -6,7 +6,7 @@ import { ContactForm } from '@/components/contact-form'
 import { Mail, Phone, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact — Nexiora',
+  title: 'Contact - Nexiora',
   description:
     'Get in touch with Nexiora to build a high-converting website and growth system for your business.',
 }
