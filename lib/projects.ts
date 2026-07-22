@@ -27,6 +27,15 @@ export const featuredProjects: Project[] = [
     tags: ['Website Design', 'Lead Forms', 'Branding', 'Local SEO'],
   },
   {
+    title: 'FJ Property Services',
+    category: 'Property Renovation & Maintenance',
+    location: 'London, UK',
+    description:
+      'A conversion-focused website designed to showcase property renovation expertise, simplify quote bookings, and attract high-quality local leads.',
+    image: '/portfolio/fjpropertyservices.png',
+    tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
+  },
+  {
     title: 'Falconis Group',
     category: 'Recruitement & Staffing',
     location: 'London, UK',
@@ -42,15 +51,6 @@ export const featuredProjects: Project[] = [
     description:
       'A results-driven fitness website designed to increase memberships, automate bookings, and turn visitors into long-term clients.',
     image: '/portfolio/Modestmoves.png',
-    tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
-  },
-  {
-    title: 'FJ Property Services',
-    category: 'Property Renovation & Maintenance',
-    location: 'London, UK',
-    description:
-      'A conversion-focused website designed to showcase property renovation expertise, simplify quote bookings, and attract high-quality local leads.',
-    image: '/portfolio/fjpropertyservices.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
   },
   {
