@@ -139,7 +139,7 @@ export function Testimonials() {
                     ))}
                   </div>
                   <Quote className="mt-4 size-7 shrink-0 text-primary/25" />
-                  <blockquote className="mt-3 flex-1 overflow-y-auto whitespace-pre-line text-sm leading-relaxed text-foreground sm:text-base">
+                  <blockquote className="scroll-primary mt-3 flex-1 overflow-y-auto whitespace-pre-line pr-2 text-sm leading-relaxed text-foreground sm:text-base">
                     {review.quote}
                   </blockquote>
                   <figcaption className="mt-6 shrink-0 border-t border-border pt-4">

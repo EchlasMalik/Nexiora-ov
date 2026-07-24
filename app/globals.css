@@ -170,3 +170,27 @@
     scroll-behavior: smooth;
   }
 }
+
+@layer utilities {
+  .scroll-primary {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklch, var(--primary) 50%, transparent) transparent;
+  }
+
+  .scroll-primary::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-primary::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scroll-primary::-webkit-scrollbar-thumb {
+    background-color: color-mix(in oklch, var(--primary) 50%, transparent);
+    border-radius: 999px;
+  }
+
+  .scroll-primary::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary);
+  }
+}
