@@ -1,9 +1,16 @@
 import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '@/lib/projects'
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Visit the live ${project.title} website (opens in a new tab)`}
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+    >
       <div className="relative aspect-[16/11] overflow-hidden border-b border-border bg-muted">
         <Image
           src={project.image || '/placeholder.svg'}
@@ -12,9 +19,12 @@ export function ProjectCard({ project }: { project: Project }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
         />
+        <span className="absolute right-3 top-3 inline-flex size-9 -translate-y-1 items-center justify-center rounded-full bg-background/90 text-foreground opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <ArrowUpRight className="size-4" />
+        </span>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-heading text-lg font-bold text-foreground">
+        <h3 className="font-heading text-lg font-bold text-foreground transition-colors group-hover:text-primary">
           {project.title}
         </h3>
         <p className="mt-1 text-sm font-medium text-primary">
@@ -34,6 +44,6 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
       </div>
-    </article>
+    </a>
   )
 }

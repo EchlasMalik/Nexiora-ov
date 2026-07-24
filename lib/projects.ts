@@ -5,6 +5,7 @@ export type Project = {
   description: string
   image: string
   tags: string[]
+  url: string
 }
 
 export const featuredProjects: Project[] = [
@@ -16,6 +17,7 @@ export const featuredProjects: Project[] = [
       'A premium gaming utility platform built for competitive players, featuring instant downloads, secure licensing, and a user experience designed to maximize performance.',
     image: '/portfolio/OmniControl.png',
     tags: ['Gaming Platform', 'Dashboard Design', 'License Management', 'Secure Downloads', 'Performance Analytics',],
+    url: 'https://omnicontrol.me/',
   },
   {
     title: 'Yasmin Tutors',
@@ -25,6 +27,7 @@ export const featuredProjects: Project[] = [
       'A modern education website crafted to showcase expertise, increase student enrollments, and drive consistent inquiry submissions.',
     image: '/portfolio/Yasmin-tutors.png',
     tags: ['Website Design', 'Lead Forms', 'Branding', 'Local SEO'],
+    url: 'https://www.yasmintutors.com/',
   },
   {
     title: 'FJ Property Services',
@@ -34,6 +37,7 @@ export const featuredProjects: Project[] = [
       'A conversion-focused website designed to showcase property renovation expertise, simplify quote bookings, and attract high-quality local leads.',
     image: '/portfolio/fjpropertyservices.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
+    url: 'https://www.fjproperty-services.com/',
   },
   {
     title: 'Falconis Group',
@@ -43,6 +47,7 @@ export const featuredProjects: Project[] = [
       'A credibility-focused recruitment website built to attract top talent, simplify hiring workflows, and convert visitors into qualified leads.',
     image: '/portfolio/falconis-group.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
+    url: 'https://www.falconisgroup.com/',
   },
   {
     title: 'Modest Moves',
@@ -52,6 +57,7 @@ export const featuredProjects: Project[] = [
       'A results-driven fitness website designed to increase memberships, promote experience & expertise, and turn visitors into long-term clients.',
     image: '/portfolio/Modestmoves.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
+    url: 'https://modestmoves.com/',
   },
   {
     title: 'Nexiora Talent',
@@ -61,6 +67,7 @@ export const featuredProjects: Project[] = [
       'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
     image: '/portfolio/Nexiora-talentt.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
+    url: 'https://www.nexioratalent.com/',
   },
 
 
@@ -76,7 +83,7 @@ export const moreProjects: Project[] = [
       'A personal brand website built to establish authority, showcase expertise, and generate high-value consultation opportunities.',
     image: '/portfolio/echlasmalik.png',
     tags: ['Website Design', 'Branding', 'Lead Gen', 'Local SEO'],
-
+    url: 'https://www.echlasmalik.com/',
   },
   // {
   //   title: 'Lumen Skincare Clinic',
