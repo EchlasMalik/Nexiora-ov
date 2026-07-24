@@ -5,13 +5,6 @@ import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
 
 const reviews = [
   {
-    quote: `Really impressed with the website made for me by Nexiora.
-
-    They took their time and were attentive to my vision, turning it into a reality that exceeded my initial expectations.`,
-    name: 'Faizan Razzaq',
-    role: 'Managing Director of Falconis Group',
-  },
-  {
     quote: `Done an amazing job building my website for a tutoring company.
 
     They suggested really good ideas that I hadn't even thought of.
@@ -19,6 +12,24 @@ const reviews = [
     Having a website made by Nexiora allowed me to organise and grow my business much more effectively.`,
     name: 'Taseen Hussain',
     role: 'Founder of Yasmin Tutors',
+  },
+  {
+    quote: `I had an excellent experience working with Nexoria Studio. They did an amazing job for my removal company, FJ Property Services.
+    
+    From the very beginning, they were professional, responsive, and understood exactly what I wanted.
+    
+    The quality of their work exceeded my expectations, and the final result has really helped my business stand out.
+
+    I highly recommend Nexoria Studio to anyone looking for high-quality design and marketing services. Thank you for your hard work and dedication!`,
+    name: 'Fahim Ahmed',
+    role: 'Co-Founder of FJ Property & Services',
+  },
+  {
+    quote: `Really impressed with the website made for me by Nexiora.
+
+    They took their time and were attentive to my vision, turning it into a reality that exceeded my initial expectations.`,
+    name: 'Faizan Razzaq',
+    role: 'Managing Director of Falconis Group',
   },
   {
     quote: `Thank you for creating the website. I found it personally too difficult to manage it, and you made the entire process very easy.

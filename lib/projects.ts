@@ -49,7 +49,7 @@ export const featuredProjects: Project[] = [
     category: 'Fitness & Coaching',
     location: 'London, UK',
     description:
-      'A results-driven fitness website designed to increase memberships, automate bookings, and turn visitors into long-term clients.',
+      'A results-driven fitness website designed to increase memberships, promote experience & expertise, and turn visitors into long-term clients.',
     image: '/portfolio/Modestmoves.png',
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
   },
