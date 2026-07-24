@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    id: 'landing-page',
     icon: LayoutTemplate,
     title: 'Single Landing Page',
     description:
@@ -32,6 +33,7 @@ const services = [
     ],
   },
   {
+    id: 'marketing',
     icon: Megaphone,
     title: 'Marketing Services',
     description:
@@ -43,6 +45,7 @@ const services = [
     ],
   },
   {
+    id: 'seo',
     icon: Search,
     title: 'SEO',
     description:
@@ -57,21 +60,25 @@ const services = [
 
 const serviceDetails = [
   {
+    id: 'web-design',
     title: 'Web Design',
     description:
       'High-performance websites designed to convert visitors into real enquiries.',
   },
   {
+    id: 'automation',
     title: 'Automations and CRM',
     description:
       'Systems that track, manage, and follow up with your leads automatically.',
   },
   {
+    id: 'advertising',
     title: 'SEO and Advertising',
     description:
       'Visibility strategies that combine organic search and paid traffic for consistent growth.',
   },
   {
+    id: 'hosting',
     title: 'Hosting and Support',
     description:
       'Reliable hosting and ongoing support so your website stays fast, secure, and updated.',
@@ -140,7 +147,8 @@ export default function ServicesPage() {
               {services.map((service) => (
                 <div
                   key={service.title}
-                  className="group rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                  id={service.id}
+                  className="group scroll-mt-24 rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                     <service.icon className="size-6" />
@@ -189,7 +197,8 @@ export default function ServicesPage() {
               {serviceDetails.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1"
+                  id={item.id}
+                  className="scroll-mt-24 rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1"
                 >
                   <h3 className="text-lg font-semibold text-foreground">
                     {item.title}

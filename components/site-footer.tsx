@@ -11,11 +11,11 @@ const quickLinks = [
 ]
 
 const services = [
-  'Single Landing Page',
-  'Website Design',
-  'Marketing Services',
-  'SEO & Local Search',
-  'Automation & CRM',
+  { label: 'Single Landing Page', href: '/services#landing-page' },
+  { label: 'Website Design', href: '/services#web-design' },
+  { label: 'Marketing Services', href: '/services#marketing' },
+  { label: 'SEO & Local Search', href: '/services#seo' },
+  { label: 'Automation & CRM', href: '/services#automation' },
 ]
 
 export function SiteFooter() {
@@ -54,9 +54,14 @@ export function SiteFooter() {
               Services
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {services.map((s) => (
-                <li key={s} className="text-sm text-navy-foreground/70">
-                  {s}
+              {services.map((service) => (
+                <li key={service.href}>
+                  <Link
+                    href={service.href}
+                    className="text-sm text-navy-foreground/70 transition-colors hover:text-primary"
+                  >
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -85,10 +90,16 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Nexiora. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-navy-foreground/55">
-            <Link href="#" className="transition-colors hover:text-primary">
+            <Link
+              href="/privacy-policy"
+              className="transition-colors hover:text-primary"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="transition-colors hover:text-primary">
+            <Link
+              href="/terms-of-service"
+              className="transition-colors hover:text-primary"
+            >
               Terms of Service
             </Link>
           </div>
