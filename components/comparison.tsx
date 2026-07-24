@@ -1,4 +1,5 @@
 import { Check, X } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
 
 const rows = [
   {
@@ -31,16 +32,16 @@ export function Comparison() {
   return (
     <section className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             The Difference
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground text-balance sm:text-4xl">
             Standard Website vs. High-Converting Website
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+        <Reveal delay={100} className="mt-12 overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
           <div className="grid grid-cols-3 border-b border-border bg-muted/50">
             <div className="p-4 sm:p-5" />
             <div className="border-l border-border p-4 text-center sm:p-5">
@@ -84,7 +85,7 @@ export function Comparison() {
               high-converting website.
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

@@ -3,7 +3,7 @@ import type { Project } from '@/lib/projects'
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
       <div className="relative aspect-[16/11] overflow-hidden border-b border-border bg-muted">
         <Image
           src={project.image || '/placeholder.svg'}

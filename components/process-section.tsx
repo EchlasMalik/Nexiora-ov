@@ -1,4 +1,5 @@
 import { Search, PenTool, Rocket } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
 
 const steps = [
   {
@@ -28,7 +29,7 @@ export function ProcessSection() {
   return (
     <section id="process" className="bg-secondary/40 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             How It Works
           </p>
@@ -39,27 +40,26 @@ export function ProcessSection() {
             Three clear steps from first call to a website that works while you
             sleep.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {steps.map((step) => (
-            <div
-              key={step.number}
-              className="group relative rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
-            >
-              <span className="absolute right-6 top-6 font-heading text-4xl font-extrabold text-primary/15">
-                {step.number}
-              </span>
-              <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform group-hover:scale-110">
-                <step.icon className="size-6" />
-              </span>
-              <h3 className="mt-5 font-heading text-xl font-bold text-foreground">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {step.description}
-              </p>
-            </div>
+          {steps.map((step, i) => (
+            <Reveal key={step.number} delay={i * 100}>
+              <div className="group relative h-full rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
+                <span className="absolute right-6 top-6 font-heading text-4xl font-extrabold text-primary/15">
+                  {step.number}
+                </span>
+                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform group-hover:scale-110">
+                  <step.icon className="size-6" />
+                </span>
+                <h3 className="mt-5 font-heading text-xl font-bold text-foreground">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {step.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

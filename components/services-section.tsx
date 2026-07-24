@@ -1,4 +1,5 @@
 import { LayoutTemplate, Megaphone, TrendingUp, ArrowRight } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
 
 const services = [
   {
@@ -31,7 +32,7 @@ export function ServicesSection() {
   return (
     <section id="services" className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             What We Do
           </p>
@@ -42,47 +43,46 @@ export function ServicesSection() {
             From stunning websites to automated systems that work while you
             sleep.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="group flex flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
-            >
-              <div className="flex items-center justify-between">
-                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <service.icon className="size-6" />
-                </span>
-                <span className="font-heading text-3xl font-extrabold text-primary/15">
-                  {service.number}
-                </span>
+          {services.map((service, i) => (
+            <Reveal key={service.title} delay={i * 100}>
+              <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <service.icon className="size-6" />
+                  </span>
+                  <span className="font-heading text-3xl font-extrabold text-primary/15">
+                    {service.number}
+                  </span>
+                </div>
+                <h3 className="mt-5 font-heading text-xl font-bold text-foreground">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {service.description}
+                </p>
+                <ul className="mt-5 flex-1 space-y-2.5">
+                  {service.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-center gap-2 text-sm text-foreground"
+                    >
+                      <span className="size-1.5 shrink-0 rounded-full bg-primary" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#contact"
+                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  Learn More
+                  <ArrowRight className="size-4" />
+                </a>
               </div>
-              <h3 className="mt-5 font-heading text-xl font-bold text-foreground">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {service.description}
-              </p>
-              <ul className="mt-5 flex-1 space-y-2.5">
-                {service.points.map((point) => (
-                  <li
-                    key={point}
-                    className="flex items-center gap-2 text-sm text-foreground"
-                  >
-                    <span className="size-1.5 shrink-0 rounded-full bg-primary" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#contact"
-                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-              >
-                Learn More
-                <ArrowRight className="size-4" />
-              </a>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

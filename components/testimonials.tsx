@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
 
 const reviews = [
   {
@@ -73,7 +74,7 @@ export function Testimonials() {
   return (
     <section id="reviews" className="bg-secondary/40 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Client Reviews
           </p>
@@ -83,9 +84,10 @@ export function Testimonials() {
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             Real feedback from real service businesses we work with.
           </p>
-        </div>
+        </Reveal>
 
-        <div
+        <Reveal
+          delay={150}
           className="relative mt-14"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
@@ -164,9 +166,9 @@ export function Testimonials() {
               />
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <Reveal delay={200} className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#contact"
             className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
@@ -182,7 +184,7 @@ export function Testimonials() {
           >
             Leave a Review
           </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

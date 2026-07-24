@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowRight, MapPin, Star, Zap, BadgeCheck } from 'lucide-react'
 import { AiComingSoonBanner } from '@/components/ai-coming-soon-banner'
+import { Reveal } from '@/components/reveal'
 
 const benefits = [
   { icon: Zap, text: 'Conversion-first design that turns visitors into booked leads' },
@@ -14,7 +15,7 @@ export function Hero() {
       <div className="pointer-events-none absolute -bottom-24 -left-24 size-[24rem] rounded-full bg-gold/10 blur-3xl" />
 
       <div className="relative mx-auto grid w-full max-w-7xl flex-1 items-center gap-8 px-4 py-5 sm:px-6 md:py-6 lg:grid-cols-2 lg:px-8">
-        <div>
+        <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-primary shadow-sm">
             <MapPin className="size-3.5" />
             Based in London · Serving clients worldwide
@@ -70,9 +71,9 @@ export function Hero() {
               20+ Sites Delivered
             </span>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="relative">
+        <Reveal delay={150} className="relative">
           <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-3xl bg-primary/10" />
           <div className="overflow-hidden rounded-3xl border border-border bg-card p-2 shadow-xl">
             <Image
@@ -84,7 +85,7 @@ export function Hero() {
               priority
             />
           </div>
-        </div>
+        </Reveal>
       </div>
 
       <div className="relative pb-2 sm:pb-3">

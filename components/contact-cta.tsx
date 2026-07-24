@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Clock, CheckCircle2, Mail, Phone, MapPin } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
 
 const highlights = [
   'A free, no-pressure design consultation',
@@ -50,7 +51,7 @@ export function ContactCta() {
     <section id="contact" className="bg-navy py-20 text-navy-foreground md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
+          <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-gold">
               <Clock className="size-3.5" />
               Free Design Consultation
@@ -93,9 +94,9 @@ export function ContactCta() {
                 London Based · Serving clients worldwide
               </p>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
+          <Reveal delay={150} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
             {submitted ? (
               <div className="flex h-full flex-col items-center justify-center py-12 text-center">
                 <CheckCircle2 className="size-14 text-gold" />
@@ -214,7 +215,7 @@ export function ContactCta() {
                 </p>
               </form>
             )}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
