@@ -1,30 +1,40 @@
-import { LayoutTemplate, Megaphone, TrendingUp, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import { LayoutTemplate, Code2, Megaphone, Server, ArrowRight } from 'lucide-react'
+import { ContactTrigger } from '@/components/contact-trigger'
 import { Reveal } from '@/components/reveal'
 
 const services = [
   {
     number: '01',
     icon: LayoutTemplate,
-    title: 'Single Landing Page',
+    title: 'Conversion Focused Web Design',
     description:
-      'A focused, high-converting page built around one goal - capturing leads for a specific offer or campaign.',
-    points: ['Conversion-optimized layout', 'Fast, mobile-first build', 'Lead capture & tracking'],
+      'High-converting websites built around your goals - from a focused single landing page to a full multi-page website for larger businesses.',
+    points: ['Single landing pages or full multi-page sites', 'Conversion-optimized layout', 'Fast, mobile-first build'],
   },
   {
     number: '02',
-    icon: Megaphone,
-    title: 'Marketing Services',
+    icon: Code2,
+    title: 'Custom Software Solutions',
     description:
-      'Smart advertising and automations that bring more qualified inquiries from every dollar you spend.',
-    points: ['Targeted ad campaigns', 'Automated lead follow-up', 'CRM & systems setup'],
+      'Custom software personally built by me around how your business actually runs, not a generic off-the-shelf tool.',
+    points: ['More time back to focus on your business', 'Less time spent chasing leads manually'],
   },
   {
     number: '03',
-    icon: TrendingUp,
-    title: 'SEO',
+    icon: Megaphone,
+    title: 'SEO & Advertising',
     description:
-      'Rank higher in local and organic search so the right customers find you long after launch.',
-    points: ['Local & on-page SEO', 'Technical optimization', 'Ongoing growth reporting'],
+      'Rank higher in search and run smarter ad campaigns that bring in qualified leads, not just clicks.',
+    points: ['Local & on-page SEO', 'Targeted Google & Meta ad campaigns', 'Ongoing growth reporting'],
+  },
+  {
+    number: '04',
+    icon: Server,
+    title: 'Hosting & Maintenance',
+    description:
+      'Reliable hosting and ongoing support so your website stays fast, secure, and updated.',
+    points: ['Regular backups & security monitoring', 'SSL renewal & uptime protection', 'Direct support when you need changes'],
   },
 ]
 
@@ -45,7 +55,7 @@ export function ServicesSection() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={i * 100}>
               <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
@@ -57,10 +67,10 @@ export function ServicesSection() {
                     {service.number}
                   </span>
                 </div>
-                <h3 className="mt-5 font-heading text-xl font-bold text-foreground">
+                <h3 className="mt-5 min-h-14 font-heading text-xl font-bold text-foreground">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 min-h-18 text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
                 <ul className="mt-5 flex-1 space-y-2.5">
@@ -74,17 +84,24 @@ export function ServicesSection() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contact"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-                >
+                <ContactTrigger className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80">
                   Learn More
                   <ArrowRight className="size-4" />
-                </a>
+                </ContactTrigger>
               </div>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={services.length * 100} className="mt-12 flex justify-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary shadow-sm transition-colors hover:bg-primary/5"
+          >
+            View All Services
+            <ArrowRight className="size-4" />
+          </Link>
+        </Reveal>
       </div>
     </section>
   )

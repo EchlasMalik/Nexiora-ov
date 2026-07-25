@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ProjectCard } from '@/components/project-card'
 import { ComingSoonProjectCard } from '@/components/coming-soon-project-card'
+import { ContactTrigger } from '@/components/contact-trigger'
+import { Reveal } from '@/components/reveal'
 import { featuredProjects, moreProjects } from '@/lib/projects'
 
 export const metadata: Metadata = {
@@ -50,17 +51,21 @@ export default function PortfolioPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {allProjects.map((project, i) => (
-                <ProjectCard
-                  key={`${project.title}-${i}`}
-                  project={project}
-                />
+                <Reveal key={`${project.title}-${i}`} delay={(i % 3) * 90}>
+                  <ProjectCard project={project} />
+                </Reveal>
               ))}
               {isComingSoonAlone ? (
-                <div className="sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-sm lg:col-span-1 lg:col-start-2 lg:mx-0 lg:max-w-none">
+                <Reveal
+                  delay={(allProjects.length % 3) * 90}
+                  className="sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-sm lg:col-span-1 lg:col-start-2 lg:mx-0 lg:max-w-none"
+                >
                   <ComingSoonProjectCard />
-                </div>
+                </Reveal>
               ) : (
-                <ComingSoonProjectCard />
+                <Reveal delay={(allProjects.length % 3) * 90}>
+                  <ComingSoonProjectCard />
+                </Reveal>
               )}
             </div>
 
@@ -71,8 +76,7 @@ export default function PortfolioPage() {
                   Like what you see?
                 </p>
 
-                <Link
-                  href="/#contact"
+                <ContactTrigger
                   className="
                     inline-flex items-center justify-center gap-2 rounded-full bg-gold
                     px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm
@@ -82,7 +86,7 @@ export default function PortfolioPage() {
                 >
                   Start Your Project
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </ContactTrigger>
               </div>
             </div>
           </div>

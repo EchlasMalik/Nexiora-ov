@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono, Poppins } from 'next/font/google'
+import { ContactModalProvider } from '@/components/contact-modal'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -42,7 +43,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} bg-background`}
     >
       <body className="font-sans antialiased">
-        {children}
+        <ContactModalProvider>{children}</ContactModalProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
         <script src="https://nexiora-ai-agent.vercel.app/widget.js" data-chatbot-id="bot_b31bh7tlkw" async></script>
       </body>

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Logo } from '@/components/logo'
+import { useContactModal } from '@/components/contact-modal'
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -17,6 +18,7 @@ const navLinks = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const { open: openContactModal } = useContactModal()
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
@@ -38,12 +40,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href="/contact"
+          <button
+            type="button"
+            onClick={openContactModal}
             className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
           >
             Get Free Quote
-          </a>
+          </button>
 
           <button
             type="button"
@@ -73,13 +76,16 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false)
+                openContactModal()
+              }}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
             >
               Get Free Quote
-            </a>
+            </button>
           </nav>
         </div>
       )}

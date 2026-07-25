@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ContactTrigger } from '@/components/contact-trigger'
 import { Logo } from '@/components/logo'
 
 const quickLinks = [
@@ -76,12 +77,9 @@ export function SiteFooter() {
               <li>+44 7835 385 699</li>
               <li>London Based · Serving clients worldwide</li>
             </ul>
-            <a
-              href="#contact"
-              className="mt-5 inline-flex rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground transition-transform hover:-translate-y-0.5"
-            >
+            <ContactTrigger className="mt-5 inline-flex rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground transition-transform hover:-translate-y-0.5">
               Get Free Quote
-            </a>
+            </ContactTrigger>
           </div>
         </div>
 

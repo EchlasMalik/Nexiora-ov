@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Check, X } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { ContactTrigger } from '@/components/contact-trigger'
 
 export const metadata: Metadata = {
   title: 'Why Us - Nexiora',
@@ -125,13 +126,10 @@ export default function WhyUsPage() {
               </p>
 
               <div className="mt-4">
-                <Link
-                  href="/#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-                >
+                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
                   Get Your High-Converting Website
                   <ArrowRight className="size-4" />
-                </Link>
+                </ContactTrigger>
               </div>
             </div>
           </div>

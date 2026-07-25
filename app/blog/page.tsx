@@ -5,6 +5,7 @@ import { ArrowRight, Clock } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { BlogCard } from '@/components/blog-card'
+import { ContactTrigger } from '@/components/contact-trigger'
 import { blogPosts, formatBlogDate } from '@/lib/blog-posts'
 
 export const metadata: Metadata = {
@@ -129,13 +130,10 @@ export default function BlogPage() {
               </p>
 
               <div className="mt-6">
-                <Link
-                  href="/#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-95"
-                >
+                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-95">
                   Book a Free Consultation
                   <ArrowRight className="size-4" />
-                </Link>
+                </ContactTrigger>
               </div>
             </div>
           </div>

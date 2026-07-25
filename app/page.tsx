@@ -7,7 +7,6 @@ import { Comparison } from '@/components/comparison'
 import { ProcessSection } from '@/components/process-section'
 import { ServicesSection } from '@/components/services-section'
 import { Testimonials } from '@/components/testimonials'
-import { ContactCta } from '@/components/contact-cta'
 import { SiteFooter } from '@/components/site-footer'
 
 export default function Page() {
@@ -25,7 +24,6 @@ export default function Page() {
         <ProcessSection />
         <ServicesSection />
         <Testimonials />
-        <ContactCta />
       </main>
       <SiteFooter />
     </>

@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ContactForm } from '@/components/contact-form'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { FaqAccordion } from '@/components/faq-accordion'
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact - Nexiora',
@@ -43,10 +44,9 @@ export default function ContactPage() {
 
         {/* CONTENT */}
         <section className="bg-background py-16 md:py-24">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-            
+          <div className="mx-auto grid grid-cols-1 items-stretch gap-10 max-w-7xl px-4 sm:px-6 lg:grid-cols-[3fr_2fr] lg:px-8">
             {/* FORM */}
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+            <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-sm">
               <h2 className="text-xl font-semibold text-foreground">
                 Send a Message
               </h2>
@@ -55,8 +55,7 @@ export default function ContactPage() {
             </div>
 
             {/* INFO + MAP */}
-            <div className="space-y-6">
-
+            <div className="flex h-full flex-col gap-6">
               {/* CONTACT INFO */}
               <div className="rounded-2xl border border-border bg-secondary/40 p-8">
                 <h2 className="text-xl font-semibold text-foreground">
@@ -81,8 +80,31 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* TIMELINE */}
+              <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Clock className="size-5" />
+                  </span>
+                  <h2 className="text-xl font-semibold text-foreground">
+                    Project Timeline
+                  </h2>
+                </div>
+
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  Most projects go live within one to two weeks of your design
+                  being approved.
+                </p>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Larger or more complex builds can take a little longer, and
+                  we'll map out a clear timeline together once we've
+                  discussed your goals on a strategy call.
+                </p>
+              </div>
+
               {/* MAP */}
-              <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <div className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
                 <div className="p-4 border-b border-border">
                   <h3 className="text-sm font-semibold text-foreground">
                     Based in London
@@ -94,14 +116,14 @@ export default function ContactPage() {
 
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199192.83829522418!2d-0.2664029591612803!3d51.52873980508483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e1!3m2!1sen!2suk!4v1781395404409!5m2!1sen!2suk"
-                  className="h-65 w-full"
+                  className="min-h-65 w-full flex-1"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
 
                 <div className="border-t border-border p-4">
                   <a
-                    href="https://maps.app.goo.gl/E4tK7XdXhYahi9Zy9"
+                    href="https://maps.app.goo.gl/qqJCMBc42c6YjcM37"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
@@ -122,73 +144,27 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ */}
-            <section className="bg-secondary/40 py-16 md:py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="max-w-2xl">
-                <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-                    Common Questions
-                </p>
+        <section className="bg-secondary/40 py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                Common Questions
+              </p>
 
-                <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                    Frequently Asked Questions
-                </h2>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground">
+                Frequently Asked Questions
+              </h2>
 
-                <p className="mt-3 text-muted-foreground">
-                    A few things people often ask before getting started.
-                </p>
-                </div>
-
-                <div className="mt-10 grid gap-6 md:grid-cols-2">
-                <div className="rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                    <h3 className="text-lg font-semibold text-foreground">
-                    How long will my website take to build?
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    Most projects are completed within 2–6 weeks depending on scope,
-                    content readiness, and any additional systems or integrations
-                    required.
-                    </p>
-                </div>
-
-                <div className="rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                    <h3 className="text-lg font-semibold text-foreground">
-                    Do you work with businesses outside London?
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    Absolutely. While we're based in London, we work with businesses
-                    across the UK and internationally through video calls, email, and
-                    online collaboration.
-                    </p>
-                </div>
-
-                <div className="rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                    <h3 className="text-lg font-semibold text-foreground">
-                    How does pricing work?
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    Pricing depends on the size of the project and the systems involved.
-                    After a quick consultation, we'll provide a clear proposal with no
-                    hidden costs.
-                    </p>
-                </div>
-
-                <div className="rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                    <h3 className="text-lg font-semibold text-foreground">
-                    What if I already have a website?
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    That's completely fine. We can improve, redesign, or rebuild your
-                    existing website while preserving what's already working and fixing
-                    what isn't.
-                    </p>
-                </div>
-                </div>
+              <p className="mt-3 text-muted-foreground">
+                A few things people often ask before getting started.
+              </p>
             </div>
-            </section>
+
+            <div className="mx-auto mt-10 max-w-3xl">
+              <FaqAccordion />
+            </div>
+          </div>
+        </section>
       </main>
 
       <SiteFooter />

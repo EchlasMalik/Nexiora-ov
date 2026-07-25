@@ -59,6 +59,32 @@
   --animate-banner-glow: banner-glow 2.4s ease-in-out infinite;
   --animate-fade-in-up: fade-in-up 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-fade-in: fade-in 0.95s ease-out both;
+  --animate-arrow-flow-x: arrow-flow-x 1.6s ease-in-out infinite;
+  --animate-arrow-flow-y: arrow-flow-y 1.6s ease-in-out infinite;
+
+  @keyframes arrow-flow-x {
+    0%,
+    100% {
+      transform: translateX(0);
+      opacity: 0.45;
+    }
+    50% {
+      transform: translateX(6px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes arrow-flow-y {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.45;
+    }
+    50% {
+      transform: translateY(6px);
+      opacity: 1;
+    }
+  }
 
   @keyframes marquee {
     from {
@@ -192,5 +218,28 @@
 
   .scroll-primary::-webkit-scrollbar-thumb:hover {
     background-color: var(--primary);
+  }
+
+  .modal-fade {
+    transition: opacity 220ms ease-out;
+  }
+
+  @starting-style {
+    .modal-fade {
+      opacity: 0;
+    }
+  }
+
+  .modal-pop {
+    transition:
+      opacity 280ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @starting-style {
+    .modal-pop {
+      opacity: 0;
+      transform: translateY(14px) scale(0.96);
+    }
   }
 }

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
+import { ContactTrigger } from '@/components/contact-trigger'
 import { Reveal } from '@/components/reveal'
 
 const reviews = [
@@ -169,12 +170,9 @@ export function Testimonials() {
         </Reveal>
 
         <Reveal delay={200} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
-          >
+          <ContactTrigger className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95">
             Book a Free Strategy Consultation
-          </a>
+          </ContactTrigger>
 
           <a
             href="https://g.page/r/CYIj1G3GZSO-EAI/review"

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowRight, MapPin, Star, Zap, BadgeCheck } from 'lucide-react'
 import { AiComingSoonBanner } from '@/components/ai-coming-soon-banner'
+import { ContactTrigger } from '@/components/contact-trigger'
 import { Reveal } from '@/components/reveal'
 
 const benefits = [
@@ -33,13 +34,10 @@ export function Hero() {
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
-            >
+            <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md">
               Book a Free Consultation
               <ArrowRight className="size-4" />
-            </a>
+            </ContactTrigger>
             <a
               href="/portfolio"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
