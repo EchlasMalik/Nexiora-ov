@@ -240,7 +240,7 @@ function Field({
     <div>
       <label
         htmlFor={name}
-        className="mb-1.5 flex min-h-10 items-end text-sm font-medium text-foreground"
+        className="mb-1.5 flex items-end text-sm font-medium text-foreground sm:min-h-10"
       >
         {label}
         {required && <span className="text-primary"> *</span>}
@@ -275,7 +275,7 @@ function SelectField({
     <div>
       <label
         htmlFor={name}
-        className="mb-1.5 flex min-h-10 items-end text-sm font-medium text-foreground"
+        className="mb-1.5 flex items-end text-sm font-medium text-foreground sm:min-h-10"
       >
         {label}
       </label>
@@ -315,7 +315,7 @@ function SelectField({
 
 function CheckboxOption({ label }: { label: string }) {
   return (
-    <label className="group flex cursor-pointer items-center gap-2.5 rounded-xl border border-border bg-background px-3.5 py-2.5 text-sm text-foreground transition-colors has-checked:border-primary has-checked:bg-primary/5">
+    <label className="group flex cursor-pointer items-center gap-2.5 rounded-xl border border-border bg-background px-3.5 py-3 text-sm text-foreground transition-colors has-checked:border-primary has-checked:bg-primary/5">
       <input
         type="checkbox"
         name="services"

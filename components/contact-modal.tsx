@@ -44,10 +44,10 @@ export function ContactModalProvider({
         <Dialog.Portal>
           <Dialog.Backdrop className="modal-fade fixed inset-0 z-100 bg-navy/70 backdrop-blur-sm" />
 
-          <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
-            <Dialog.Popup className="modal-pop max-h-[97vh] w-full max-w-4xl overflow-y-auto rounded-3xl border border-border bg-card p-5 shadow-2xl sm:p-6">
+          <div className="fixed inset-0 z-100 flex items-center justify-center p-3 sm:p-4">
+            <Dialog.Popup className="modal-pop max-h-[92dvh] w-full max-w-4xl overflow-y-auto rounded-3xl border border-border bg-card p-5 shadow-2xl sm:p-6">
               <div className="flex items-start justify-between gap-4">
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-widest text-primary">
                     Get In Touch
                   </p>
@@ -58,7 +58,7 @@ export function ContactModalProvider({
 
                 <Dialog.Close
                   aria-label="Close"
-                  className="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className="inline-flex size-11 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   <X className="size-5" />
                 </Dialog.Close>
