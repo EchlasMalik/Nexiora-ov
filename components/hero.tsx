@@ -12,8 +12,8 @@ const benefits = [
 export function Hero() {
   return (
     <section id="home" className="relative flex flex-1 flex-col overflow-hidden">
-      <div className="pointer-events-none absolute -right-32 -top-32 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -left-24 size-[24rem] rounded-full bg-gold/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 -top-32 size112 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 -left-24 size96 rounded-full bg-gold/10 blur-3xl" />
 
       <div className="relative mx-auto grid w-full max-w-7xl flex-1 items-center gap-8 px-4 py-5 sm:px-6 md:py-6 lg:grid-cols-2 lg:px-8">
         <Reveal>
