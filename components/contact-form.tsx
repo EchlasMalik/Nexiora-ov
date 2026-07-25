@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowRight, Check, CheckCircle2 } from 'lucide-react'
+import { Select } from '@base-ui/react/select'
+import { ArrowRight, Check, CheckCircle2, ChevronDown } from 'lucide-react'
 
 const services = [
   'New Website',
@@ -189,20 +190,15 @@ export function ContactForm() {
           label="Preferred Contact Method"
           name="contactMethod"
           defaultValue="Email"
-        >
-          <option>Email</option>
-          <option>Phone Call</option>
-          <option>WhatsApp</option>
-        </SelectField>
+          options={['Email', 'Phone Call', 'WhatsApp']}
+        />
 
-        <SelectField label="How Did You Hear About Us?" name="hearAbout">
-          <option value="" disabled>
-            Select
-          </option>
-          {hearAboutOptions.map((option) => (
-            <option key={option}>{option}</option>
-          ))}
-        </SelectField>
+        <SelectField
+          label="How Did You Hear About Us?"
+          name="hearAbout"
+          placeholder="Select"
+          options={hearAboutOptions}
+        />
       </div>
 
       {error && (
@@ -266,12 +262,14 @@ function SelectField({
   label,
   name,
   defaultValue,
-  children,
+  placeholder,
+  options,
 }: {
   label: string
   name: string
   defaultValue?: string
-  children: React.ReactNode
+  placeholder?: string
+  options: string[]
 }) {
   return (
     <div>
@@ -282,14 +280,35 @@ function SelectField({
         {label}
       </label>
 
-      <select
-        id={name}
-        name={name}
-        defaultValue={defaultValue ?? ''}
-        className="h-11 w-full rounded-xl border border-border bg-background px-3.5 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/40"
-      >
-        {children}
-      </select>
+      <Select.Root name={name} defaultValue={defaultValue ?? null}>
+        <Select.Trigger
+          id={name}
+          className="group flex h-11 w-full items-center justify-between rounded-xl border border-border bg-background px-3.5 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/40 data-popup-open:border-primary"
+        >
+          <Select.Value placeholder={placeholder ?? 'Select'} />
+          <Select.Icon className="text-muted-foreground">
+            <ChevronDown className="size-4 transition-transform duration-200 group-data-popup-open:rotate-180" />
+          </Select.Icon>
+        </Select.Trigger>
+
+        <Select.Portal>
+          <Select.Positioner sideOffset={6} className="z-100 outline-none">
+            <Select.Popup className="modal-pop max-h-64 min-w-40 overflow-y-auto rounded-2xl border border-border bg-card p-1.5 shadow-lg outline-none">
+              <Select.List>
+                {options.map((option) => (
+                  <Select.Item
+                    key={option}
+                    value={option}
+                    className="cursor-pointer rounded-lg px-3 py-2 text-sm text-foreground outline-none data-highlighted:bg-primary/10 data-highlighted:text-primary"
+                  >
+                    <Select.ItemText>{option}</Select.ItemText>
+                  </Select.Item>
+                ))}
+              </Select.List>
+            </Select.Popup>
+          </Select.Positioner>
+        </Select.Portal>
+      </Select.Root>
     </div>
   )
 }
