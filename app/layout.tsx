@@ -16,6 +16,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.nexiorastudio.com'),
   title: 'Nexiora Studio - High-Converting Websites for Service Businesses',
   description:
     'Nexiora builds high-converting websites and smart systems for service businesses. Book a free design consultation and get a response within 24 hours.',
