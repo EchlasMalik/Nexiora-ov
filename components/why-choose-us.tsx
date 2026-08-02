@@ -1,4 +1,5 @@
-import { Target, Clock, Layers, ShieldCheck } from 'lucide-react'
+import Link from 'next/link'
+import { Target, Clock, Layers, ShieldCheck, ArrowRight } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 const stats = [
@@ -81,6 +82,16 @@ export function WhyChooseUs() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={stats.length * 90} className="mt-14 flex justify-center">
+          <Link
+            href="/why-us"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-navy-foreground shadow-sm transition-colors hover:bg-white/10"
+          >
+            Why Choose Us
+            <ArrowRight className="size-4" />
+          </Link>
+        </Reveal>
       </div>
     </section>
   )

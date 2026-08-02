@@ -1,4 +1,5 @@
-import { Check, X } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowRight, Check, X } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 const rows = [
@@ -85,6 +86,16 @@ export function Comparison() {
               high-converting website.
             </p>
           </div>
+        </Reveal>
+
+        <Reveal delay={150} className="mt-10 flex justify-center">
+          <Link
+            href="/why-us"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary shadow-sm transition-colors hover:bg-primary/5"
+          >
+            See The Difference
+            <ArrowRight className="size-4" />
+          </Link>
         </Reveal>
       </div>
     </section>
