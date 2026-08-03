@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import { useContactModal } from '@/components/contact-modal'
@@ -16,9 +17,13 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
+const CALENDLY_URL = 'https://calendly.com/echlas-nexioratalent/website-consultation'
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const { open: openContactModal } = useContactModal()
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
@@ -40,13 +45,24 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={openContactModal}
-            className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
-          >
-            Get Free Quote
-          </button>
+          {isHome ? (
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
+            >
+              Get Free Quote
+            </a>
+          ) : (
+            <button
+              type="button"
+              onClick={openContactModal}
+              className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
+            >
+              Get Free Quote
+            </button>
+          )}
 
           <button
             type="button"
@@ -76,16 +92,28 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
-            <button
-              type="button"
-              onClick={() => {
-                setOpen(false)
-                openContactModal()
-              }}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
-            >
-              Get Free Quote
-            </button>
+            {isHome ? (
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
+              >
+                Get Free Quote
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false)
+                  openContactModal()
+                }}
+                className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
+              >
+                Get Free Quote
+              </button>
+            )}
           </nav>
         </div>
       )}
