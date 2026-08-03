@@ -51,7 +51,7 @@ export default function BlogPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Link
               href={`/blog/${featured.slug}`}
-              className="animate-fade-in-up group grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg sm:p-8 md:grid-cols-[1.4fr_1fr] md:gap-10 md:p-10"
+              className="animate-fade-in-up group grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg sm:p-8 md:grid-cols-[1.4fr_1fr] md:gap-10 md:p-10"
             >
               <div className="flex flex-col justify-center">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-medium text-muted-foreground">
@@ -64,7 +64,7 @@ export default function BlogPage() {
                   <span>{formatBlogDate(featured.date)}</span>
                 </div>
 
-                <h2 className="mt-4 font-heading text-xl font-bold tracking-tight text-foreground text-balance transition-colors duration-300 group-hover:text-primary sm:text-2xl md:text-3xl">
+                <h2 className="mt-4 font-heading text-xl font-bold tracking-tight text-foreground text-balance transition-colors duration-200 group-hover:text-primary sm:text-2xl md:text-3xl">
                   {featured.title}
                 </h2>
 
@@ -80,21 +80,21 @@ export default function BlogPage() {
 
                   <span className="flex items-center gap-1.5 text-sm font-semibold text-primary">
                     Read the Latest Article
-                    <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
+                    <ArrowRight className="size-4 transition-transform duration-200 ease-out group-hover:translate-x-1.5" />
                   </span>
                 </div>
               </div>
 
               <div className="relative mx-auto w-full max-w-xs md:mx-0 md:ml-auto md:max-w-sm">
-                <div className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-primary/15 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-primary/15 opacity-0 blur-3xl transition-opacity duration-200 group-hover:opacity-100" />
 
-                <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-border shadow-md transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-xl">
+                <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-border shadow-md transition-all duration-200 ease-out group-hover:-translate-y-1 group-hover:shadow-xl">
                   <Image
                     src="/Nexiora-Medium.png"
                     alt={`${featured.title} - Nexiora blog`}
                     fill
                     sizes="(max-width: 768px) 320px, 384px"
-                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                    className="object-cover transition-transform duration-200 ease-out group-hover:scale-110"
                     priority
                   />
                 </div>
@@ -130,7 +130,7 @@ export default function BlogPage() {
               </p>
 
               <div className="mt-6">
-                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-95">
+                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md active:scale-95">
                   Book a Free Consultation
                   <ArrowRight className="size-4" />
                 </ContactTrigger>

@@ -17,9 +17,9 @@ export function ProjectCard({ project }: { project: Project }) {
           alt={`${project.title} website design by Nexiora`}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="object-cover object-top transition-transform duration-200 group-hover:scale-105"
         />
-        <span className="absolute right-3 top-3 inline-flex size-9 -translate-y-1 items-center justify-center rounded-full bg-background/90 text-foreground opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        <span className="absolute right-3 top-3 inline-flex size-9 -translate-y-1 items-center justify-center rounded-full bg-background/90 text-foreground opacity-0 shadow-sm backdrop-blur-sm transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
           <ArrowUpRight className="size-4" />
         </span>
       </div>

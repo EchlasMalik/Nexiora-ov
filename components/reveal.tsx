@@ -50,7 +50,7 @@ export function Reveal({
       ref={ref}
       style={{ ...(delay ? { transitionDelay: `${delay}ms` } : undefined), ...style }}
       className={cn(
-        'transition-all duration-1000 ease-out',
+        'transition-all duration-500 ease-out',
         visible
           ? 'translate-y-0 opacity-100'
           : direction === 'up'

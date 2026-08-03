@@ -106,7 +106,7 @@ export default function ServicesPage() {
                 <div
                   key={service.title}
                   id={service.id}
-                  className="group flex h-full scroll-mt-24 flex-col rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                  className="group flex h-full scroll-mt-24 flex-col rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="flex items-center justify-between">
                     <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">

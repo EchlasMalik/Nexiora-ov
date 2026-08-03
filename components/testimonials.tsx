@@ -125,7 +125,7 @@ export function Testimonials() {
                 <figure
                   key={review.name}
                   aria-hidden={!isActive}
-                  className="absolute top-0 left-1/2 flex h-full w-[82%] max-w-xl flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-700 ease-out"
+                  className="absolute top-0 left-1/2 flex h-full w-[82%] max-w-xl flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-500 ease-out"
                   style={{
                     transform: `translateX(calc(-50% + ${offset * 80}%)) scale(${isActive ? 1 : 0.9})`,
                     opacity: isActive ? 1 : 0.4,
@@ -161,7 +161,7 @@ export function Testimonials() {
                 type="button"
                 onClick={() => goTo(i)}
                 aria-label={`Go to review ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                className={`h-2 rounded-full transition-all duration-200 ${
                   i === index ? 'w-6 bg-primary' : 'w-2 bg-border'
                 }`}
               />

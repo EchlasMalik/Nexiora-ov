@@ -102,7 +102,7 @@ export function ProcessExplorer() {
             type="button"
             onClick={() => setActiveId(tab.id)}
             className={cn(
-              'rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300',
+              'rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200',
               tab.id === activeId
                 ? 'bg-primary text-primary-foreground shadow-sm'
                 : 'border border-border bg-card text-foreground hover:border-primary/30 hover:text-primary',
@@ -122,9 +122,9 @@ export function ProcessExplorer() {
           <div
             key={`${active.id}-${card.title}`}
             style={{ animationDelay: `${i * 90}ms` }}
-            className="animate-fade-in-up group rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+            className="animate-fade-in-up group rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
           >
-            <div className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
+            <div className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-200 group-hover:scale-110">
               <card.icon className="size-5" />
             </div>
 
@@ -136,7 +136,7 @@ export function ProcessExplorer() {
               {card.description}
             </p>
 
-            <div className="mt-5 h-px w-0 bg-primary/40 transition-all duration-300 group-hover:w-full" />
+            <div className="mt-5 h-px w-0 bg-primary/40 transition-all duration-200 group-hover:w-full" />
           </div>
         ))}
       </div>

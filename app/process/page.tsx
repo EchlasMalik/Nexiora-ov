@@ -68,12 +68,12 @@ export default function ProcessPage() {
             <div className="grid gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch">
               {steps.map((step, i) => (
                 <Fragment key={step.title}>
-                  <div className="group relative rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                  <div className="group relative rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                     <div className="absolute right-6 top-6 text-5xl font-bold text-muted-foreground/10">
                       0{i + 1}
                     </div>
 
-                    <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-200 group-hover:scale-110">
                       <step.icon className="size-6" />
                     </div>
 
@@ -85,7 +85,7 @@ export default function ProcessPage() {
                       {step.description}
                     </p>
 
-                    <div className="mt-6 h-px w-0 bg-primary/40 transition-all duration-300 group-hover:w-full" />
+                    <div className="mt-6 h-px w-0 bg-primary/40 transition-all duration-200 group-hover:w-full" />
                   </div>
 
                   {i < steps.length - 1 && (
@@ -147,7 +147,7 @@ export default function ProcessPage() {
               </p>
 
               <div className="mt-6">
-                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-95">
+                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md active:scale-95">
                   Book a Free Consultation
                   <ArrowRight className="size-4" />
                 </ContactTrigger>

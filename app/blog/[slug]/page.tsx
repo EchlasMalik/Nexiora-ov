@@ -102,7 +102,7 @@ export default async function BlogPostPage({
             <BlogContent blocks={post.content} />
 
             {/* IN-ARTICLE CTA */}
-            <div className="mt-14 rounded-2xl border border-border bg-primary/5 p-8 text-center transition-shadow duration-300 hover:shadow-md">
+            <div className="mt-14 rounded-2xl border border-border bg-primary/5 p-8 text-center transition-shadow duration-200 hover:shadow-md">
               <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                 Ready to put this into practice?
               </h2>
@@ -113,7 +113,7 @@ export default async function BlogPostPage({
               </p>
 
               <div className="mt-6">
-                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-95">
+                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md active:scale-95">
                   Book a Free Consultation
                   <ArrowRight className="size-4" />
                 </ContactTrigger>

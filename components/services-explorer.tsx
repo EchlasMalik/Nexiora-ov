@@ -236,7 +236,7 @@ export function ServicesExplorer() {
             type="button"
             onClick={() => setActiveId(category.id)}
             className={cn(
-              'scroll-mt-24 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300',
+              'scroll-mt-24 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200',
               category.id === activeId
                 ? 'bg-primary text-primary-foreground shadow-sm'
                 : 'border border-border bg-card text-foreground hover:border-primary/30 hover:text-primary',
@@ -255,7 +255,7 @@ export function ServicesExplorer() {
           <div
             key={card.title}
             className={cn(
-              'rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md',
+              'rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md',
               card.full && 'md:col-span-2',
             )}
           >
