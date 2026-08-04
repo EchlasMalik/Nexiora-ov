@@ -92,7 +92,7 @@ export function Hero() {
         </Reveal>
       </div>
 
-      <div className="relative mt-6 pb-2 sm:mt-0 sm:pb-3">
+      <div className="relative mt-6 pb-6 sm:mt-0 sm:pb-3">
         <AiComingSoonBanner />
       </div>
     </section>
