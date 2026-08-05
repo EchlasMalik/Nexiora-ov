@@ -16,6 +16,15 @@ const reviews = [
     role: 'Founder of Yasmin Tutors',
   },
   {
+    quote: `Really happy with the website Nexiora created for my business. They were professional, easy to work with, and delivered a clean, modern site that matched exactly what I was looking for.
+
+    Communication was great throughout the project, and the whole process was smooth. 
+     
+    I'd definitely recommend them to anyone looking for a reliable web agency.`,
+    name: 'OmniControl',
+    role: 'Founder of OmniControl',
+  },
+  {
     quote: `I had an excellent experience working with Nexoria Studio. They did an amazing job for my removal company, FJ Property Services.
     
     From the very beginning, they were professional, responsive, and understood exactly what I wanted.
