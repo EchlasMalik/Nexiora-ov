@@ -69,6 +69,7 @@ const allPosts: BlogPostInput[] = [
         type: 'p',
         text: "For most service businesses, your website is the first real interaction a potential client has with your brand - before a phone call, before a quote, before they ever meet you. If that first impression is slow, confusing, or generic, they won't tell you why they left. They'll just leave. After auditing hundreds of business websites, we keep finding the same costly mistakes on repeat. Here are the ten that quietly do the most damage - and what a fix actually looks like.",
       },
+      { type: 'h2', text: 'The 10 Mistakes That Do the Most Damage' },
       { type: 'h3', text: '1. Slow Load Times' },
       {
         type: 'p',
@@ -131,7 +132,7 @@ const allPosts: BlogPostInput[] = [
       { type: 'h2', text: 'How to Fix It' },
       {
         type: 'p',
-        text: "Start with a proper website audit - a clear-eyed look at speed, mobile experience, SEO, security, and conversion paths. From there, prioritise the issues actually costing you leads rather than chasing every trend at once. If your site is ticking more than two or three of the boxes above, it's likely underperforming for your business right now, not just in theory.",
+        text: "Start with a proper [website audit](/blog/complete-website-redesign-checklist-2026) - a clear-eyed look at speed, mobile experience, SEO, security, and conversion paths. From there, prioritise the issues actually costing you leads rather than chasing every trend at once. If your site is ticking more than two or three of the boxes above, it's likely underperforming for your business right now, not just in theory.",
       },
     ],
   },
@@ -260,7 +261,7 @@ const allPosts: BlogPostInput[] = [
     content: [
       {
         type: 'p',
-        text: 'The biggest mistake in a website redesign is starting with how it should look. Start with why it needs to change and what it needs to do better. Use this checklist to get a clear, honest picture of where your current site stands before a single new page is designed.',
+        text: 'The biggest mistake in a website redesign is starting with how it should look. Start with why it needs to change and what it needs to do better - if you are still weighing that up, the [signs your website needs a redesign](/blog/when-to-redesign-your-website) are worth reading first. Use this checklist to get a clear, honest picture of where your current site stands before a single new page is designed.',
       },
       { type: 'h3', text: '1. Run a Full Website Audit' },
       {
@@ -422,7 +423,7 @@ const allPosts: BlogPostInput[] = [
       { type: 'h2', text: 'Fixing It' },
       {
         type: 'p',
-        text: 'Start by mapping your current site against these six points honestly. In most cases, the fix is not a full rebuild - it is tightening the offer, shortening the path to contact, and putting trust signals exactly where hesitation happens.',
+        text: 'Start by mapping your current site against these six points honestly. In most cases, the fix is not a full rebuild - it is tightening the offer, shortening the path to contact, and putting trust signals exactly where hesitation happens. If several of them land at once, it is worth working out [whether your website needs a redesign](/blog/when-to-redesign-your-website) rather than another round of patches.',
       },
     ],
   },
@@ -535,7 +536,7 @@ const allPosts: BlogPostInput[] = [
       { type: 'h2', text: 'The Real Cost of Going Cheap' },
       {
         type: 'p',
-        text: 'The cheapest option upfront often becomes the most expensive one over time, through lost leads from poor conversion focused web design, ongoing patch-up work, or a full rebuild within a year or two once the limitations become obvious. A website should be judged on return, not just sticker price.',
+        text: 'The cheapest option upfront often becomes the most expensive one over time, through lost leads from poor conversion focused web design, ongoing patch-up work, or a full rebuild within a year or two once the limitations become obvious. Knowing [when to redesign your website](/blog/when-to-redesign-your-website) is what stops that second bill arriving early. A website should be judged on return, not just sticker price.',
       },
       { type: 'h2', text: 'What Ongoing Costs to Expect' },
       {
