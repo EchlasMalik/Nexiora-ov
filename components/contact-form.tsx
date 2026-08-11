@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Select } from '@base-ui/react/select'
 import { ArrowRight, Check, CheckCircle2, ChevronDown } from 'lucide-react'
 
@@ -25,6 +25,11 @@ export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const successRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (submitted) successRef.current?.focus()
+  }, [submitted])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -73,21 +78,29 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="flex h-full flex-col items-center justify-center py-12 text-center">
-        <CheckCircle2 className="size-14 text-primary" />
+      // Focused and announced on mount - the form is replaced entirely, so
+      // without this a screen reader user gets no feedback that it worked.
+      <div
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        aria-live="polite"
+        className="flex h-full flex-col items-center justify-center py-12 text-center outline-none"
+      >
+        <CheckCircle2 className="size-14 text-primary" aria-hidden="true" />
 
         <h3 className="mt-5 font-heading text-2xl font-bold text-foreground">
-          You're all set!
+          You’re all set!
         </h3>
 
         <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
-          Thanks for reaching out. We've received your enquiry and will get
+          Thanks for reaching out. We’ve received your enquiry and will get
           back to you within 24 hours.
         </p>
 
         <div className="mt-8 flex w-full max-w-xs flex-col gap-3">
           <a
-            href="https://wa.me/447835385699?text=Hi%20Nexiora%20Talent,%20I%20just%20submitted%20your%20website%20form%20and%20would%20love%20to%20chat%20about%20my%20project."
+            href="https://wa.me/447835385699?text=Hi%20Nexiora%20Studio,%20I%20just%20submitted%20your%20website%20form%20and%20would%20love%20to%20chat%20about%20my%20project."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition hover:brightness-110"
@@ -137,6 +150,8 @@ export function ContactForm() {
             name="email"
             type="email"
             placeholder="jane@business.com"
+            describedBy="contact-method-hint"
+            invalid={Boolean(error)}
           />
 
           <Field
@@ -144,23 +159,25 @@ export function ContactForm() {
             name="phone"
             type="tel"
             placeholder="+44 7123 456789"
+            describedBy="contact-method-hint"
+            invalid={Boolean(error)}
           />
         </div>
-        <p className="mt-1.5 text-xs text-muted-foreground">
+        <p id="contact-method-hint" className="mt-1.5 text-xs text-muted-foreground">
           * Email or phone required (at least one)
         </p>
       </div>
 
-      <div>
-        <label className="mb-1.5 block text-sm font-medium text-foreground">
+      <fieldset className="min-w-0 border-0 p-0">
+        <legend className="mb-1.5 block text-sm font-medium text-foreground">
           Services You Are Interested In
-        </label>
+        </legend>
         <div className="grid gap-x-4 gap-y-2 sm:grid-cols-3">
           {services.map((service) => (
             <CheckboxOption key={service} label={service} />
           ))}
         </div>
-      </div>
+      </fieldset>
 
       <div>
         <label
@@ -201,15 +218,21 @@ export function ContactForm() {
         />
       </div>
 
-      {error && (
-        <p className="rounded-lg bg-destructive/10 px-3.5 py-2.5 text-sm text-destructive">
-          {error}
-        </p>
-      )}
+      <div aria-live="assertive" aria-atomic="true">
+        {error && (
+          <p
+            role="alert"
+            className="rounded-lg bg-destructive/10 px-3.5 py-2.5 text-sm text-destructive"
+          >
+            {error}
+          </p>
+        )}
+      </div>
 
       <button
         type="submit"
         disabled={loading}
+        aria-busy={loading}
         className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
       >
         {loading ? 'Sending...' : 'Submit Request'}
@@ -229,12 +252,16 @@ function Field({
   type = 'text',
   placeholder,
   required,
+  describedBy,
+  invalid,
 }: {
   label: string
   name: string
   type?: string
   placeholder?: string
   required?: boolean
+  describedBy?: string
+  invalid?: boolean
 }) {
   return (
     <div>
@@ -252,6 +279,8 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
+        aria-describedby={describedBy}
+        aria-invalid={invalid || undefined}
         className="h-11 w-full rounded-xl border border-border bg-background px-3.5 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/40"
       />
     </div>
@@ -273,16 +302,19 @@ function SelectField({
 }) {
   return (
     <div>
-      <label
-        htmlFor={name}
+      {/* htmlFor cannot label a <button>, which is what Select.Trigger renders -
+          the trigger is named via aria-labelledby instead. */}
+      <span
+        id={`${name}-label`}
         className="mb-1.5 flex items-end text-sm font-medium text-foreground sm:min-h-10"
       >
         {label}
-      </label>
+      </span>
 
       <Select.Root name={name} defaultValue={defaultValue ?? null}>
         <Select.Trigger
           id={name}
+          aria-labelledby={`${name}-label ${name}`}
           className="group flex h-11 w-full items-center justify-between rounded-xl border border-border bg-background px-3.5 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/40 data-popup-open:border-primary"
         >
           <Select.Value placeholder={placeholder ?? 'Select'} />

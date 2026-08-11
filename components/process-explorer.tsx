@@ -101,6 +101,8 @@ export function ProcessExplorer() {
             key={tab.id}
             type="button"
             onClick={() => setActiveId(tab.id)}
+            // Active state was conveyed by colour alone.
+            aria-pressed={tab.id === activeId}
             className={cn(
               'rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200',
               tab.id === activeId

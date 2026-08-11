@@ -6,6 +6,13 @@ import { cn } from '@/lib/utils'
 type RevealProps = React.ComponentPropsWithoutRef<'div'> & {
   delay?: number
   direction?: 'up' | 'none'
+  /**
+   * Set on above-the-fold content. Renders visible immediately instead of
+   * starting at opacity-0 and waiting for hydration + IntersectionObserver,
+   * which otherwise leaves the server-rendered markup painted blank and delays
+   * LCP by the full hydration cost.
+   */
+  immediate?: boolean
 }
 
 export function Reveal({
@@ -13,13 +20,16 @@ export function Reveal({
   className,
   delay = 0,
   direction = 'up',
+  immediate = false,
   style,
   ...rest
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(immediate)
 
   useEffect(() => {
+    if (immediate) return
+
     const el = ref.current
     if (!el) return
 
@@ -27,8 +37,9 @@ export function Reveal({
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) {
-      setVisible(true)
-      return
+      // Deferred a tick so this doesn't setState synchronously inside the effect.
+      const id = requestAnimationFrame(() => setVisible(true))
+      return () => cancelAnimationFrame(id)
     }
 
     const observer = new IntersectionObserver(
@@ -43,7 +54,7 @@ export function Reveal({
 
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
+  }, [immediate])
 
   return (
     <div

@@ -17,7 +17,7 @@ export function PortfolioSection() {
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             Real results for real service businesses - built to look sharp and
-            convert visitors into inquiries.
+            convert visitors into enquiries.
           </p>
         </Reveal>
 

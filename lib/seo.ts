@@ -1,10 +1,5 @@
 import type { Metadata } from 'next'
-import {
-  DEFAULT_OG_IMAGE,
-  SITE_NAME,
-  SITE_URL,
-  absoluteUrl,
-} from '@/lib/site-config'
+import { SITE_NAME, SITE_URL, absoluteUrl } from '@/lib/site-config'
 
 export type BuildMetadataOptions = {
   /** Page title without the " | Nexiora Studio" suffix - the root layout

@@ -10,7 +10,7 @@ const rows = [
     standardGood: false,
   },
   {
-    label: 'Mobile Optimized',
+    label: 'Mobile Optimised',
     standard: 'Breaks or feels clunky on phones',
     high: 'Flawless on every screen size',
     standardGood: false,
@@ -82,7 +82,7 @@ export function Comparison() {
 
           <div className="border-t border-border bg-navy p-6 text-center sm:p-8">
             <p className="mx-auto max-w-2xl font-heading text-lg font-semibold text-navy-foreground text-balance sm:text-xl">
-              Same traffic, triple the conversions. That&apos;s the power of a
+              Same traffic, 2-3x more conversions. That&apos;s the power of a
               high-converting website.
             </p>
           </div>

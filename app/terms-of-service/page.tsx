@@ -110,7 +110,7 @@ export default function TermsOfServicePage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-20">
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />

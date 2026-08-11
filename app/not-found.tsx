@@ -14,7 +14,7 @@ export default function NotFound() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         <section className="relative overflow-hidden bg-secondary/40 py-20 md:py-28">
           <div className="pointer-events-none absolute -right-24 -top-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
 

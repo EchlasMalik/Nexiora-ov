@@ -1,9 +1,23 @@
 'use client'
 
 import { createContext, useContext, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { Dialog } from '@base-ui/react/dialog'
 import { X } from 'lucide-react'
-import { ContactForm } from '@/components/contact-form'
+
+/**
+ * The provider wraps every route, so importing the form eagerly pulled Base
+ * UI's Select into the initial bundle of pages that never open the modal.
+ * Loaded on demand instead - the modal is always user-triggered.
+ */
+const ContactForm = dynamic(
+  () => import('@/components/contact-form').then((m) => m.ContactForm),
+  {
+    loading: () => (
+      <div className="mt-4 h-96 animate-pulse rounded-xl bg-muted/50" />
+    ),
+  },
+)
 
 type ContactModalContextValue = {
   open: () => void

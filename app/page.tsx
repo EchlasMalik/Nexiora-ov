@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main">
         <div className="flex min-h-[calc(100svh-4.3rem)] flex-col">
           <Hero />
           <MarqueeStrip />

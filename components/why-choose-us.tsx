@@ -6,7 +6,7 @@ const stats = [
   { value: '100%', label: 'Client Satisfaction' },
   { value: '5+', label: 'Years of Experience' },
   { value: '20+', label: 'Websites Delivered' },
-  { value: '3x', label: 'Higher Conversion Rates' },
+  { value: '2-3x', label: 'Higher Conversion Rates' },
 ]
 
 const benefits = [
@@ -14,7 +14,7 @@ const benefits = [
     icon: Target,
     title: 'Pre-Qualifying Leads',
     description:
-      'Clear structure and smart forms qualify inquiries early, so you spend time on real opportunities - not tire-kickers.',
+      'Clear structure and smart forms qualify enquiries early, so you spend time on real opportunities - not tire-kickers.',
   },
   {
     icon: Clock,

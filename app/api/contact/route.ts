@@ -1,7 +1,23 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+/**
+ * Created on first request rather than at module scope.
+ *
+ * The Resend constructor throws synchronously when no API key is present, and
+ * Next evaluates route modules during `next build` - so instantiating here at
+ * import time failed the build in any environment without the env var (fresh
+ * clone, CI, local build). Deferring keeps production behaviour identical: the
+ * same single client is reused across requests on a warm instance.
+ */
+let resendClient: Resend | null = null
+
+function getResend() {
+  if (!resendClient) {
+    resendClient = new Resend(process.env.RESEND_API_KEY)
+  }
+  return resendClient
+}
 
 export async function POST(req: Request) {
   try {
@@ -27,7 +43,7 @@ export async function POST(req: Request) {
 
     const servicesList: string[] = Array.isArray(services) ? services : []
 
-    const notification = await resend.emails.send({
+    const notification = await getResend().emails.send({
       from: 'Nexiora Studio <info@nexiorastudio.com>',
       to: 'echlas@nexiorastudio.com',
       replyTo: email || undefined,
@@ -61,7 +77,7 @@ export async function POST(req: Request) {
     }
 
     if (email) {
-      const confirmation = await resend.emails.send({
+      const confirmation = await getResend().emails.send({
         from: 'Nexiora Studio<info@nexiorastudio.com>',
         to: email,
         subject: 'Thanks for contacting Nexiora Studio',

@@ -103,7 +103,7 @@ export default function EcommerceWebDesignPage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         <ServiceHero
           eyebrow="Ecommerce Web Design"
           title="Ecommerce Web Design Built"

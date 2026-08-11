@@ -14,7 +14,7 @@ export const featuredProjects: Project[] = [
     category: 'Gaming & Entertainment',
     location: 'England, UK',
     description:
-      'A premium gaming utility platform built for competitive players, featuring instant downloads, secure licensing, and a user experience designed to maximize performance.',
+      'A premium gaming utility platform built for competitive players, featuring instant downloads, secure licensing, and a user experience designed to maximise performance.',
     image: '/portfolio/OmniControl.png',
     tags: ['Gaming Platform', 'Dashboard Design', 'License Management', 'Secure Downloads', 'Performance Analytics',],
     url: 'https://omnicontrol.me/',
@@ -24,7 +24,7 @@ export const featuredProjects: Project[] = [
     category: 'Tutoring & Education',
     location: 'London, UK',
     description:
-      'A modern education website crafted to showcase expertise, increase student enrollments, and drive consistent inquiry submissions.',
+      'A modern education website crafted to showcase expertise, increase student enrolments, and drive consistent enquiry submissions.',
     image: '/portfolio/Yasmin-tutors.png',
     tags: ['Website Design', 'Lead Forms', 'Branding', 'Local SEO'],
     url: 'https://www.yasmintutors.com/',
@@ -41,7 +41,7 @@ export const featuredProjects: Project[] = [
   },
   {
     title: 'Falconis Group',
-    category: 'Recruitement & Staffing',
+    category: 'Recruitment & Staffing',
     location: 'London, UK',
     description:
       'A credibility-focused recruitment website built to attract top talent, simplify hiring workflows, and convert visitors into qualified leads.',
@@ -61,10 +61,10 @@ export const featuredProjects: Project[] = [
   },
   {
     title: 'Nexiora Talent',
-    category: 'Recruitement & Staffing',
+    category: 'Recruitment & Staffing',
     location: 'London, UK',
     description:
-      'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer inquiries.',
+      'A professional recruitment platform designed to build trust, streamline candidate sourcing, and generate high-quality employer enquiries.',
     image: '/portfolio/Nexiora-talentt.png',
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
     url: 'https://www.nexioratalent.com/',

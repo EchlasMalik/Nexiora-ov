@@ -25,13 +25,13 @@ const reviews = [
     role: 'Founder of OmniControl',
   },
   {
-    quote: `I had an excellent experience working with Nexoria Studio. They did an amazing job for my removal company, FJ Property Services.
+    quote: `I had an excellent experience working with Nexiora Studio. They did an amazing job for my removal company, FJ Property Services.
     
     From the very beginning, they were professional, responsive, and understood exactly what I wanted.
     
     The quality of their work exceeded my expectations, and the final result has really helped my business stand out.
 
-    I highly recommend Nexoria Studio to anyone looking for high-quality design and marketing services. Thank you for your hard work and dedication!`,
+    I highly recommend Nexiora Studio to anyone looking for high-quality design and marketing services. Thank you for your hard work and dedication!`,
     name: 'Fahim Ahmed',
     role: 'Co-Founder of FJ Property & Services',
   },
@@ -68,18 +68,27 @@ const count = reviews.length
 export function Testimonials() {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const sync = () => setReducedMotion(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
 
   const goTo = useCallback((i: number) => {
     setIndex(((i % count) + count) % count)
   }, [])
 
   useEffect(() => {
-    if (paused) return
+    if (paused || reducedMotion) return
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % count)
     }, 7000)
     return () => clearInterval(id)
-  }, [paused])
+  }, [paused, reducedMotion])
 
   return (
     <section id="reviews" className="bg-secondary/40 py-20 md:py-28">
@@ -96,11 +105,21 @@ export function Testimonials() {
           </p>
         </Reveal>
 
+        {/* Pauses on focus as well as hover, so keyboard users don't have the
+            slide change under them mid-read (WCAG 2.2.2). */}
         <Reveal
           delay={150}
           className="relative mt-14"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
+          onFocusCapture={() => setPaused(true)}
+          onBlurCapture={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+              setPaused(false)
+            }
+          }}
+          aria-roledescription="carousel"
+          aria-label="Client reviews"
         >
           <button
             type="button"
@@ -120,7 +139,11 @@ export function Testimonials() {
             <ChevronRight className="size-5" />
           </button>
 
-          <div className="relative h-115 overflow-hidden sm:h-100">
+          <div
+            className="relative h-115 overflow-hidden sm:h-100"
+            aria-live="polite"
+            aria-atomic="false"
+          >
             {reviews.map((review, i) => {
               let offset = i - index
               if (offset > count / 2) offset -= count
@@ -149,7 +172,14 @@ export function Testimonials() {
                     ))}
                   </div>
                   <Quote className="mt-4 size-7 shrink-0 text-primary/25" />
-                  <blockquote className="scroll-primary mt-3 flex-1 overflow-y-auto whitespace-pre-line pr-2 text-sm leading-relaxed text-foreground sm:text-base">
+                  {/* Focusable: longer quotes overflow this fixed-height box,
+                      so without a tab stop keyboard users cannot scroll to
+                      read them (WCAG 2.1.1). */}
+                  <blockquote
+                    tabIndex={isActive ? 0 : -1}
+                    aria-label={`Review from ${review.name}`}
+                    className="scroll-primary mt-3 flex-1 overflow-y-auto whitespace-pre-line pr-2 text-sm leading-relaxed text-foreground outline-none focus-visible:ring-2 focus-visible:ring-primary/50 sm:text-base"
+                  >
                     {review.quote}
                   </blockquote>
                   <figcaption className="mt-6 shrink-0 border-t border-border pt-4">
@@ -170,10 +200,17 @@ export function Testimonials() {
                 type="button"
                 onClick={() => goTo(i)}
                 aria-label={`Go to review ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-200 ${
-                  i === index ? 'w-6 bg-primary' : 'w-2 bg-border'
-                }`}
-              />
+                aria-current={i === index}
+                // Visually a small dot, but padded to a 24px hit area (WCAG 2.5.8).
+                className="flex h-6 w-6 items-center justify-center rounded-full outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`h-2 rounded-full transition-all duration-200 ${
+                    i === index ? 'w-6 bg-primary' : 'w-2 bg-border'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </Reveal>

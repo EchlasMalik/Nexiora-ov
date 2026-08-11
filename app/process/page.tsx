@@ -17,7 +17,7 @@ export const metadata = buildMetadata({
 const steps = [
   {
     icon: Search,
-    title: 'Discover & Strategize',
+    title: 'Discover & Strategise',
     description:
       'We learn your business, your goals, and your customers - then map a clear plan for a site that actually converts.',
   },
@@ -31,7 +31,7 @@ const steps = [
     icon: Rocket,
     title: 'Launch & Grow',
     description:
-      'We launch fast, track performance, and continuously optimize so your site keeps turning visitors into booked work.',
+      'We launch fast, track performance, and continuously optimise so your site keeps turning visitors into booked work.',
   },
 ]
 
@@ -40,7 +40,7 @@ export default function ProcessPage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-24">
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
@@ -74,6 +74,16 @@ export default function ProcessPage() {
         {/* STEPS */}
         <section className="bg-background py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground text-balance sm:text-4xl">
+                The Three Stages of a Project
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Every build follows the same path, so you always know what is
+                happening and what comes next.
+              </p>
+            </div>
+
             <div className="grid gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch">
               {steps.map((step, i) => (
                 <Fragment key={step.title}>

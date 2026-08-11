@@ -158,7 +158,7 @@ export default function AiSeoAgencyLondonPage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         <ServiceHero
           eyebrow="AI SEO & GEO"
           title="Be Found on Google."

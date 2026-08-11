@@ -5,7 +5,7 @@ export const generalFaqs: Faq[] = [
   {
     question: 'How long will my website take to build?',
     answer:
-      'Most projects are completed within 2-6 weeks depending on scope, content readiness, and any additional systems or integrations required.',
+      'Most projects are completed within 2-6 weeks end to end, depending on scope, content readiness, and any additional systems or integrations required. Within that, the final stage is quick - once you have approved the design, sites typically go live within one to two weeks. The variable part is usually content and feedback rather than build time.',
   },
   {
     question: 'Do you work with businesses outside London?',

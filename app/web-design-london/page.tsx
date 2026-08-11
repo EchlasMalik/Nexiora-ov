@@ -52,7 +52,7 @@ export default function WebDesignLondonPage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         <ServiceHero
           eyebrow="Web Design London"
           title="Web Design in London for Businesses That Want"

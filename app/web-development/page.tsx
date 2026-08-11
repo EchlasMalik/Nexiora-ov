@@ -104,7 +104,7 @@ export default function WebDevelopmentPage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         <ServiceHero
           eyebrow="Web Development"
           title="Web Development That Builds Systems,"
@@ -158,7 +158,7 @@ export default function WebDevelopmentPage() {
           reverse
           body={[
             'OmniControl is a live product we built end to end - a gaming utility platform with secure licensing, instant downloads, a user dashboard and performance analytics behind it.',
-            'It is a useful example because none of that is website work in the traditional sense. It is account management, license validation, file delivery and reporting, wrapped in an interface that had to feel fast and trustworthy to a demanding audience.',
+            'It is a useful example because none of that is website work in the traditional sense. It is account management, licence validation, file delivery and reporting, wrapped in an interface that had to feel fast and trustworthy to a demanding audience.',
             'That same thinking applies whether we are building a SaaS product or a booking system for a service business: work out what the software genuinely has to do, then build exactly that.',
           ]}
           points={[

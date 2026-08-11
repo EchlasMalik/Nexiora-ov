@@ -12,9 +12,31 @@ export type BlogPost = {
   excerpt: string
   category: string
   date: string
+  /** Derived from `content` - see estimateReadTime. Never set by hand. */
   readTime: string
   author: string
   content: BlogBlock[]
+}
+
+/** Authored shape: identical to BlogPost minus the derived readTime. */
+type BlogPostInput = Omit<BlogPost, 'readTime'>
+
+const WORDS_PER_MINUTE = 200
+
+/**
+ * Read time is computed rather than stored so it cannot drift out of sync with
+ * the article - the hand-authored values previously ranged from 69 to 119
+ * words per claimed minute.
+ */
+function estimateReadTime(content: BlogBlock[]) {
+  const words = content.reduce((total, block) => {
+    const text =
+      'items' in block ? block.items.join(' ') : block.text
+    // Don't count link targets: [label](/path) -> label
+    return total + text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').split(/\s+/).length
+  }, 0)
+
+  return `${Math.max(1, Math.round(words / WORDS_PER_MINUTE))} min read`
 }
 
 export const categories = [
@@ -26,7 +48,7 @@ export const categories = [
   'Strategy',
 ] as const
 
-const allPosts: BlogPost[] = [
+const allPosts: BlogPostInput[] = [
   {
     slug: '10-website-mistakes-costing-you-clients',
     title: '10 Website Mistakes That Are Costing You Clients',
@@ -34,7 +56,6 @@ const allPosts: BlogPost[] = [
       'From slow load times to invisible calls to action, these are the silent website mistakes turning visitors away before they ever become clients.',
     category: 'Web Design',
     date: '2026-07-15',
-    readTime: '8 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -49,7 +70,7 @@ const allPosts: BlogPost[] = [
       { type: 'h3', text: '2. Designed for Desktop, Broken on Mobile' },
       {
         type: 'p',
-        text: "More than half of your traffic is almost certainly arriving on a phone. A mobile friendly website design isn't a nice-to-have anymore - it's the baseline. Tiny tap targets, text that requires zooming, and forms that are painful to fill out on a small screen are some of the fastest ways to lose a ready-to-book client.",
+        text: "More than half of your traffic is almost certainly arriving on a phone. A [mobile-first, bespoke web design](/web-design) isn't a nice-to-have anymore - it's the baseline. Tiny tap targets, text that requires zooming, and forms that are painful to fill out on a small screen are some of the fastest ways to lose a ready-to-book client.",
       },
       { type: 'h3', text: '3. No Clear Call to Action' },
       {
@@ -59,7 +80,7 @@ const allPosts: BlogPost[] = [
       { type: 'h3', text: '4. Generic, Templated Design' },
       {
         type: 'p',
-        text: "A website that looks like every other business in your industry does nothing to build trust or set you apart. Custom website development doesn't have to mean an enormous budget - but it does mean a layout, message, and visual identity built around your business, not a stock template with your logo swapped in.",
+        text: "A website that looks like every other business in your industry does nothing to build trust or set you apart. [Custom website development](/web-development) doesn't have to mean an enormous budget - but it does mean a layout, message, and visual identity built around your business, not a stock template with your logo swapped in.",
       },
       { type: 'h3', text: '5. Confusing Navigation' },
       {
@@ -69,7 +90,7 @@ const allPosts: BlogPost[] = [
       { type: 'h3', text: '6. Weak or Missing SEO Foundations' },
       {
         type: 'p',
-        text: 'Plenty of good-looking websites are invisible on Google because the technical SEO underneath was never set up properly - missing page titles, no structured headings, slow indexing, or duplicate content. Without this foundation, even great design will not bring in organic leads.',
+        text: 'Plenty of good-looking websites are invisible on Google because the [technical SEO](/ai-seo-agency-london) underneath was never set up properly - missing page titles, no structured headings, slow indexing, or duplicate content. Without this foundation, even great design will not bring in organic leads.',
       },
       { type: 'h3', text: '7. No Social Proof' },
       {
@@ -114,7 +135,6 @@ const allPosts: BlogPost[] = [
       'From missed calls to manual follow-ups, most service businesses lose hours every week to admin that AI automation can now handle instead.',
     category: 'AI & Automation',
     date: '2026-07-01',
-    readTime: '7 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -129,7 +149,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: 'An AI Business Assistant Covers the First Response' },
       {
         type: 'p',
-        text: 'An AI business assistant - whether that is a chatbot on your site or an automated messaging flow - can answer common questions instantly, any hour of the day, and hand off to a human only when needed. For service businesses that rely on fast response times to win work, this alone can be the difference between booking a client and losing them to a competitor who replied first.',
+        text: 'An AI business assistant - whether that is a chatbot built into your [website](/web-design) or an automated messaging flow - can answer common questions instantly, any hour of the day, and hand off to a human only when needed. For service businesses that rely on fast response times to win work, this alone can be the difference between booking a client and losing them to a competitor who replied first.',
       },
       { type: 'h2', text: 'AI Appointment Booking Removes the Back-and-Forth' },
       {
@@ -144,7 +164,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: 'Business Process Automation Connects the Dots' },
       {
         type: 'p',
-        text: 'The biggest gains usually come from workflow automation that connects the pieces already listed - a new enquiry automatically creates a record in your CRM development system, triggers a welcome message, notifies the right team member, and schedules a follow-up if there is no response. This is business process automation doing the coordinating work a person would otherwise have to do manually, every single time.',
+        text: 'The biggest gains usually come from [custom software and workflow automation](/custom-software) that connects the pieces already listed - a new enquiry automatically creates a record in your CRM development system, triggers a welcome message, notifies the right team member, and schedules a follow-up if there is no response. This is business process automation doing the coordinating work a person would otherwise have to do manually, every single time.',
       },
       { type: 'h2', text: 'What 20+ Hours a Week Actually Looks Like' },
       {
@@ -177,7 +197,6 @@ const allPosts: BlogPost[] = [
       'Off-the-shelf tools are fast to launch but rarely fit forever. Here is how to decide when custom software development actually pays off.',
     category: 'Software Development',
     date: '2026-06-18',
-    readTime: '7 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -207,7 +226,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: 'Weighing the Investment' },
       {
         type: 'p',
-        text: "Custom software costs more upfront than a subscription. But subscriptions compound quietly over years, and they still do not fit your process. A software development agency worth working with will tell you honestly when off-the-shelf is still the right call - the goal is not to sell you custom software, it is to solve the actual bottleneck.",
+        text: "Custom software costs more upfront than a subscription. But subscriptions compound quietly over years, and they still do not fit your process. A [custom software development](/custom-software) partner worth working with will tell you honestly when off-the-shelf is still the right call - the goal is not to sell you custom software, it is to solve the actual bottleneck.",
       },
       {
         type: 'quote',
@@ -227,7 +246,6 @@ const allPosts: BlogPost[] = [
       'A practical, no-fluff checklist covering everything worth reviewing before you commit to a website redesign in 2026.',
     category: 'Web Design',
     date: '2026-06-04',
-    readTime: '9 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -239,10 +257,20 @@ const allPosts: BlogPost[] = [
         type: 'p',
         text: 'Review analytics, current conversion rates, bounce rate by page, and where visitors are actually dropping off. A proper website audit tells you which pages are working and which ones are quietly losing you business.',
       },
+      {
+        type: 'ul',
+        items: [
+          'Top 10 landing pages by traffic, and the conversion rate of each',
+          'Pages with high traffic but no enquiries - usually the quickest wins',
+          'Any page with a bounce rate well above your site average',
+          'Which devices and browsers your visitors actually use',
+          'Every URL that currently ranks for something, before you change anything',
+        ],
+      },
       { type: 'h3', text: '2. Revisit Your Goals and Audience' },
       {
         type: 'p',
-        text: 'Has your business shifted since the last build? New services, a different ideal client, a new price point? Your website redesign services provider should design around who you are targeting today, not who you were targeting when the last site launched.',
+        text: 'Has your business shifted since the last build? New services, a different ideal client, a new price point? Your [web design](/web-design) partner should design around who you are targeting today, not who you were targeting when the last site launched.',
       },
       { type: 'h3', text: '3. Check Website Performance Optimisation' },
       {
@@ -274,6 +302,17 @@ const allPosts: BlogPost[] = [
         type: 'p',
         text: 'A redesign is the riskiest time for SEO if it is handled carelessly - broken redirects and lost pages can hurt rankings overnight. Technical SEO and local SEO structure should be mapped before launch, not patched afterwards.',
       },
+      {
+        type: 'ul',
+        items: [
+          'Export a full list of current URLs before the rebuild starts',
+          'Map every old URL to its new destination with a 301 redirect',
+          'Keep page titles and meta descriptions for pages that already rank',
+          'Check the new site is not accidentally blocking crawlers on launch day',
+          'Resubmit your sitemap once the new structure is live',
+          'Confirm your Google Business Profile still points at working pages',
+        ],
+      },
       { type: 'h3', text: '9. Plan Your Content and Conversion Paths' },
       {
         type: 'p',
@@ -283,6 +322,33 @@ const allPosts: BlogPost[] = [
       {
         type: 'p',
         text: 'Website hosting, an active security setup, and a maintenance plan should be locked in before launch, not figured out after something breaks.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'SSL certificate active and renewing automatically',
+          'Backups running, and tested at least once',
+          'Someone named as responsible for updates',
+          'Analytics and Search Console connected before launch, not after',
+          'A plan for who fixes what, and how fast, when something breaks',
+        ],
+      },
+      { type: 'h2', text: 'The Week Before Launch' },
+      {
+        type: 'p',
+        text: 'Most redesign problems are not design problems - they surface in the last week, when everyone is focused on how it looks rather than whether it works. Run this before you go live.',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Submit every form yourself, on a phone, and confirm the email actually arrives',
+          'Click every navigation item and every footer link',
+          'Check the site on a real phone, not just a resized browser window',
+          'Test how it loads on mobile data rather than office wifi',
+          'Read the page titles as they appear in a search result',
+          'Confirm redirects work by visiting your old URLs directly',
+          'Check the 404 page exists and points people somewhere useful',
+        ],
       },
       { type: 'h2', text: 'Using the Checklist' },
       {
@@ -302,7 +368,6 @@ const allPosts: BlogPost[] = [
       'Traffic is not the problem for most small business websites. Conversion is. Here is why good-looking sites still fail to generate leads.',
     category: 'Conversion & Leads',
     date: '2026-05-21',
-    readTime: '6 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -317,7 +382,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: "There's No Single Clear Offer" },
       {
         type: 'p',
-        text: 'Sites that try to be everything to everyone often convert worse than sites with one focused offer. A high converting website usually leads with a specific, clear promise - not a general "welcome to our business" message that could apply to any competitor in the same field.',
+        text: 'Sites that try to be everything to everyone often convert worse than sites with one focused offer. A [high-converting website](/web-design) usually leads with a specific, clear promise - not a general "welcome to our business" message that could apply to any competitor in the same field.',
       },
       { type: 'h2', text: 'The Path to Contact Is Too Long' },
       {
@@ -337,7 +402,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: "There's No Follow-Up System Behind the Form" },
       {
         type: 'p',
-        text: 'Generating an enquiry is only half the job. Without a fast, structured follow-up, even a well-designed lead generation website leaks leads it worked hard to earn.',
+        text: 'Generating an enquiry is only half the job. Without a fast, structured follow-up, even a well-designed lead generation website leaks leads it worked hard to earn. Automating that follow-up is usually a [custom software](/custom-software) job rather than a design one.',
       },
       {
         type: 'quote',
@@ -357,12 +422,11 @@ const allPosts: BlogPost[] = [
       'Page speed affects more than user patience - it directly shapes your search rankings and how many visitors convert. Here is how the two connect.',
     category: 'SEO & Performance',
     date: '2026-05-07',
-    readTime: '6 min read',
     author: 'The Nexiora Team',
     content: [
       {
         type: 'p',
-        text: "Search engines factor page speed and core web vitals directly into how sites are ranked. Website speed optimisation is not a peripheral technical task anymore - it's part of technical SEO, and it affects whether your site shows up at all before a visitor even has the chance to judge your design.",
+        text: "Search engines factor page speed and core web vitals directly into how sites are ranked. [Website speed optimisation](/ai-seo-agency-london) is not a peripheral technical task anymore - it's part of technical SEO, and it affects whether your site shows up at all before a visitor even has the chance to judge your design.",
       },
       { type: 'h2', text: 'The Direct Link to Conversions' },
       {
@@ -415,7 +479,6 @@ const allPosts: BlogPost[] = [
       'A clear, honest breakdown of what businesses actually pay for a website in 2026, and what really drives the price up or down.',
     category: 'Strategy',
     date: '2026-04-23',
-    readTime: '8 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -434,15 +497,28 @@ const allPosts: BlogPost[] = [
           'How much strategy and conversion planning goes in before design starts',
         ],
       },
+      {
+        type: 'p',
+        text: 'Of those, two move the number far more than the rest: custom functionality, and who writes the content. A five-page site and a fifteen-page site are not hugely different jobs. A five-page site and a site that takes bookings, checks availability and syncs with your CRM are different projects entirely.',
+      },
+      { type: 'h3', text: 'What you are actually paying for' },
+      {
+        type: 'p',
+        text: 'It helps to know where the hours go, because "design" is usually the smallest part. On a typical project the split is roughly: working out what the site needs to say and to whom, designing it, building it, writing or shaping the content, then testing, launching and fixing what testing found.',
+      },
+      {
+        type: 'p',
+        text: 'That is why two quotes for "a website" can differ so widely. One may include discovery, copywriting and conversion planning. The other may assume you supply finished text and just want it laid out. Neither is dishonest - they are quoting different jobs.',
+      },
       { type: 'h2', text: 'Template Sites vs Custom Website Development' },
       {
         type: 'p',
-        text: 'A best website builder for businesses can be a sensible, low-cost starting point for a very early-stage business. But template limitations show up quickly - restricted customisation, weaker performance, and a design that looks the same as thousands of other sites using the same theme. Custom website development costs more because it is built around your business specifically, not adapted from something generic.',
+        text: 'A best website builder for businesses can be a sensible, low-cost starting point for a very early-stage business. But template limitations show up quickly, which is where [bespoke web design](/web-design) starts to earn its cost - restricted customisation, weaker performance, and a design that looks the same as thousands of other sites using the same theme. Custom website development costs more because it is built around your business specifically, not adapted from something generic.',
       },
       { type: 'h2', text: 'What a Landing Page Costs vs a Full Website' },
       {
         type: 'p',
-        text: 'A single, focused landing page design is typically the most affordable option, built around one offer or campaign. A full business website with multiple service pages, a portfolio, and lead capture across the site is a bigger investment because it is doing considerably more work. Neither is automatically the right choice, it depends on what you are trying to achieve - we cover that decision in more depth in our landing pages versus full websites breakdown.',
+        text: 'A single, focused landing page design is typically the most affordable option, built around one offer or campaign. A full business website with multiple service pages, a portfolio, and lead capture across the site is a bigger investment because it is doing considerably more work. Neither is automatically the right choice, it depends on what you are trying to achieve - we cover that decision in more depth in our [landing pages versus full websites breakdown](/blog/landing-pages-vs-full-websites).',
       },
       { type: 'h2', text: 'The Real Cost of Going Cheap' },
       {
@@ -453,6 +529,45 @@ const allPosts: BlogPost[] = [
       {
         type: 'p',
         text: 'Beyond the build, budget for website hosting, an SSL certificate and basic security monitoring, and either DIY updates or a maintenance plan. These ongoing costs are usually modest compared to the build itself, but skipping them entirely is a common, and costly, mistake.',
+      },
+      {
+        type: 'p',
+        text: 'The one people forget is their own time. If updating a price or adding a service means emailing an agency and waiting, that is a real cost too. Worth asking upfront what you can change yourself and what you cannot.',
+      },
+      { type: 'h2', text: 'What Quotes Often Leave Out' },
+      {
+        type: 'p',
+        text: 'Most disputes about website cost are not about the headline figure. They are about something everyone assumed was included. Before signing, get a straight answer on each of these:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Who writes the copy - you, them, or a mix',
+          'Whether photography is included or expected from you',
+          'How many rounds of revisions the price covers, and what happens after',
+          'Whether redirects from your old URLs are handled during a rebuild',
+          'Who owns the site, the domain and the hosting account at the end',
+          'What a small change costs once the project is closed',
+          'Whether analytics, search console and tracking are set up',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'The redirect question matters more than it sounds. If your current site ranks for anything at all, a rebuild that drops those URLs without redirects can undo years of visibility in a weekend - and it is rarely on a quote unless you ask.',
+      },
+      { type: 'h2', text: 'How to Compare Two Quotes Fairly' },
+      {
+        type: 'p',
+        text: 'Put the numbers aside first. Write down what each quote actually includes, then compare like for like. A quote that is twice the price but includes copywriting, a booking system and a year of support may well be the cheaper option once you price the gaps in the other one.',
+      },
+      {
+        type: 'p',
+        text: 'Then ask each of them the same question: what would you cut if the budget were smaller? The answer tells you a lot. Someone who knows their craft will name the thing that matters least. Someone selling a package will struggle to answer.',
+      },
+      { type: 'h2', text: 'How Payment Usually Works' },
+      {
+        type: 'p',
+        text: 'Most studios take a deposit to secure a start date, with the balance either on completion or split across milestones on larger builds. That is normal and protects both sides. What is not normal is paying the full amount upfront before any work has been scoped.',
       },
       {
         type: 'quote',
@@ -472,7 +587,6 @@ const allPosts: BlogPost[] = [
       'The right AI chatbot can answer questions, qualify leads, and book appointments around the clock. Here is what to look for and where to start.',
     category: 'AI & Automation',
     date: '2026-04-09',
-    readTime: '6 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -492,7 +606,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: '3. The Lead Qualifier' },
       {
         type: 'p',
-        text: 'Rather than just collecting a name and email, an AI lead generation chatbot can ask a few smart questions to understand what a visitor actually needs, so your team follows up with context instead of starting from zero.',
+        text: 'Rather than just collecting a name and email, an AI lead generation chatbot - one part of a wider [custom software and automation](/custom-software) setup - can ask a few smart questions to understand what a visitor actually needs, so your team follows up with context instead of starting from zero.',
       },
       { type: 'h2', text: '4. The Support and Retention Bot' },
       {
@@ -527,7 +641,6 @@ const allPosts: BlogPost[] = [
       'Landing pages and full websites solve different problems. Here is how to choose the right one for your next campaign or business goal.',
     category: 'Conversion & Leads',
     date: '2026-03-26',
-    readTime: '6 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -542,7 +655,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: 'What a Full Website Does Best' },
       {
         type: 'p',
-        text: 'A full business website earns trust over a longer journey. It has room for your full range of services, a portfolio, an about page, and content that supports SEO for small businesses across many search terms rather than one. If you are building long-term visibility and credibility, not just running a single campaign, a full site does work a landing page simply is not built to do.',
+        text: 'A full business website earns trust over a longer journey. It has room for your full range of services, a portfolio, an about page, and content that supports [bespoke web design](/web-design) and SEO for small businesses across many search terms rather than one. If you are building long-term visibility and credibility, not just running a single campaign, a full site does work a landing page simply is not built to do.',
       },
       { type: 'h2', text: 'When to Use a Landing Page' },
       {
@@ -577,7 +690,6 @@ const allPosts: BlogPost[] = [
       "Not sure if your site needs a refresh or a full rebuild? Here are the clearest signs it's time for a website redesign.",
     category: 'Web Design',
     date: '2026-03-12',
-    readTime: '7 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -592,7 +704,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: 'It Does Not Work Properly on Mobile' },
       {
         type: 'p',
-        text: 'If your site was built before mobile friendly website design was standard practice, it is very likely underperforming for the majority of your traffic. This alone is one of the fastest-growing reasons businesses come to us for a rebuild.',
+        text: 'If your site was built before [mobile-first web design](/web-design) was standard practice, it is very likely underperforming for the majority of your traffic. This alone is one of the fastest-growing reasons businesses come to us for a rebuild.',
       },
       { type: 'h2', text: 'Your Business Has Changed, But the Site Has Not' },
       {
@@ -626,7 +738,7 @@ const allPosts: BlogPost[] = [
       { type: 'h2', text: 'Deciding What Comes Next' },
       {
         type: 'p',
-        text: "If two or three of these points sound familiar, it's worth a proper conversation rather than more small patches. A focused website redesign services provider will start with a website audit, not a moodboard, so the new site is built to fix what's actually holding the current one back.",
+        text: "If two or three of these points sound familiar, it's worth a proper conversation rather than more small patches. A focused [web design agency](/web-design) will start with a website audit, not a moodboard, so the new site is built to fix what's actually holding the current one back.",
       },
     ],
   },
@@ -637,7 +749,6 @@ const allPosts: BlogPost[] = [
       'Most businesses pick an agency on price and portfolio alone, then wonder why the site underperforms. Here is a more reliable way to judge who will actually deliver.',
     category: 'Strategy',
     date: '2026-08-11',
-    readTime: '9 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -740,7 +851,6 @@ const allPosts: BlogPost[] = [
       'The two words get used interchangeably, and it causes real problems when scoping a project. Here is what each actually covers and why it matters to your quote.',
     category: 'Web Design',
     date: '2026-08-08',
-    readTime: '7 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -836,7 +946,6 @@ const allPosts: BlogPost[] = [
       'Beyond making things look good - a plain explanation of what you are paying for when you hire a web design agency, stage by stage.',
     category: 'Strategy',
     date: '2026-08-05',
-    readTime: '7 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -929,7 +1038,6 @@ const allPosts: BlogPost[] = [
       'A straight look at what drives the price of custom web development, why quotes vary so much, and how to tell whether it is worth it for your business.',
     category: 'Software Development',
     date: '2026-08-01',
-    readTime: '8 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -1022,7 +1130,6 @@ const allPosts: BlogPost[] = [
       'A good brief gets you better quotes, fewer surprises and a site that does what you needed. Here is what to include - and what to leave to the agency.',
     category: 'Strategy',
     date: '2026-07-29',
-    readTime: '7 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -1130,7 +1237,6 @@ const allPosts: BlogPost[] = [
       'Templates are cheaper and faster, and sometimes they are the right call. Here is an honest comparison of where each one wins.',
     category: 'Web Design',
     date: '2026-07-25',
-    readTime: '8 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -1225,7 +1331,6 @@ const allPosts: BlogPost[] = [
       'The pages, sections and details every business website needs - and the common additions that quietly get in the way.',
     category: 'Web Design',
     date: '2026-07-22',
-    readTime: '8 min read',
     author: 'The Nexiora Team',
     content: [
       {
@@ -1324,9 +1429,9 @@ const allPosts: BlogPost[] = [
  * Sorted newest-first here rather than relying on authoring order - the blog
  * index treats blogPosts[0] as the featured "Latest Article".
  */
-export const blogPosts: BlogPost[] = [...allPosts].sort((a, b) =>
-  b.date.localeCompare(a.date),
-)
+export const blogPosts: BlogPost[] = [...allPosts]
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .map((post) => ({ ...post, readTime: estimateReadTime(post.content) }))
 
 export function getPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug)

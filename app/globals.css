@@ -7,7 +7,6 @@
 @theme inline {
   --font-heading: var(--font-poppins), var(--font-sans);
   --font-sans: var(--font-geist-sans), "Geist Fallback";
-  --font-mono: var(--font-geist-mono), "Geist Mono Fallback";
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -194,6 +193,23 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+  }
+
+  /* Respect the OS setting. Without this the 120s marquee and the pulsing
+     banner glow run indefinitely regardless of user preference. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 

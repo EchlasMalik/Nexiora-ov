@@ -20,7 +20,7 @@ const comparisons = [
     pro: 'Lightning fast - under 2 seconds',
   },
   {
-    feature: 'Mobile Optimized',
+    feature: 'Mobile Optimised',
     standard: 'Breaks or feels clunky on phones',
     pro: 'Flawless on every screen size',
   },
@@ -41,7 +41,7 @@ export default function WhyUsPage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-24">
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />

@@ -6,7 +6,7 @@ const steps = [
   {
     number: '01',
     icon: Search,
-    title: 'Discover & Strategize',
+    title: 'Discover & Strategise',
     description:
       'We learn your business, your goals, and your customers - then map a clear plan for a site that actually converts.',
   },
@@ -22,7 +22,7 @@ const steps = [
     icon: Rocket,
     title: 'Launch & Grow',
     description:
-      'We launch fast, track performance, and keep optimizing so your site keeps turning visitors into booked work.',
+      'We launch fast, track performance, and keep optimising so your site keeps turning visitors into booked work.',
   },
 ]
 

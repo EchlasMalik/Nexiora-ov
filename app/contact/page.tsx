@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { generalFaqs } from '@/lib/faqs'
 import { graph, localBusinessSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
+import { NAP } from '@/lib/site-config'
 
 export const metadata = buildMetadata({
   title: 'Contact Us | Web Design Agency London',
@@ -21,7 +22,7 @@ export default function ContactPage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-24">
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
@@ -66,20 +67,32 @@ export default function ContactPage() {
                   Contact Information
                 </h2>
 
+                {/* Read from NAP so the visible details and the LocalBusiness
+                    schema can never drift apart. */}
                 <div className="mt-6 space-y-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-3">
-                    <Mail className="size-4 text-primary" />
-                    echlas@nexiorastudio.com
+                    <Mail className="size-4 shrink-0 text-primary" />
+                    <a
+                      href={`mailto:${NAP.email}`}
+                      className="transition-colors hover:text-primary"
+                    >
+                      {NAP.email}
+                    </a>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Phone className="size-4 text-primary" />
-                    +44 7835 385 699
+                    <Phone className="size-4 shrink-0 text-primary" />
+                    <a
+                      href={NAP.phoneHref}
+                      className="transition-colors hover:text-primary"
+                    >
+                      {NAP.phone}
+                    </a>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <MapPin className="size-4 text-primary" />
-                    London, United Kingdom
+                    <MapPin className="size-4 shrink-0 text-primary" />
+                    {NAP.locality}, {NAP.countryName}
                   </div>
                 </div>
               </div>
@@ -102,7 +115,7 @@ export default function ContactPage() {
 
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   Larger or more complex builds can take a little longer, and
-                  we'll map out a clear timeline together once we've
+                  we’ll map out a clear timeline together once we’ve
                   discussed your goals on a strategy call.
                 </p>
               </div>

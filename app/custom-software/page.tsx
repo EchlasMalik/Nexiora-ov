@@ -103,7 +103,7 @@ export default function CustomSoftwarePage() {
     <>
       <SiteHeader />
 
-      <main>
+      <main id="main">
         <ServiceHero
           eyebrow="Custom Software"
           title="Custom Software Built Around How Your"

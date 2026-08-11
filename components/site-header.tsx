@@ -38,6 +38,8 @@ export function SiteHeader() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const servicesRef = useRef<HTMLDivElement>(null)
+  const servicesTriggerRef = useRef<HTMLButtonElement>(null)
+  const mobileToggleRef = useRef<HTMLButtonElement>(null)
   const { open: openContactModal } = useContactModal()
   const pathname = usePathname()
   const isHome = pathname === '/'
@@ -62,7 +64,11 @@ export function SiteHeader() {
     if (!servicesOpen) return
 
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') setServicesOpen(false)
+      if (event.key === 'Escape') {
+        setServicesOpen(false)
+        // Return focus to the trigger rather than orphaning it on the page.
+        servicesTriggerRef.current?.focus()
+      }
     }
     function onPointerDown(event: PointerEvent) {
       if (!servicesRef.current?.contains(event.target as Node)) {
@@ -77,6 +83,22 @@ export function SiteHeader() {
       document.removeEventListener('pointerdown', onPointerDown)
     }
   }, [servicesOpen])
+
+  // The mobile panel had no Escape handling at all - the listener above is
+  // gated on servicesOpen, not the menu itself.
+  useEffect(() => {
+    if (!open) return
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        closeMobileMenu()
+        mobileToggleRef.current?.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [open])
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
@@ -103,10 +125,11 @@ export function SiteHeader() {
                 }}
               >
                 <button
+                  ref={servicesTriggerRef}
                   type="button"
                   onClick={() => setServicesOpen((v) => !v)}
                   aria-expanded={servicesOpen}
-                  aria-haspopup="true"
+                  aria-controls="services-menu"
                   className={cn(
                     'flex items-center gap-1 text-sm font-medium transition-colors',
                     isActive(link)
@@ -124,7 +147,10 @@ export function SiteHeader() {
                 </button>
 
                 {servicesOpen && (
-                  <div className="absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3">
+                  <div
+                    id="services-menu"
+                    className="absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3"
+                  >
                     <div className="animate-fade-in-up overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-lg">
                       {link.children.map((child) => (
                         <Link
@@ -184,18 +210,24 @@ export function SiteHeader() {
 
           <button
             type="button"
+            ref={mobileToggleRef}
             onClick={() => setOpen((v) => !v)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-muted lg:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
+            aria-controls="mobile-menu"
           >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            {open ? (
+              <X className="size-5" aria-hidden="true" />
+            ) : (
+              <Menu className="size-5" aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div id="mobile-menu" className="border-t border-border bg-background lg:hidden">
           <nav
             className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6"
             aria-label="Mobile"

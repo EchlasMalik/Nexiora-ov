@@ -7,17 +7,17 @@ const CALENDLY_URL = 'https://calendly.com/echlas-nexioratalent/website-consulta
 
 const benefits = [
   { icon: Zap, text: 'Conversion-first design that turns visitors into booked leads' },
-  { icon: BadgeCheck, text: 'Smart systems that follow up and stay organized for you' },
+  { icon: BadgeCheck, text: 'Smart systems that follow up and stay organised for you' },
 ]
 
 export function Hero() {
   return (
     <section id="home" className="relative flex flex-1 flex-col overflow-hidden">
-      <div className="pointer-events-none absolute -right-32 -top-32 size112 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -left-24 size96 rounded-full bg-gold/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 -top-32 size-112 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 -left-24 size-96 rounded-full bg-gold/10 blur-3xl" />
 
       <div className="relative mx-auto grid w-full max-w-7xl flex-1 items-center gap-8 px-4 py-5 sm:px-6 md:py-6 lg:grid-cols-2 lg:px-8">
-        <Reveal>
+        <Reveal immediate>
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-primary shadow-sm">
             <MapPin className="size-3.5" />
             Based in London · Serving clients worldwide
@@ -78,12 +78,12 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <Reveal delay={150} className="relative">
+        <Reveal immediate className="relative">
           <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-3xl bg-primary/10" />
           <div className="overflow-hidden rounded-3xl border border-border bg-card p-2 shadow-xl">
             <Image
               src="/hero-dashboard.png"
-              alt="Nexiora analytics dashboard showing rising conversions and lead inquiries"
+              alt="Nexiora analytics dashboard showing rising conversions and lead enquiries"
               width={900}
               height={680}
               className="h-auto w-full rounded-2xl"

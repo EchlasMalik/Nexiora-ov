@@ -172,10 +172,10 @@ const categories: Category[] = [
         icon: Target,
         title: 'Google and Meta Ads',
         description:
-          'Ad setup and optimization on Google and Meta with a focus on high-quality local leads.',
+          'Ad setup and optimisation on Google and Meta with a focus on high-quality local leads.',
         points: [
           'Targeting refined for your ideal customers',
-          'Ongoing optimization for better results',
+          'Ongoing optimisation for better results',
           'Clear reporting on performance',
         ],
       },
@@ -288,6 +288,8 @@ export function ServicesExplorer() {
             id={category.id}
             type="button"
             onClick={() => setActiveId(category.id)}
+            // Active state was conveyed by colour alone.
+            aria-pressed={category.id === activeId}
             className={cn(
               'scroll-mt-24 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200',
               category.id === activeId
