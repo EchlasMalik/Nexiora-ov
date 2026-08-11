@@ -1,14 +1,15 @@
-import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { BlogContent } from '@/components/blog-content'
 import type { BlogBlock } from '@/lib/blog-posts'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Terms of Service - Nexiora',
+export const metadata = buildMetadata({
+  title: 'Terms of Service',
   description:
     'The terms and conditions that govern your use of the Nexiora Studio website and our web design, development, and automation services.',
-}
+  path: '/terms-of-service',
+})
 
 const lastUpdated = '24 July 2026'
 

@@ -1,16 +1,18 @@
-import type { Metadata } from 'next'
 import { Fragment } from 'react'
 import { ArrowDown, ArrowRight, Search, PencilRuler, Rocket } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { ProcessExplorer } from '@/components/process-explorer'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'How It Works - Nexiora',
+export const metadata = buildMetadata({
+  title: 'Our Web Design & Development Process',
   description:
-    'A simple, proven 3-step process from discovery to launch and growth with Nexiora.',
-}
+    'How a Nexiora project runs, from discovery and strategy through design, build and launch - and what happens once your website goes live.',
+  path: '/process',
+})
 
 const steps = [
   {
@@ -44,14 +46,21 @@ export default function ProcessPage() {
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl">
+            <Breadcrumbs
+              items={[
+                { name: 'Home', path: '/' },
+                { name: 'Process', path: '/process' },
+              ]}
+            />
+
+            <div className="mt-6 max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">
                 How It Works
               </p>
 
               <h1 className="mt-3 font-heading text-4xl font-extrabold tracking-tight text-foreground text-balance sm:text-5xl">
-                A Simple, Proven{' '}
-                <span className="text-primary">3-Step Process</span>
+                Our Web Design &amp; Development{' '}
+                <span className="text-primary">Process</span>
               </h1>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">

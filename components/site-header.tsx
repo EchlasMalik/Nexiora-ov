@@ -1,16 +1,31 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import { useContactModal } from '@/components/contact-modal'
+import { servicePages } from '@/lib/services-data'
+import { CALENDLY_URL } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
 
-const navLinks = [
+type NavChild = { label: string; href: string }
+type NavLink = { label: string; href: string; children?: NavChild[] }
+
+const navLinks: NavLink[] = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
+  {
+    label: 'Services',
+    href: '/services',
+    children: [
+      { label: 'All Services', href: '/services' },
+      ...servicePages.map((page) => ({
+        label: page.navLabel,
+        href: `/${page.slug}`,
+      })),
+    ],
+  },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'Process', href: '/process' },
   { label: 'Why Us', href: '/why-us' },
@@ -18,18 +33,50 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
-const CALENDLY_URL = 'https://calendly.com/echlas-nexioratalent/website-consultation'
-
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const servicesRef = useRef<HTMLDivElement>(null)
   const { open: openContactModal } = useContactModal()
   const pathname = usePathname()
   const isHome = pathname === '/'
 
-  function isActive(href: string) {
-    if (href === '/') return pathname === '/'
-    return pathname === href || pathname.startsWith(`${href}/`)
+  function closeMobileMenu() {
+    setOpen(false)
+    setMobileServicesOpen(false)
   }
+
+  function isActive(link: NavLink) {
+    if (link.href === '/') return pathname === '/'
+    if (pathname === link.href || pathname.startsWith(`${link.href}/`)) return true
+    // Highlight "Services" while on any dedicated service page.
+    return (
+      link.children?.some(
+        (child) => child.href !== link.href && pathname === child.href,
+      ) ?? false
+    )
+  }
+
+  useEffect(() => {
+    if (!servicesOpen) return
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') setServicesOpen(false)
+    }
+    function onPointerDown(event: PointerEvent) {
+      if (!servicesRef.current?.contains(event.target as Node)) {
+        setServicesOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
+  }, [servicesOpen])
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
@@ -39,20 +86,80 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'text-sm font-medium transition-colors',
-                isActive(link.href)
-                  ? 'text-primary underline underline-offset-4'
-                  : 'text-muted-foreground hover:text-primary',
-              )}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.children ? (
+              <div
+                key={link.href}
+                ref={servicesRef}
+                className="relative"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+                onBlurCapture={(event) => {
+                  if (
+                    !event.currentTarget.contains(event.relatedTarget as Node)
+                  ) {
+                    setServicesOpen(false)
+                  }
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setServicesOpen((v) => !v)}
+                  aria-expanded={servicesOpen}
+                  aria-haspopup="true"
+                  className={cn(
+                    'flex items-center gap-1 text-sm font-medium transition-colors',
+                    isActive(link)
+                      ? 'text-primary underline underline-offset-4'
+                      : 'text-muted-foreground hover:text-primary',
+                  )}
+                >
+                  {link.label}
+                  <ChevronDown
+                    className={cn(
+                      'size-4 transition-transform duration-200',
+                      servicesOpen && 'rotate-180',
+                    )}
+                  />
+                </button>
+
+                {servicesOpen && (
+                  <div className="absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3">
+                    <div className="animate-fade-in-up overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-lg">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => setServicesOpen(false)}
+                          className={cn(
+                            'block rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors',
+                            pathname === child.href
+                              ? 'bg-primary/10 text-primary'
+                              : 'text-foreground hover:bg-muted hover:text-primary',
+                          )}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'text-sm font-medium transition-colors',
+                  isActive(link)
+                    ? 'text-primary underline underline-offset-4'
+                    : 'text-muted-foreground hover:text-primary',
+                )}
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -93,27 +200,72 @@ export function SiteHeader() {
             className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6"
             aria-label="Mobile"
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  'rounded-lg px-3 py-3 text-base font-medium transition-colors',
-                  isActive(link.href)
-                    ? 'text-primary underline underline-offset-4'
-                    : 'text-foreground hover:bg-muted',
-                )}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.children ? (
+                <div key={link.href}>
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((v) => !v)}
+                    aria-expanded={mobileServicesOpen}
+                    className={cn(
+                      'flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-medium transition-colors',
+                      isActive(link)
+                        ? 'text-primary'
+                        : 'text-foreground hover:bg-muted',
+                    )}
+                  >
+                    {link.label}
+                    <ChevronDown
+                      className={cn(
+                        'size-4 transition-transform duration-200',
+                        mobileServicesOpen && 'rotate-180',
+                      )}
+                    />
+                  </button>
+
+                  {mobileServicesOpen && (
+                    <div className="ml-3 border-l border-border pl-3">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={closeMobileMenu}
+                          className={cn(
+                            'block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
+                            pathname === child.href
+                              ? 'text-primary'
+                              : 'text-muted-foreground hover:bg-muted hover:text-primary',
+                          )}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMobileMenu}
+                  className={cn(
+                    'rounded-lg px-3 py-3 text-base font-medium transition-colors',
+                    isActive(link)
+                      ? 'text-primary underline underline-offset-4'
+                      : 'text-foreground hover:bg-muted',
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
+
             {isHome ? (
               <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
+                onClick={closeMobileMenu}
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
               >
                 Get Free Quote
@@ -122,7 +274,7 @@ export function SiteHeader() {
               <button
                 type="button"
                 onClick={() => {
-                  setOpen(false)
+                  closeMobileMenu()
                   openContactModal()
                 }}
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"

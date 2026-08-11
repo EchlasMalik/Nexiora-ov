@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ProjectCard } from '@/components/project-card'
@@ -7,12 +7,15 @@ import { ComingSoonProjectCard } from '@/components/coming-soon-project-card'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { Reveal } from '@/components/reveal'
 import { featuredProjects, moreProjects } from '@/lib/projects'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Portfolio - Nexiora',
+export const metadata = buildMetadata({
+  title: 'Web Design Portfolio | UK Website Projects',
   description:
-    'Explore high-converting websites and systems Nexiora has built for service businesses across industries.',
-}
+    'Real websites and software Nexiora Studio has built for UK businesses - from tutoring, recruitment and property services to a live SaaS platform.',
+  path: '/portfolio',
+})
 
 export default function PortfolioPage() {
   const allProjects = [...featuredProjects, ...moreProjects]
@@ -28,19 +31,41 @@ export default function PortfolioPage() {
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <Breadcrumbs
+              items={[
+                { name: 'Home', path: '/' },
+                { name: 'Portfolio', path: '/portfolio' },
+              ]}
+            />
 
-            <div className="mt-6 max-w-2xl">
+            <div className="mt-6 max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">
                 Our Work
               </p>
 
               <h1 className="mt-3 font-heading text-4xl font-extrabold tracking-tight text-foreground text-balance sm:text-5xl">
-                The Full <span className="text-primary">Portfolio</span>
+                Our Web Design &amp; Development{' '}
+                <span className="text-primary">Portfolio</span>
               </h1>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 A closer look at the websites and systems we’ve built to help
-                service businesses convert more visitors into real inquiries.
+                service businesses convert more visitors into real enquiries -
+                from{' '}
+                <Link
+                  href="/web-design"
+                  className="font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  bespoke web design
+                </Link>{' '}
+                through to{' '}
+                <Link
+                  href="/custom-software"
+                  className="font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  custom software
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -49,6 +74,16 @@ export default function PortfolioPage() {
         {/* PROJECT GRID */}
         <section className="bg-background py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground text-balance sm:text-4xl">
+                Recent Client Projects
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Every site below is live. Each one was built from scratch around
+                a specific business and a specific customer.
+              </p>
+            </div>
+
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {allProjects.map((project, i) => (
                 <Reveal key={`${project.title}-${i}`} delay={(i % 3) * 90}>

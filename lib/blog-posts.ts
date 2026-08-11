@@ -26,7 +26,7 @@ export const categories = [
   'Strategy',
 ] as const
 
-export const blogPosts: BlogPost[] = [
+const allPosts: BlogPost[] = [
   {
     slug: '10-website-mistakes-costing-you-clients',
     title: '10 Website Mistakes That Are Costing You Clients',
@@ -630,7 +630,703 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'how-to-choose-a-web-design-agency',
+    title: 'How to Choose the Right Web Design Agency for Your Business',
+    excerpt:
+      'Most businesses pick an agency on price and portfolio alone, then wonder why the site underperforms. Here is a more reliable way to judge who will actually deliver.',
+    category: 'Strategy',
+    date: '2026-08-11',
+    readTime: '9 min read',
+    author: 'The Nexiora Team',
+    content: [
+      {
+        type: 'p',
+        text: "Choosing a web design agency is one of those decisions that feels simple until you start. Every agency has a tidy portfolio, every one promises results, and the quotes you get back can differ by a factor of ten for what looks like the same job. Below is the way we would go about it if we were on your side of the table.",
+      },
+      { type: 'h2', text: 'Start With the Job, Not the Agency' },
+      {
+        type: 'p',
+        text: "Before you speak to anyone, get clear on what the website is actually for. A site meant to book appointments is a different project to one meant to establish credibility before a sales call, which is different again to one selling products directly. Agencies can only aim at a target you have named.",
+      },
+      {
+        type: 'p',
+        text: "It also protects you from the most common expensive mistake: buying a beautiful brochure site when what you needed was [custom web development](/web-development) to handle bookings, quoting or client logins. Those are different disciplines, and not every agency does both.",
+      },
+      { type: 'h2', text: 'Look Past the Portfolio Screenshots' },
+      {
+        type: 'p',
+        text: "Every portfolio looks good, because agencies choose what goes in it. The useful questions are about what happened after launch.",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Are the sites in the portfolio still live, or have clients since replaced them?',
+          'Did the agency build those sites, or design them for someone else to build?',
+          'Can they explain why a particular page is laid out the way it is?',
+          'Do the examples resemble your situation - similar audience, similar decision, similar price point?',
+        ],
+      },
+      {
+        type: 'p',
+        text: "That last point matters more than industry. An agency that has built for tutoring businesses and recruitment firms understands the same core problem you have: a stranger arrives sceptical and has to be persuaded to make contact.",
+      },
+      { type: 'h2', text: 'Questions Worth Asking on the Call' },
+      { type: 'h3', text: '1. Who actually does the work?' },
+      {
+        type: 'p',
+        text: "Some agencies sell with senior people and deliver with juniors or subcontractors. Not inherently wrong, but you should know before you sign, and you should know who you will be speaking to when something needs changing in month three.",
+      },
+      { type: 'h3', text: '2. What happens after launch?' },
+      {
+        type: 'p',
+        text: "Ask directly about hosting, updates, security and small changes. Some agencies disappear at launch. Others charge for every text edit. Neither is a problem if you know upfront, and both are a nasty surprise if you do not.",
+      },
+      { type: 'h3', text: '3. Do I own the website?' },
+      {
+        type: 'p',
+        text: "You should own the site, the domain and the content. Be careful with arrangements where the site only works while you keep paying a monthly fee, and leaving means starting again from nothing. Ask what happens if you part ways in two years.",
+      },
+      { type: 'h3', text: '4. How do you decide what goes on the page?' },
+      {
+        type: 'p',
+        text: "This is the question that separates designers from decorators. A good answer talks about your customers, their objections, and the order information needs to appear in. A weak answer talks only about trends and colour palettes.",
+      },
+      { type: 'h3', text: '5. What do you need from me?' },
+      {
+        type: 'p',
+        text: "Projects stall on content far more often than on design. An agency that tells you plainly what they need, and when, is one that has run this process before. It is also worth reading up on [how to brief a web design agency](/blog/how-to-brief-a-web-design-agency) before the first meeting.",
+      },
+      { type: 'h2', text: 'Warning Signs' },
+      {
+        type: 'ul',
+        items: [
+          'Guaranteed first-page Google rankings - nobody can promise this honestly',
+          'A quote given before anyone has asked what the site needs to do',
+          'No questions about your customers during the entire sales conversation',
+          'Reluctance to name who owns the site and the domain at the end',
+          'Portfolio links that are dead, or lead to sites that no longer look like the screenshot',
+          'Pressure to sign quickly because a discount expires on Friday',
+        ],
+      },
+      { type: 'h2', text: 'How to Read the Quotes' },
+      {
+        type: 'p',
+        text: "Wildly different prices usually mean the agencies have understood the job differently, not that one is cheating you. A £900 quote and a £9,000 quote are often describing genuinely different projects: a template populated with your content versus a [bespoke website](/web-design) designed around your sales process.",
+      },
+      {
+        type: 'p',
+        text: "Compare on scope rather than headline figure. What is included, what is extra, what happens when you want a change, and who carries the cost if something breaks. Our breakdown of [what a business website actually costs](/blog/cost-of-a-business-website-2026) goes through the drivers in more detail.",
+      },
+      { type: 'h2', text: 'Making the Decision' },
+      {
+        type: 'p',
+        text: "When the shortlist is down to two or three, the deciding factor is rarely price or portfolio. It is whether they understood your business in the first conversation, whether their questions were better than your answers, and whether you would be comfortable telling them something is not working.",
+      },
+      {
+        type: 'quote',
+        text: 'The best sign is simple: they told you something you did not want to hear, before you had paid them anything.',
+      },
+      {
+        type: 'p',
+        text: "If you are weighing up options at the moment, we are happy to be one of the conversations - and equally happy to tell you if what you need is smaller than you think.",
+      },
+    ],
+  },
+  {
+    slug: 'web-design-vs-web-development',
+    title: "Web Design vs Web Development: What's the Difference?",
+    excerpt:
+      'The two words get used interchangeably, and it causes real problems when scoping a project. Here is what each actually covers and why it matters to your quote.',
+    category: 'Web Design',
+    date: '2026-08-08',
+    readTime: '7 min read',
+    author: 'The Nexiora Team',
+    content: [
+      {
+        type: 'p',
+        text: "Ask ten business owners the difference between web design and web development and most will say something like \"design is the look, development is the code\". That is roughly right, and it is also the reason so many projects end up scoped wrongly. The distinction matters most when you are deciding what to pay for.",
+      },
+      { type: 'h2', text: 'What Web Design Covers' },
+      {
+        type: 'p',
+        text: "Design decides what a visitor sees and the route they take through it. That includes the visual side - typography, colour, imagery, spacing - but the more valuable part is structure: what appears first, what gets answered before someone can raise an objection, and where the call to action sits.",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Layout and visual hierarchy',
+          'Brand presentation - typography, colour, imagery',
+          'User experience and the path from landing to enquiry',
+          'Responsive behaviour across phones, tablets and desktops',
+          'Conversion decisions: what to include, and what to leave out',
+        ],
+      },
+      {
+        type: 'p',
+        text: "Good design is mostly a series of decisions about priority. Everything on a page competes for attention, so [bespoke web design](/web-design) is largely the discipline of deciding what wins.",
+      },
+      { type: 'h2', text: 'What Web Development Covers' },
+      {
+        type: 'p',
+        text: "Development is what makes the thing work. On a simple site that means turning the design into fast, accessible, well-structured pages. On anything more involved, it means building functionality that did not exist before.",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Turning designs into working, responsive pages',
+          'Forms, logins, accounts and permissions',
+          'Databases and how information is stored and retrieved',
+          'Integrations with CRMs, payment providers and booking systems',
+          'Performance, security and how the site behaves under load',
+        ],
+      },
+      {
+        type: 'p',
+        text: "This is where [custom web development](/web-development) separates from page-building. Anyone can install a contact form. Building a booking system that understands your availability, travel time and staff is a different job entirely.",
+      },
+      { type: 'h2', text: 'Why the Confusion Costs Money' },
+      {
+        type: 'p',
+        text: "Most disappointing projects come from a scope that named one discipline and needed both. A business asks for a website redesign, gets a beautiful set of pages, and then discovers the quoting process they wanted automated was never in scope.",
+      },
+      {
+        type: 'p',
+        text: "The reverse happens too. A capable developer builds exactly the functionality requested, and it converts badly because nobody made decisions about hierarchy, proof or clarity. The system works; the page does not persuade.",
+      },
+      {
+        type: 'quote',
+        text: 'Design decides whether someone wants to act. Development decides whether they can.',
+      },
+      { type: 'h2', text: 'Which Do You Need?' },
+      {
+        type: 'p',
+        text: "Most projects need both, but the balance shifts. Here is a rough guide.",
+      },
+      { type: 'h3', text: 'Mostly design' },
+      {
+        type: 'p',
+        text: "Your site explains services and asks people to get in touch. Nothing complicated happens after the form is submitted. The work is presentation, structure and persuasion.",
+      },
+      { type: 'h3', text: 'Mostly development' },
+      {
+        type: 'p',
+        text: "Customers need accounts, bookings, payments or dashboards. The interface matters, but the difficulty is in the logic underneath - and often in connecting to systems you already run.",
+      },
+      { type: 'h3', text: 'Genuinely both' },
+      {
+        type: 'p',
+        text: "An online store is the clearest example. It has to persuade like a brochure site and function like software. That combination is why [ecommerce web design](/ecommerce-web-design) tends to cost more than either discipline alone.",
+      },
+      { type: 'h2', text: 'What to Do With This' },
+      {
+        type: 'p',
+        text: "When you brief a project, describe outcomes rather than deliverables. \"We want customers to book and pay without phoning us\" tells an agency far more than \"we need a new website\", and it makes the quotes you receive comparable.",
+      },
+      {
+        type: 'p',
+        text: "If you are still weighing up scope, [bespoke versus template](/blog/bespoke-website-vs-template-website) is usually the next question worth settling.",
+      },
+    ],
+  },
+  {
+    slug: 'what-does-a-web-design-agency-do',
+    title: 'What Does a Web Design Agency Actually Do?',
+    excerpt:
+      'Beyond making things look good - a plain explanation of what you are paying for when you hire a web design agency, stage by stage.',
+    category: 'Strategy',
+    date: '2026-08-05',
+    readTime: '7 min read',
+    author: 'The Nexiora Team',
+    content: [
+      {
+        type: 'p',
+        text: "\"Web design agency\" is a vague label covering everyone from a freelancer assembling templates to a forty-person studio running brand strategy. If you have never hired one, it is genuinely hard to know what the money buys. Here is what the work involves when it is done properly.",
+      },
+      { type: 'h2', text: 'It Starts With Questions, Not Designs' },
+      {
+        type: 'p',
+        text: "The first stage is research, and it is the part clients least expect. Who buys from you, what do they compare you against, what makes them hesitate, and what does a good enquiry look like versus a time-waster?",
+      },
+      {
+        type: 'p',
+        text: "This is not box-ticking. Almost every meaningful design decision - what goes above the fold, how much you say about price, whether case studies outrank testimonials - depends on those answers.",
+      },
+      { type: 'h2', text: 'Structure Before Aesthetics' },
+      {
+        type: 'p',
+        text: "Next comes the shape of the site: what pages exist, what each one is for, and the order information appears in on the important ones. Get this wrong and no amount of visual polish rescues it.",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Which pages are needed, and which are just noise',
+          'What each page is trying to get the visitor to do',
+          'The order objections get answered in',
+          'Where proof - reviews, case studies, logos - does the most work',
+          'How someone moves from interested to in touch',
+        ],
+      },
+      { type: 'h2', text: 'Then the Design Itself' },
+      {
+        type: 'p',
+        text: "This is the visible part: layout, typography, colour, imagery and how it all adapts to a phone. A good agency is making credibility decisions here, not decorative ones. If you charge more than your competitors, the site has to look like it belongs at that price.",
+      },
+      { type: 'h2', text: 'Build and Technical Setup' },
+      {
+        type: 'p',
+        text: "Then the design becomes a working site. Depending on the agency this is either straightforward page-building or genuine [custom development](/web-development) - forms, integrations, logins, or whatever functionality the business needs.",
+      },
+      {
+        type: 'p',
+        text: "The unglamorous technical work happens here too, and it is the part most likely to be skipped by a cheap quote:",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Page speed and Core Web Vitals',
+          'Proper heading structure and crawlable markup',
+          'Titles, meta descriptions and structured data',
+          'SSL, secure hosting and backups',
+          'Analytics connected so you can see what happens',
+        ],
+      },
+      { type: 'h2', text: 'Launch, and Then the Bit Everyone Forgets' },
+      {
+        type: 'p',
+        text: "Launch is a milestone, not the finish. Redirects from old URLs, indexing, testing forms on real devices, checking nothing broke on the way live - all of it decides whether the new site keeps the traffic the old one had.",
+      },
+      {
+        type: 'p',
+        text: "After that comes the ongoing part: hosting, updates, security, small changes, and ideally looking at what visitors actually do and improving accordingly. A website is a business asset, not a one-off purchase.",
+      },
+      { type: 'h2', text: 'What a Web Design Agency Should Not Do' },
+      {
+        type: 'ul',
+        items: [
+          'Guarantee specific Google rankings',
+          'Quote before understanding what the site needs to achieve',
+          'Hold your domain or content hostage',
+          'Charge for every minor text change without warning you upfront',
+          'Present a design with no explanation of why it is laid out that way',
+        ],
+      },
+      { type: 'h2', text: 'Where Agencies Differ Most' },
+      {
+        type: 'p',
+        text: "The biggest practical difference is how far they go. Some stop at brochure sites. Some also build [custom software](/custom-software) and automation, which matters if your website will eventually need to do real work rather than just describe it.",
+      },
+      {
+        type: 'p',
+        text: "If you are shortlisting, our guide on [how to choose the right web design agency](/blog/how-to-choose-a-web-design-agency) covers the questions worth asking before you commit.",
+      },
+    ],
+  },
+  {
+    slug: 'bespoke-web-development-cost',
+    title: 'How Much Does Bespoke Web Development Cost?',
+    excerpt:
+      'A straight look at what drives the price of custom web development, why quotes vary so much, and how to tell whether it is worth it for your business.',
+    category: 'Software Development',
+    date: '2026-08-01',
+    readTime: '8 min read',
+    author: 'The Nexiora Team',
+    content: [
+      {
+        type: 'p',
+        text: "Nobody enjoys the answer \"it depends\", but with bespoke development it is the honest starting point - in the same way that \"how much does a building cost\" depends entirely on whether you mean a shed or an office block. What is useful is understanding what moves the number.",
+      },
+      { type: 'h2', text: 'What You Are Actually Paying For' },
+      {
+        type: 'p',
+        text: "With a template site, most of the work has already been done and you are paying to configure it. With [custom web development](/web-development), you are paying for something that does not exist yet: the thinking, the building, and the testing that stops it falling over.",
+      },
+      {
+        type: 'p',
+        text: "That is why the cost tracks complexity rather than page count. Twenty pages of content is a small job. One booking system that understands staff availability, travel time and cancellation rules is not.",
+      },
+      { type: 'h2', text: 'The Main Cost Drivers' },
+      { type: 'h3', text: 'How many things the system has to remember' },
+      {
+        type: 'p',
+        text: "Anything involving stored data - accounts, orders, bookings, records - adds cost, because it needs structure, validation and a plan for what happens when something goes wrong.",
+      },
+      { type: 'h3', text: 'How many systems it has to talk to' },
+      {
+        type: 'p',
+        text: "Every integration is a small project. A well-documented payment provider is straightforward. A legacy system with no API is not, and it is worth asking early which category yours falls into.",
+      },
+      { type: 'h3', text: 'How many rules your business really has' },
+      {
+        type: 'p',
+        text: "This is the one that surprises people. Businesses tend to describe a process in three sentences, then reveal a dozen exceptions once building starts. Trade customers priced differently, certain jobs needing two staff, a discount that only applies on repeat bookings. Every exception is real work.",
+      },
+      { type: 'h3', text: 'How many people use it, and how' },
+      {
+        type: 'p',
+        text: "An internal tool used by five colleagues who can be shown how it works is cheaper than a customer-facing system used by thousands of strangers on unknown devices, where every edge case has to be handled gracefully.",
+      },
+      { type: 'h2', text: 'Why Quotes Vary So Wildly' },
+      {
+        type: 'p',
+        text: "If two quotes differ by a factor of five, they are usually describing different projects. One may have assumed an off-the-shelf plugin does most of the job. The other may have assumed you need it built properly with your rules baked in.",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Ask what is explicitly excluded, not just what is included',
+          'Ask what happens when a requirement is discovered mid-build',
+          'Ask who owns the code at the end',
+          'Ask what ongoing costs look like once it is live',
+          'Ask what the cheapest sensible version of this project would be',
+        ],
+      },
+      { type: 'h2', text: 'How to Tell If It Is Worth It' },
+      {
+        type: 'p',
+        text: "Custom development is not automatically better - it is better when the alternative is costing you more than you have noticed. The calculation is usually simpler than people expect.",
+      },
+      {
+        type: 'ol',
+        items: [
+          'Estimate the hours per week currently spent on the manual process',
+          'Multiply by what that time is genuinely worth',
+          'Add the licence fees for tools you would stop paying for',
+          'Add the cost of mistakes caused by data living in two places',
+          'Compare the annual total against the build cost',
+        ],
+      },
+      {
+        type: 'p',
+        text: "If a process eats ten hours a week and could take one, the payback period is short enough to justify itself. If it saves twenty minutes a month, it does not, and any honest developer will tell you so.",
+      },
+      { type: 'h2', text: 'Keeping the Number Down' },
+      {
+        type: 'p',
+        text: "The most effective way to control cost is to build in phases. Start with the single piece removing the most manual work, get it in use, then extend once it has proved itself. It reduces risk, spreads spend, and means real users shape what gets built next.",
+      },
+      {
+        type: 'quote',
+        text: 'The expensive version of custom software is not the one that costs more. It is the one that accurately builds the wrong thing.',
+      },
+      {
+        type: 'p',
+        text: "If you are weighing build against buy, our comparison of [custom software versus off-the-shelf tools](/blog/custom-software-vs-off-the-shelf-software) works through where each one wins.",
+      },
+    ],
+  },
+  {
+    slug: 'how-to-brief-a-web-design-agency',
+    title: 'How to Brief a Web Design Agency',
+    excerpt:
+      'A good brief gets you better quotes, fewer surprises and a site that does what you needed. Here is what to include - and what to leave to the agency.',
+    category: 'Strategy',
+    date: '2026-07-29',
+    readTime: '7 min read',
+    author: 'The Nexiora Team',
+    content: [
+      {
+        type: 'p',
+        text: "Most briefs we receive describe a website. The useful ones describe a business problem. That difference decides whether the quotes you get back are comparable, and whether the finished site does the job you actually had in mind.",
+      },
+      { type: 'h2', text: 'Lead With the Problem' },
+      {
+        type: 'p',
+        text: "Start with what is wrong today, in plain terms. \"We get enquiries but most are not serious\" is more useful than \"we need a modern website\", because it points at qualification, not aesthetics.",
+      },
+      {
+        type: 'ul',
+        items: [
+          'What is happening now that you want to change',
+          'What a good outcome would look like in six months',
+          'How you currently get customers',
+          'What you would consider a successful enquiry',
+        ],
+      },
+      { type: 'h2', text: 'Describe Your Customers' },
+      {
+        type: 'p',
+        text: "Agencies design for your customers, not for you. Anything you know about them is worth writing down: what they compare you against, what makes them hesitate, and what they always ask before committing.",
+      },
+      {
+        type: 'p',
+        text: "If you can only include one thing, make it the objection you answer most often on the phone. That sentence usually ends up shaping the whole homepage.",
+      },
+      { type: 'h2', text: 'Be Honest About Budget' },
+      {
+        type: 'p',
+        text: "Withholding budget feels like negotiating leverage. In practice it wastes everyone's time, because an agency cannot tell whether you want a focused landing page or a system with client logins.",
+      },
+      {
+        type: 'p',
+        text: "A range is enough. It lets an agency propose the best version of the project at your level rather than guessing and being wrong in either direction. If you have no idea what is realistic, our breakdown of [website costs](/blog/cost-of-a-business-website-2026) is a reasonable starting point.",
+      },
+      { type: 'h2', text: 'List the Functional Requirements' },
+      {
+        type: 'p',
+        text: "This is where projects most often go wrong. Anything the site needs to do, rather than say, belongs in the brief - it is the difference between a design job and a [development job](/web-development).",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Online booking or scheduling',
+          'Payments, deposits or subscriptions',
+          'Customer accounts or client logins',
+          'Integration with a CRM, calendar or accounting system',
+          'Anything currently done manually that you would like automated',
+        ],
+      },
+      { type: 'h2', text: 'Say What You Are Bringing' },
+      {
+        type: 'p',
+        text: "Projects stall on content far more often than on design. Be clear about what exists and what does not: logo and brand assets, photography, written copy, product information, testimonials.",
+      },
+      {
+        type: 'p',
+        text: "If you need help writing the copy, say so upfront. It is a normal part of the work, and it is much cheaper to plan for than to discover halfway through.",
+      },
+      { type: 'h2', text: 'What to Leave Out' },
+      {
+        type: 'p',
+        text: "A brief should define the destination, not the route. Prescribing solutions removes the expertise you are paying for.",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Specific layouts - describe the goal, not the wireframe',
+          'Technology choices, unless you have a genuine constraint',
+          'Long lists of competitor sites you like the look of, with no explanation of why',
+          'Exhaustive page-by-page instructions before anyone has researched your customers',
+        ],
+      },
+      {
+        type: 'quote',
+        text: 'Tell an agency what success looks like. If you also tell them exactly how to build it, you are paying expert rates for typing.',
+      },
+      { type: 'h2', text: 'Practical Details Worth Including' },
+      {
+        type: 'ul',
+        items: [
+          'Any real deadline, and what is driving it',
+          'Who is making the final decision',
+          'Who else needs to approve work, and when they are available',
+          'Whether you are replacing an existing site, and whether it currently ranks for anything',
+        ],
+      },
+      {
+        type: 'p',
+        text: "That last one matters more than people expect. If your current site gets meaningful search traffic, protecting it during a rebuild is real work - and it needs to be in the brief rather than discovered afterwards.",
+      },
+      {
+        type: 'p',
+        text: "Once your brief is written, [choosing the right agency](/blog/how-to-choose-a-web-design-agency) becomes far easier, because you can compare answers rather than prices.",
+      },
+    ],
+  },
+  {
+    slug: 'bespoke-website-vs-template-website',
+    title: 'Bespoke Website vs Template Website: Which Is Better?',
+    excerpt:
+      'Templates are cheaper and faster, and sometimes they are the right call. Here is an honest comparison of where each one wins.',
+    category: 'Web Design',
+    date: '2026-07-25',
+    readTime: '8 min read',
+    author: 'The Nexiora Team',
+    content: [
+      {
+        type: 'p',
+        text: "We build bespoke sites, so you can reasonably expect us to be biased. We will try not to be, because there are genuinely situations where a template is the sensible choice and telling you otherwise would be dishonest.",
+      },
+      { type: 'h2', text: 'What Each One Actually Means' },
+      {
+        type: 'p',
+        text: "A template website starts from a pre-built design. You replace the images and text with your own, adjust colours, and publish. A [bespoke website](/web-design) starts from your business: the structure, layout and messaging are decided by who your customers are and what makes them hesitate.",
+      },
+      {
+        type: 'p',
+        text: "The distinction is not really about code quality. It is about who the design decisions were made for.",
+      },
+      { type: 'h2', text: 'Where Templates Win' },
+      {
+        type: 'ul',
+        items: [
+          'Cost - materially cheaper upfront, sometimes by an order of magnitude',
+          'Speed - live in days rather than weeks',
+          'Predictability - you can see roughly what you are getting before you commit',
+          'Low stakes - fine when the site is a formality rather than a sales channel',
+        ],
+      },
+      {
+        type: 'p',
+        text: "If you need a presence so people can check you exist, if your work comes entirely through referral, or if you are testing a business idea before investing properly, a template is a perfectly rational decision. Spend the money on something with a clearer return.",
+      },
+      { type: 'h2', text: 'Where Templates Cost You' },
+      {
+        type: 'p',
+        text: "The trouble starts when the website is expected to sell. Templates are designed to look good for the widest possible range of businesses, which means they are optimised for nobody in particular.",
+      },
+      { type: 'h3', text: 'The structure is generic' },
+      {
+        type: 'p',
+        text: "The order of sections was decided by someone who had never heard of you. If most of your enquiries hinge on one specific objection, a template has no way of knowing to answer it early.",
+      },
+      { type: 'h3', text: 'You inherit weight you do not need' },
+      {
+        type: 'p',
+        text: "Templates ship with features for every possible user, and you carry the loading cost of all of it. That shows up in speed, which affects both rankings and conversion - as we covered in [how website speed impacts SEO](/blog/website-speed-seo-conversions).",
+      },
+      { type: 'h3', text: 'You look like your competitors' },
+      {
+        type: 'p',
+        text: "Popular templates are popular. If three firms in your area chose the same one, the differentiation you were relying on quietly disappears.",
+      },
+      { type: 'h3', text: 'Changes get harder, not easier' },
+      {
+        type: 'p',
+        text: "Templates are flexible until you want something they did not anticipate. Then you are fighting the theme, and the workarounds tend to cost more than building it properly would have.",
+      },
+      { type: 'h2', text: 'The Honest Comparison' },
+      {
+        type: 'ul',
+        items: [
+          'Upfront cost: template wins clearly',
+          'Time to launch: template wins',
+          'Conversion rate: bespoke, usually by a wide margin',
+          'Speed and technical performance: bespoke',
+          'Standing out from competitors: bespoke',
+          'Room to grow: bespoke',
+          'Simplicity if you never change anything: template',
+        ],
+      },
+      { type: 'h2', text: 'The Question That Settles It' },
+      {
+        type: 'p',
+        text: "Ask what the website is worth to you. If one extra client a month would cover the difference within a year, the sums answer themselves. If your website has never generated an enquiry and realistically never will, spend accordingly.",
+      },
+      {
+        type: 'quote',
+        text: 'A template is a cost. A website that converts is an investment. The mistake is treating the second like the first.',
+      },
+      { type: 'h2', text: 'A Middle Path' },
+      {
+        type: 'p',
+        text: "You do not have to choose between a £500 template and a £15,000 rebuild. A focused bespoke landing page targeting your highest-value service often outperforms a full template site for a fraction of a complete custom build.",
+      },
+      {
+        type: 'p',
+        text: "Start where the money is, prove it works, then expand. That approach also works well if you later need [custom functionality](/web-development) - you are building on foundations that were designed to grow.",
+      },
+    ],
+  },
+  {
+    slug: 'what-should-a-business-website-include',
+    title: 'What Should a Business Website Include?',
+    excerpt:
+      'The pages, sections and details every business website needs - and the common additions that quietly get in the way.',
+    category: 'Web Design',
+    date: '2026-07-22',
+    readTime: '8 min read',
+    author: 'The Nexiora Team',
+    content: [
+      {
+        type: 'p',
+        text: "There is no universal template for a business website, but there is a reliable list of things visitors look for and get frustrated when they cannot find. Most underperforming sites are missing several of them, and adding them back is usually cheaper than a redesign.",
+      },
+      { type: 'h2', text: 'The Essentials' },
+      { type: 'h3', text: 'A homepage that says what you do in one sentence' },
+      {
+        type: 'p',
+        text: "Visitors decide within seconds whether they are in the right place. Clever taglines that require interpretation fail this test. Say what you do, who for, and where - then earn the cleverness later.",
+      },
+      { type: 'h3', text: 'A page per service that matters' },
+      {
+        type: 'p',
+        text: "One page listing eight services is worse than four pages covering the four you actually want more of. It gives you room to answer real questions, and it gives search engines something specific to rank.",
+      },
+      { type: 'h3', text: 'Proof that you are not a stranger' },
+      {
+        type: 'p',
+        text: "Reviews, case studies, client logos, before-and-after photos, accreditations. Nothing you write about yourself carries the weight of one specific, verifiable thing you did for someone else.",
+      },
+      { type: 'h3', text: 'Contact details that are easy to find' },
+      {
+        type: 'p',
+        text: "Phone number, email, and a form. Visible in the header or footer on every page, not buried behind a single contact link. If you serve a location, say where - it matters for both trust and [local search](/web-design-london).",
+      },
+      { type: 'h3', text: 'One obvious next step on every page' },
+      {
+        type: 'p',
+        text: "Every page should make it clear what to do next. A visitor who reaches the bottom of a service page and finds nothing to click will simply leave.",
+      },
+      { type: 'h2', text: 'The Things People Look For and Rarely Find' },
+      {
+        type: 'ul',
+        items: [
+          'Some indication of price, even a range or a starting point',
+          'What the process looks like - what happens after they get in touch',
+          'How quickly you respond',
+          'Which areas you cover, if location is relevant',
+          'Who they will actually be dealing with',
+          'What happens if something goes wrong',
+        ],
+      },
+      {
+        type: 'p',
+        text: "Price is the one businesses resist most. You do not need a full price list, but silence pushes people to assume - and the ones who assume you are too expensive never call to check.",
+      },
+      { type: 'h2', text: 'The Technical Basics' },
+      {
+        type: 'p',
+        text: "None of this is visible, and all of it decides how many people ever see the rest.",
+      },
+      {
+        type: 'ul',
+        items: [
+          'Fast loading, especially on mobile data',
+          'A layout that works properly on a phone',
+          'SSL, so browsers do not warn people away',
+          'Unique page titles and meta descriptions',
+          'Clean heading structure so pages can be read and indexed',
+          'Analytics, so you can see what visitors actually do',
+          'A privacy policy and terms - a legal requirement, not an optional extra',
+        ],
+      },
+      { type: 'h2', text: 'What You Probably Do Not Need' },
+      {
+        type: 'ul',
+        items: [
+          'An autoplaying video background that delays everything else',
+          'A pop-up appearing before anyone has read a sentence',
+          'A blog nobody has updated since 2022',
+          'A live chat widget nobody is available to answer',
+          'A long "our journey" story on the homepage',
+          'Stock photography of people who have never used your service',
+        ],
+      },
+      {
+        type: 'p',
+        text: "Most of these are added because a competitor has them. They cost loading speed and attention, which are the two things a website has least of.",
+      },
+      { type: 'h2', text: 'When You Need More Than Pages' },
+      {
+        type: 'p',
+        text: "Some businesses need the site to do work rather than describe it: take bookings, provide client logins, generate quotes, or sync with the systems you already run. That is where a website turns into [custom software](/custom-software), and it is worth knowing that boundary exists before you scope a project.",
+      },
+      {
+        type: 'p',
+        text: "If you are reviewing an existing site against this list, our [website redesign checklist](/blog/complete-website-redesign-checklist-2026) is a practical next step.",
+      },
+    ],
+  },
 ]
+
+/**
+ * Sorted newest-first here rather than relying on authoring order - the blog
+ * index treats blogPosts[0] as the featured "Latest Article".
+ */
+export const blogPosts: BlogPost[] = [...allPosts].sort((a, b) =>
+  b.date.localeCompare(a.date),
+)
 
 export function getPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug)

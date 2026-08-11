@@ -29,9 +29,10 @@ export function Hero() {
           </h1>
 
           <p className="mt-2.5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Nexiora builds high-converting websites and smart AI systems that
-            help service businesses look professional, win more clients, and
-            stay organized behind the scenes.
+            Nexiora is a UK web design and development agency building bespoke,
+            high-converting websites, custom software and AI-powered systems
+            that help service businesses look professional, win more clients,
+            and stay organised behind the scenes.
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">

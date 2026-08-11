@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { Logo } from '@/components/logo'
+import { servicePages } from '@/lib/services-data'
+import { NAP } from '@/lib/site-config'
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -9,15 +11,13 @@ const quickLinks = [
   { label: 'Process', href: '/process' },
   { label: 'Services', href: '/services' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
 ]
 
-const services = [
-  { label: 'Single Landing Page', href: '/services#landing-page' },
-  { label: 'Website Design', href: '/services#web-design' },
-  { label: 'Marketing Services', href: '/services#marketing' },
-  { label: 'SEO & Local Search', href: '/services#seo' },
-  { label: 'Automation & CRM', href: '/services#automation' },
-]
+const services = servicePages.map((page) => ({
+  label: page.navLabel,
+  href: `/${page.slug}`,
+}))
 
 export function SiteFooter() {
   return (
@@ -27,8 +27,9 @@ export function SiteFooter() {
           <div>
             <Logo variant="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/70">
-              A website agency building high-converting websites and smart
-              AI systems for service businesses everywhere.
+              A UK web design and development agency building bespoke,
+              high-converting websites, custom software and smart AI systems for
+              growing businesses.
             </p>
           </div>
 
@@ -39,12 +40,12 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-navy-foreground/70 transition-colors hover:text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -73,9 +74,31 @@ export function SiteFooter() {
               Contact
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm text-navy-foreground/70">
-              <li>echlas@nexiorastudio.com</li>
-              <li>+44 7835 385 699</li>
-              <li>London Based · Serving clients worldwide</li>
+              <li>
+                <a
+                  href={`mailto:${NAP.email}`}
+                  className="transition-colors hover:text-primary"
+                >
+                  {NAP.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={NAP.phoneHref}
+                  className="transition-colors hover:text-primary"
+                >
+                  {NAP.phone}
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/web-design-london"
+                  className="transition-colors hover:text-primary"
+                >
+                  London Based
+                </Link>{' '}
+                · Serving clients worldwide
+              </li>
             </ul>
             <ContactTrigger className="mt-5 inline-flex rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground transition-transform hover:-translate-y-0.5">
               Get Free Quote

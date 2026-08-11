@@ -2,6 +2,9 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono, Poppins } from 'next/font/google'
 import { ContactModalProvider } from '@/components/contact-modal'
+import { JsonLd } from '@/components/json-ld'
+import { graph, organizationSchema, websiteSchema } from '@/lib/schema'
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site-config'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -16,13 +19,29 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.nexiorastudio.com'),
-  title: 'Nexiora Studio - High-Converting Websites for Service Businesses',
-  description:
-    'Nexiora builds high-converting websites and smart systems for service businesses. Book a free design consultation and get a response within 24 hours.',
-  generator: 'v0.app',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default:
+      'Bespoke Web Design & Development Agency UK | Nexiora Studio',
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    title: 'Bespoke Web Design & Development Agency UK | Nexiora Studio',
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: 'en_GB',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bespoke Web Design & Development Agency UK | Nexiora Studio',
+    description: SITE_DESCRIPTION,
+  },
   icons: {
-    icon: "/favicon1.png",
+    icon: '/favicon1.png',
   },
 }
 
@@ -40,10 +59,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} bg-background`}
     >
       <body className="font-sans antialiased">
+        <JsonLd data={graph(organizationSchema(), websiteSchema())} />
         <ContactModalProvider>{children}</ContactModalProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
         <script

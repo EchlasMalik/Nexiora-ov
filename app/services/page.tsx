@@ -1,19 +1,38 @@
-import type { Metadata } from 'next'
+import Link from 'next/link'
 import { ArrowRight, LayoutTemplate, Code2, Megaphone, Server } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ServicesExplorer } from '@/components/services-explorer'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { buildMetadata } from '@/lib/seo'
+import { servicePages } from '@/lib/services-data'
 
-export const metadata: Metadata = {
-  title: 'Services - Nexiora',
+export const metadata = buildMetadata({
+  title: 'Web Design & Development Services UK',
   description:
-    'Web design, marketing systems, SEO, automation, and ongoing support to help your business grow online.',
+    'Bespoke web design, custom web development, ecommerce and business software - built around how your business actually runs. See what Nexiora Studio does.',
+  path: '/services',
+})
+
+type ServiceCard = {
+  id: string
+  exploreId: string
+  number: string
+  icon: typeof LayoutTemplate
+  title: string
+  description: string
+  points: string[]
+  /** Set when a dedicated service page exists for this card. */
+  href?: string
+  linkLabel?: string
 }
 
-const services = [
+const services: ServiceCard[] = [
   {
     id: 'landing-page',
     exploreId: 'web-design',
+    href: '/web-design',
+    linkLabel: 'Explore bespoke web design',
     number: '01',
     icon: LayoutTemplate,
     title: 'Conversion Focused Web Design',
@@ -21,18 +40,20 @@ const services = [
       'High-converting websites built around your goals - from a focused single landing page to a full multi-page website for larger businesses.',
     points: [
       'Single landing pages or full multi-page sites',
-      'Conversion-optimized layout',
+      'Conversion-optimised layout',
       'Fast, mobile-first build',
     ],
   },
   {
     id: 'custom-software',
     exploreId: 'automation',
+    href: '/custom-software',
+    linkLabel: 'Explore custom software',
     number: '02',
     icon: Code2,
     title: 'Custom Software Solutions',
     description:
-      'Custom software personally built by me around how your business actually runs, not a generic off-the-shelf tool.',
+      'Custom software built around how your business actually runs, not a generic off-the-shelf tool you have to work around.',
     points: [
       'More time back to focus on your business',
       'Less time spent chasing leads manually',
@@ -79,20 +100,27 @@ export default function ServicesPage() {
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl">
+            <Breadcrumbs
+              items={[
+                { name: 'Home', path: '/' },
+                { name: 'Services', path: '/services' },
+              ]}
+            />
+
+            <div className="mt-6 max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">
                 What We Do
               </p>
 
               <h1 className="mt-3 font-heading text-4xl font-extrabold tracking-tight text-foreground text-balance sm:text-5xl">
-                Everything You Need to{' '}
-                <span className="text-primary">Grow Online</span>
+                Web Design, Development &amp; Software{' '}
+                <span className="text-primary">Built Around Your Business</span>
               </h1>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                From high-converting websites to automated systems that work
-                while you sleep - everything is built to generate real growth,
-                not just traffic.
+                From high-converting websites to custom software and automated
+                systems that work while you sleep - everything is built to
+                generate real growth, not just traffic.
               </p>
             </div>
           </div>
@@ -134,21 +162,70 @@ export default function ServicesPage() {
                     ))}
                   </ul>
 
-                  <a
-                    href={`#${service.exploreId}`}
-                    className="mt-6 flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                  >
-                    Learn More
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </a>
+                  {service.href ? (
+                    <Link
+                      href={service.href}
+                      className="mt-6 flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                    >
+                      {service.linkLabel}
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  ) : (
+                    <a
+                      href={`#${service.exploreId}`}
+                      className="mt-6 flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                    >
+                      Learn More
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* DEDICATED SERVICE PAGES */}
+        <section className="border-y border-border bg-secondary/40 py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                Go Deeper
+              </p>
+              <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                Specialist Services in Detail
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Each of these has its own page covering how we approach it, what
+                you get, and what it costs you to keep doing it the old way.
+              </p>
+            </div>
+
+            <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {servicePages.map((page) => (
+                <Link
+                  key={page.slug}
+                  href={`/${page.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-md"
+                >
+                  <h3 className="font-heading text-base font-bold text-foreground transition-colors group-hover:text-primary">
+                    {page.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {page.description}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                    Learn more
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* SERVICE DETAILS */}
-        <section className="bg-secondary/40 py-16 md:py-24">
+        <section className="bg-background py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">

@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
@@ -7,12 +6,14 @@ import { SiteFooter } from '@/components/site-footer'
 import { BlogCard } from '@/components/blog-card'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { blogPosts, formatBlogDate } from '@/lib/blog-posts'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Blog - Web Design, SEO & AI Automation Insights | Nexiora',
+export const metadata = buildMetadata({
+  title: 'Blog | Web Design, SEO & AI Automation Insights',
   description:
     'Practical guides on web design, website conversion optimisation, SEO, and AI automation for service businesses - from the team building high-converting websites at Nexiora.',
-}
+  path: '/blog',
+})
 
 export default function BlogPage() {
   const [featured, ...rest] = blogPosts

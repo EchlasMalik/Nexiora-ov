@@ -5,9 +5,12 @@ import type { LucideIcon } from 'lucide-react'
 import {
   ArrowRight,
   BarChart3,
+  Bot,
+  Braces,
   Check,
   CheckCircle2,
   Code2,
+  Layers,
   MapPin,
   MessageSquare,
   RefreshCw,
@@ -174,6 +177,56 @@ const categories: Category[] = [
           'Targeting refined for your ideal customers',
           'Ongoing optimization for better results',
           'Clear reporting on performance',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ai-seo',
+    label: 'AI SEO and GEO',
+    cards: [
+      {
+        icon: Search,
+        title: 'Technical SEO Foundations',
+        description:
+          'Crawlability, indexability, site architecture and performance. Search engines and AI systems have to read a site before they can recommend it.',
+        points: [
+          'Clean structure search engines can parse',
+          'Fast pages and healthy Core Web Vitals',
+          'Fixes for the issues quietly capping visibility',
+        ],
+      },
+      {
+        icon: Bot,
+        title: 'AI Search Optimisation',
+        description:
+          'Structuring content so it can be understood and retrieved by AI-powered search experiences like AI Overviews, ChatGPT, Gemini and Perplexity.',
+        points: [
+          'Clear answers to the questions people actually ask',
+          'Content organised for retrieval, not just reading',
+          'Consistent facts across your site',
+        ],
+      },
+      {
+        icon: Braces,
+        title: 'Structured Data and Entities',
+        description:
+          'Schema.org markup and entity signals that make who you are, what you do and where you work explicit rather than implied.',
+        points: [
+          'Organisation, service and FAQ markup',
+          'Consistent name, address and contact signals',
+          'Clear relationships between your services',
+        ],
+      },
+      {
+        icon: Layers,
+        title: 'Topical Authority',
+        description:
+          'Depth across the subjects you want to be known for, so your site reads as a credible source on a topic rather than a single page chasing a keyword.',
+        points: [
+          'Content clusters around core services',
+          'Internal linking that shows structure',
+          'Genuine expertise rather than thin pages',
         ],
       },
     ],

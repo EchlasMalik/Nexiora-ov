@@ -1,14 +1,15 @@
-import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { BlogContent } from '@/components/blog-content'
 import type { BlogBlock } from '@/lib/blog-posts'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy - Nexiora',
+export const metadata = buildMetadata({
+  title: 'Privacy Policy',
   description:
     'How Nexiora Studio collects, uses, and protects your personal information across our website and services.',
-}
+  path: '/privacy-policy',
+})
 
 const lastUpdated = '24 July 2026'
 

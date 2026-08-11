@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, ArrowRight, Clock, User } from 'lucide-react'
+import { ArrowRight, Clock, User } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ContactTrigger } from '@/components/contact-trigger'
@@ -13,9 +13,50 @@ import {
   getRelatedPosts,
   formatBlogDate,
 } from '@/lib/blog-posts'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { JsonLd } from '@/components/json-ld'
+import { articleSchema, graph } from '@/lib/schema'
+import { buildMetadata } from '@/lib/seo'
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }))
+}
+
+/** The service each category most naturally leads into. */
+const categoryServiceLinks: Record<
+  string,
+  { label: string; href: string; blurb: string }
+> = {
+  'Web Design': {
+    label: 'Bespoke web design',
+    href: '/web-design',
+    blurb: 'See how we design websites built to convert, not just to look good.',
+  },
+  'AI & Automation': {
+    label: 'Custom software & automation',
+    href: '/custom-software',
+    blurb: 'See how we build systems that handle the admin for you.',
+  },
+  'Software Development': {
+    label: 'Custom software development',
+    href: '/custom-software',
+    blurb: 'See how we build software around the way your business runs.',
+  },
+  'Conversion & Leads': {
+    label: 'Bespoke web design',
+    href: '/web-design',
+    blurb: 'See how we turn traffic you already have into booked enquiries.',
+  },
+  'SEO & Performance': {
+    label: 'Custom web development',
+    href: '/web-development',
+    blurb: 'See how we build fast, technically sound websites from the ground up.',
+  },
+  Strategy: {
+    label: 'Web design & development services',
+    href: '/services',
+    blurb: 'See what we build and how projects typically come together.',
+  },
 }
 
 export async function generateMetadata({
@@ -27,13 +68,17 @@ export async function generateMetadata({
   const post = getPostBySlug(slug)
 
   if (!post) {
-    return { title: 'Article Not Found - Nexiora' }
+    return { title: 'Article Not Found', robots: { index: false, follow: true } }
   }
 
-  return {
-    title: `${post.title} - Nexiora Blog`,
+  return buildMetadata({
+    title: post.title,
     description: post.excerpt,
-  }
+    path: `/blog/${post.slug}`,
+    ogType: 'article',
+    publishedTime: post.date,
+    authors: [post.author],
+  })
 }
 
 export default async function BlogPostPage({
@@ -49,6 +94,7 @@ export default async function BlogPostPage({
   }
 
   const related = getRelatedPosts(slug, 3)
+  const serviceLink = categoryServiceLinks[post.category]
 
   return (
     <>
@@ -60,13 +106,13 @@ export default async function BlogPostPage({
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
 
           <div className="animate-fade-in-up mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:-translate-x-0.5 hover:text-primary/80"
-            >
-              <ArrowLeft className="size-4" />
-              Back to Blog
-            </Link>
+            <Breadcrumbs
+              items={[
+                { name: 'Home', path: '/' },
+                { name: 'Blog', path: '/blog' },
+                { name: post.title, path: `/blog/${post.slug}` },
+              ]}
+            />
 
             <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-medium text-muted-foreground">
               <span className="rounded-full bg-primary/10 px-2.5 py-1 font-semibold text-primary">
@@ -119,6 +165,21 @@ export default async function BlogPostPage({
                 </ContactTrigger>
               </div>
             </div>
+
+            {serviceLink ? (
+              <div className="mt-8 rounded-2xl border border-border bg-card p-6">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {serviceLink.blurb}
+                </p>
+                <Link
+                  href={serviceLink.href}
+                  className="group mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  {serviceLink.label}
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            ) : null}
           </div>
         </section>
 
@@ -144,6 +205,7 @@ export default async function BlogPostPage({
       </main>
 
       <SiteFooter />
+      <JsonLd data={graph(articleSchema(post))} />
     </>
   )
 }

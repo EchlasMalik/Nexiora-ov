@@ -1,15 +1,17 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, Check, X } from 'lucide-react'
+import { ArrowRight, Check, X } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ContactTrigger } from '@/components/contact-trigger'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Why Us - Nexiora',
+export const metadata = buildMetadata({
+  title: 'Why Choose Us | Bespoke Web Design Agency UK',
   description:
-    'See why Nexiora builds high-converting websites that outperform standard designs and generate more leads.',
-}
+    'Most websites look professional and still fail to convert. Here is how Nexiora Studio builds bespoke, high-converting websites that turn visitors into booked clients.',
+  path: '/why-us',
+})
 
 const comparisons = [
   {
@@ -45,14 +47,14 @@ export default function WhyUsPage() {
           <div className="pointer-events-none absolute -top-24 -right-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-            >
-              
-            </Link>
+            <Breadcrumbs
+              items={[
+                { name: 'Home', path: '/' },
+                { name: 'Why Us', path: '/why-us' },
+              ]}
+            />
 
-            <div className="mt-6 max-w-2xl">
+            <div className="mt-6 max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">
                 Why Nexiora
               </p>
@@ -64,7 +66,15 @@ export default function WhyUsPage() {
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 The difference between a standard website and a high-converting
-                system isn’t design - it’s strategy, speed, and psychology.
+                system isn’t design - it’s strategy, speed, and psychology. It’s
+                also why we build{' '}
+                <Link
+                  href="/web-design"
+                  className="font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  bespoke websites
+                </Link>{' '}
+                rather than dressing up a template.
               </p>
             </div>
           </div>

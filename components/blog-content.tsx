@@ -1,4 +1,5 @@
 import type { BlogBlock } from '@/lib/blog-posts'
+import { renderRichText } from '@/components/rich-text'
 
 export function BlogContent({ blocks }: { blocks: BlogBlock[] }) {
   return (
@@ -29,7 +30,7 @@ export function BlogContent({ blocks }: { blocks: BlogBlock[] }) {
                 key={i}
                 className="text-base leading-relaxed text-muted-foreground"
               >
-                {block.text}
+                {renderRichText(block.text)}
               </p>
             )
           case 'ul':
@@ -41,7 +42,7 @@ export function BlogContent({ blocks }: { blocks: BlogBlock[] }) {
                     className="flex items-start gap-3 text-base leading-relaxed text-muted-foreground"
                   >
                     <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-primary/60" />
-                    {item}
+                    <span>{renderRichText(item)}</span>
                   </li>
                 ))}
               </ul>
@@ -57,7 +58,7 @@ export function BlogContent({ blocks }: { blocks: BlogBlock[] }) {
                     <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
                       {j + 1}
                     </span>
-                    {item}
+                    <span>{renderRichText(item)}</span>
                   </li>
                 ))}
               </ol>

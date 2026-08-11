@@ -1,16 +1,20 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ContactForm } from '@/components/contact-form'
-import { FaqAccordion } from '@/components/faq-accordion'
+import { FaqSection } from '@/components/faq-section'
+import { JsonLd } from '@/components/json-ld'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { generalFaqs } from '@/lib/faqs'
+import { graph, localBusinessSchema } from '@/lib/schema'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Contact - Nexiora',
+export const metadata = buildMetadata({
+  title: 'Contact Us | Web Design Agency London',
   description:
-    'Get in touch with Nexiora to build a high-converting website and growth system for your business.',
-}
+    'Talk to a London web design and development agency about your project. Free consultation, a clear proposal, and a response within 24 hours.',
+  path: '/contact',
+})
 
 export default function ContactPage() {
   return (
@@ -144,30 +148,14 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-secondary/40 py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Common Questions
-              </p>
-
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                Frequently Asked Questions
-              </h2>
-
-              <p className="mt-3 text-muted-foreground">
-                A few things people often ask before getting started.
-              </p>
-            </div>
-
-            <div className="mx-auto mt-10 max-w-3xl">
-              <FaqAccordion />
-            </div>
-          </div>
-        </section>
+        <FaqSection
+          faqs={generalFaqs}
+          intro="A few things people often ask before getting started."
+        />
       </main>
 
       <SiteFooter />
+      <JsonLd data={graph(localBusinessSchema())} />
     </>
   )
 }

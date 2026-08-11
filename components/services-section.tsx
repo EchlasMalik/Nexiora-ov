@@ -3,22 +3,37 @@ import { LayoutTemplate, Code2, Megaphone, Server, ArrowRight } from 'lucide-rea
 import { ContactTrigger } from '@/components/contact-trigger'
 import { Reveal } from '@/components/reveal'
 
-const services = [
+type HomeService = {
+  number: string
+  icon: typeof LayoutTemplate
+  title: string
+  description: string
+  points: string[]
+  /** Set when a dedicated service page exists. */
+  href?: string
+  linkLabel?: string
+}
+
+const services: HomeService[] = [
   {
     number: '01',
     icon: LayoutTemplate,
     title: 'Conversion Focused Web Design',
     description:
       'High-converting websites built around your goals - from a focused single landing page to a full multi-page website for larger businesses.',
-    points: ['Single landing pages or full multi-page sites', 'Conversion-optimized layout', 'Fast, mobile-first build'],
+    points: ['Single landing pages or full multi-page sites', 'Conversion-optimised layout', 'Fast, mobile-first build'],
+    href: '/web-design',
+    linkLabel: 'Bespoke web design',
   },
   {
     number: '02',
     icon: Code2,
     title: 'Custom Software Solutions',
     description:
-      'Custom software personally built by me around how your business actually runs, not a generic off-the-shelf tool.',
+      'Custom software built around how your business actually runs, not a generic off-the-shelf tool you have to work around.',
     points: ['More time back to focus on your business', 'Less time spent chasing leads manually'],
+    href: '/custom-software',
+    linkLabel: 'Custom software',
   },
   {
     number: '03',
@@ -50,8 +65,23 @@ export function ServicesSection() {
             Everything You Need to Grow Online
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            From stunning websites to automated systems that work while you
-            sleep.
+            Most clients start with a website, then need it to do more - take
+            bookings, sync with a CRM, run quotes. We build the whole
+            progression, from{' '}
+            <Link
+              href="/web-design"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
+              bespoke web design
+            </Link>{' '}
+            through to{' '}
+            <Link
+              href="/custom-software"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
+              custom software and automation
+            </Link>
+            .
           </p>
         </Reveal>
 
@@ -84,10 +114,20 @@ export function ServicesSection() {
                     </li>
                   ))}
                 </ul>
-                <ContactTrigger className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80">
-                  Learn More
-                  <ArrowRight className="size-4" />
-                </ContactTrigger>
+                {service.href ? (
+                  <Link
+                    href={service.href}
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  >
+                    {service.linkLabel}
+                    <ArrowRight className="size-4" />
+                  </Link>
+                ) : (
+                  <ContactTrigger className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80">
+                    Learn More
+                    <ArrowRight className="size-4" />
+                  </ContactTrigger>
+                )}
               </div>
             </Reveal>
           ))}
