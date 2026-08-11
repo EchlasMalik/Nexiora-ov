@@ -116,6 +116,12 @@ export default function WebDevelopmentPage() {
             { name: 'Web Development', path: '/web-development' },
           ]}
           secondaryCta={{ label: 'See our work', href: '/portfolio' }}
+          image={{
+            src: '/web-development.png',
+            alt: 'Browser window showing a dark code editor with syntax-highlighted source code',
+            width: 355,
+            height: 453,
+          }}
         />
 
         <ServiceSplit

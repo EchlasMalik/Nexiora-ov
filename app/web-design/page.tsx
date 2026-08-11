@@ -116,6 +116,12 @@ export default function WebDesignPage() {
             { name: 'Bespoke Web Design', path: '/web-design' },
           ]}
           secondaryCta={{ label: 'See our work', href: '/portfolio' }}
+          image={{
+            src: '/bespoke-web-design.png',
+            alt: 'Browser window showing a website layout being designed, with an image block selected on the canvas',
+            width: 360,
+            height: 459,
+          }}
         />
 
         <ServiceSplit

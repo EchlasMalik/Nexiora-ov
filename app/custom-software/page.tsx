@@ -114,7 +114,13 @@ export default function CustomSoftwarePage() {
             { name: 'Services', path: '/services' },
             { name: 'Custom Software', path: '/custom-software' },
           ]}
-          secondaryCta={{ label: 'Read: custom vs off-the-shelf', href: '/blog/custom-software-vs-off-the-shelf-software' }}
+          secondaryCta={{ label: 'Read: Custom vs off-the-shelf', href: '/blog/custom-software-vs-off-the-shelf-software' }}
+          image={{
+            src: '/custom-software.png',
+            alt: 'Browser window showing a business dashboard with a growth chart and summary figures for users, revenue and orders',
+            width: 378,
+            height: 456,
+          }}
         />
 
         <ServiceSplit

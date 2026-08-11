@@ -14,6 +14,8 @@ export type ServicePage = {
   description: string
   serviceType: string
   priority: number
+  /** Illustration used on the page hero and as the thumbnail on /services. */
+  image: string
   /**
    * Date this page's content last meaningfully changed (YYYY-MM-DD).
    * Feeds <lastmod> in the sitemap - update it when you edit the page, and
@@ -33,6 +35,7 @@ export const servicePages: ServicePage[] = [
     serviceType: 'Web Design',
     priority: 0.9,
     lastModified: '2026-08-11',
+    image: '/bespoke-web-design.png',
   },
   {
     slug: 'web-development',
@@ -44,6 +47,7 @@ export const servicePages: ServicePage[] = [
     serviceType: 'Web Development',
     priority: 0.9,
     lastModified: '2026-08-11',
+    image: '/web-development.png',
   },
   {
     slug: 'ecommerce-web-design',
@@ -55,6 +59,7 @@ export const servicePages: ServicePage[] = [
     serviceType: 'Ecommerce Web Design',
     priority: 0.85,
     lastModified: '2026-08-11',
+    image: '/ecommerce-web-design.png',
   },
   {
     slug: 'custom-software',
@@ -66,6 +71,7 @@ export const servicePages: ServicePage[] = [
     serviceType: 'Custom Software Development',
     priority: 0.85,
     lastModified: '2026-08-11',
+    image: '/custom-software.png',
   },
   {
     slug: 'ai-seo-agency-london',
@@ -77,6 +83,7 @@ export const servicePages: ServicePage[] = [
     serviceType: 'Search Engine Optimisation',
     priority: 0.85,
     lastModified: '2026-08-11',
+    image: '/ai-seo-geo.png',
   },
   {
     slug: 'web-design-london',
@@ -88,6 +95,7 @@ export const servicePages: ServicePage[] = [
     serviceType: 'Web Design',
     priority: 0.8,
     lastModified: '2026-08-11',
+    image: '/web-design-london.png',
   },
 ]
 

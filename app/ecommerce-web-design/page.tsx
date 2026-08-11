@@ -115,6 +115,12 @@ export default function EcommerceWebDesignPage() {
             { name: 'Ecommerce Web Design', path: '/ecommerce-web-design' },
           ]}
           secondaryCta={{ label: 'See our work', href: '/portfolio' }}
+          image={{
+            src: '/ecommerce-web-design.png',
+            alt: 'Browser window showing an online store product grid with ratings and an add to cart button',
+            width: 365,
+            height: 464,
+          }}
         />
 
         <ServiceSplit

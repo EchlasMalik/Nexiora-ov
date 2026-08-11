@@ -171,6 +171,12 @@ export default function AiSeoAgencyLondonPage() {
           ]}
           primaryCta="Start Your Project"
           secondaryCta={{ label: 'See our work', href: '/portfolio' }}
+          image={{
+            src: '/ai-seo-geo.png',
+            alt: 'Browser window showing a central AI icon connected to search, location, global and analytics icons',
+            width: 361,
+            height: 462,
+          }}
         />
 
         <ServiceSplit

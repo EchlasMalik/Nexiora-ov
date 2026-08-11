@@ -64,6 +64,12 @@ export default function WebDesignLondonPage() {
             { name: 'Web Design London', path: '/web-design-london' },
           ]}
           secondaryCta={{ label: 'See London projects', href: '/portfolio' }}
+          image={{
+            src: '/web-design-london.png',
+            alt: 'Browser window showing a London skyline with Big Ben, the London Eye and Tower Bridge, marked with a location pin',
+            width: 367,
+            height: 457,
+          }}
         />
 
         <ServiceSplit
