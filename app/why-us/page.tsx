@@ -1,13 +1,29 @@
 import Link from 'next/link'
-import { ArrowRight, Check, X } from 'lucide-react'
+import {
+  ArrowRight,
+  Check,
+  X,
+  Compass,
+  Layers,
+  MessageSquare,
+  Gauge,
+  ShieldCheck,
+  LineChart,
+} from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { Breadcrumbs } from '@/components/breadcrumbs'
+import { ServiceSplit } from '@/components/service/service-split'
+import { ServiceFeatureGrid } from '@/components/service/service-feature-grid'
+import { ServiceProof } from '@/components/service/service-proof'
+import { ServiceCta } from '@/components/service/service-cta'
+import { FaqSection } from '@/components/faq-section'
+import { whyUsFaqs } from '@/lib/faqs'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'Why Choose Us | Bespoke Web Design Agency UK',
+  title: 'Why Choose Us | Bespoke Web Design UK',
   description:
     'Most websites look professional and still fail to convert. Here is how Nexiora Studio builds bespoke, high-converting websites that turn visitors into booked clients.',
   path: '/why-us',
@@ -33,6 +49,66 @@ const comparisons = [
     feature: 'Design',
     standard: 'Generic template everyone else uses',
     pro: 'Custom-built around your brand',
+  },
+  {
+    feature: 'Structure',
+    standard: 'Sections in whatever order the theme shipped',
+    pro: 'Ordered around the questions buyers ask',
+  },
+  {
+    feature: 'Search Foundations',
+    standard: 'Bolted on afterwards, if at all',
+    pro: 'Clean markup and speed built in from day one',
+  },
+  {
+    feature: 'Room to Grow',
+    standard: 'Fighting the theme to add anything new',
+    pro: 'Custom functionality added without a rebuild',
+  },
+]
+
+const reasons = [
+  {
+    icon: Compass,
+    title: 'Built Around Your Sales Process',
+    description:
+      'Before anything is designed we work out who lands on the page, what makes them hesitate, and what a genuinely good enquiry looks like for you. The layout follows from those answers rather than from a theme.',
+    points: ['Audience-first structure', 'Objections answered early'],
+  },
+  {
+    icon: Layers,
+    title: 'Design and Development Under One Roof',
+    description:
+      'Most agencies stop at the brochure site. We also build the systems behind it, so bookings, portals, quoting tools and integrations stay on the table instead of becoming somebody else’s problem.',
+    points: ['Bespoke web design', 'Custom web development', 'Business software'],
+  },
+  {
+    icon: MessageSquare,
+    title: 'You Speak to the People Building It',
+    description:
+      'No account manager relaying messages to a team you never meet. Fewer layers means faster answers, and someone on the call who can tell you immediately whether a change is trivial or expensive.',
+    points: ['Direct access', 'Straight answers on cost'],
+  },
+  {
+    icon: Gauge,
+    title: 'Speed Treated as a Feature',
+    description:
+      'Performance is designed in rather than tidied up at the end. It affects how many people stay, how many convert, and how search engines read the site - so it is not left until launch week.',
+    points: ['Core Web Vitals in mind', 'Fast on mobile data'],
+  },
+  {
+    icon: ShieldCheck,
+    title: 'You Own What We Build',
+    description:
+      'The website, the domain and the content are yours. No arrangement where the site stops working if you stop paying, and no situation where leaving means starting again from nothing.',
+    points: ['Full ownership', 'No lock-in'],
+  },
+  {
+    icon: LineChart,
+    title: 'Judged on Enquiries, Not Traffic',
+    description:
+      'A site that halves your traffic while doubling booked work has done its job. Analytics are set up properly at launch so those numbers are visible to you, not just to us.',
+    points: ['Measured on real outcomes', 'Reporting you can read'],
   },
 ]
 
@@ -144,6 +220,81 @@ export default function WhyUsPage() {
             </div>
           </div>
         </section>
+
+        <ServiceSplit
+          eyebrow="The Real Difference"
+          heading="Good-Looking Isn't the Same as Good"
+          tone="muted"
+          body={[
+            'Almost every business we speak to already has a website, and most of them are perfectly presentable. That is exactly the problem. Looking professional has become the baseline, not the advantage - your competitors cleared that bar years ago.',
+            'What separates a site that generates enquiries from one that just exists is rarely visual. It is whether the page answers the question a visitor actually arrived with, in the order they think about it, before they lose patience. That is a strategy problem wearing a design costume.',
+            'It is also why we start with your customers rather than a moodboard. A [bespoke web design](/web-design) is not about being precious over pixels - it is that hierarchy, proof and clarity are the parts a generic theme gets wrong, and they are the parts that decide whether anyone gets in touch.',
+          ]}
+          aside={{
+            title: 'Where good sites quietly lose work',
+            items: [
+              'The main objection is answered on a page nobody visits',
+              'Three clicks between interest and a way to get in touch',
+              'No pricing signal at all, so people assume the worst',
+              'Proof buried below content about the company',
+              'Slow enough on mobile data that patience runs out first',
+            ],
+          }}
+        />
+
+        <ServiceFeatureGrid
+          eyebrow="Why Clients Stay"
+          heading="Six Reasons Businesses Choose Nexiora"
+          intro="Not awards or agency-speak - the practical differences clients tell us actually mattered once the project was underway."
+          items={reasons}
+          columns={3}
+          tone="default"
+        />
+
+        <ServiceSplit
+          eyebrow="Beyond the Website"
+          heading="We Don't Stop Where Most Agencies Do"
+          reverse
+          tone="muted"
+          body={[
+            'A lot of businesses outgrow their website without realising it. The site is fine; the problem is that everything around it is still manual. Enquiries retyped into a spreadsheet, quotes rebuilt from scratch each time, follow-up that depends on somebody remembering.',
+            'At that point you do not need a redesign - you need the website to start doing work. That is [custom web development](/web-development) and, further along, [bespoke software](/custom-software) shaped around how you actually operate.',
+            'Because we build across that whole range, where you sit on it stays a decision about your business rather than a limit of whoever you hired. Nothing gets rebuilt from scratch just because the requirement grew.',
+          ]}
+          points={[
+            'A website that earns trust and generates enquiries',
+            'Custom functionality when a brochure site stops being enough',
+            'Software and automation that remove the manual admin',
+            'Search and AI visibility so the right people find it',
+          ]}
+          link={{ label: 'See what we build', href: '/services' }}
+        />
+
+        <ServiceProof
+          eyebrow="Proof"
+          heading="Real Businesses, Real Websites"
+          intro="Every site below is live. Most are London businesses in competitive markets where the website has to earn trust quickly."
+          tone="default"
+        />
+
+        <FaqSection
+          faqs={whyUsFaqs}
+          eyebrow="Before You Decide"
+          heading="Questions Worth Asking Any Agency"
+          intro="Including the one most agencies avoid answering honestly."
+          tone="muted"
+        />
+
+        <ServiceCta
+          heading="Want to know if we're a good fit?"
+          body="Tell us what your business does and what the current site isn't doing. If a smaller piece of work would fix it, or if you genuinely don't need us yet, we'll say so."
+          buttonLabel="Book a Free Consultation"
+          related={[
+            { label: 'Bespoke Web Design', href: '/web-design' },
+            { label: 'Web Development', href: '/web-development' },
+            { label: 'Our Process', href: '/process' },
+          ]}
+        />
       </main>
 
       <SiteFooter />

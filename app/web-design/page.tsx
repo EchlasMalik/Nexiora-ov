@@ -24,7 +24,7 @@ import { graph, serviceSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'Bespoke Web Design | Website Design Services UK',
+  title: 'Bespoke Web Design Services UK',
   description:
     'Bespoke web design built around your business rather than a template. High-converting websites designed to turn visitors into booked clients.',
   path: '/web-design',

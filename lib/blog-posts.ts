@@ -9,6 +9,12 @@ export type BlogBlock =
 export type BlogPost = {
   slug: string
   title: string
+  /**
+   * Shorter title used only for <title> / og:title. `title` stays the H1 and
+   * the blog-card headline. Set this when `title` plus the " | Nexiora Studio"
+   * template suffix (17 chars) would push the rendered title past ~60.
+   */
+  seoTitle?: string
   excerpt: string
   category: string
   date: string
@@ -52,6 +58,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: '10-website-mistakes-costing-you-clients',
     title: '10 Website Mistakes That Are Costing You Clients',
+    seoTitle: '10 Website Mistakes Costing You Clients',
     excerpt:
       'From slow load times to invisible calls to action, these are the silent website mistakes turning visitors away before they ever become clients.',
     category: 'Web Design',
@@ -131,6 +138,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'ai-automation-save-service-businesses-hours',
     title: 'How AI Automation Can Save Service Businesses 20+ Hours Per Week',
+    seoTitle: 'How AI Automation Saves 20+ Hours a Week',
     excerpt:
       'From missed calls to manual follow-ups, most service businesses lose hours every week to admin that AI automation can now handle instead.',
     category: 'AI & Automation',
@@ -193,6 +201,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'custom-software-vs-off-the-shelf-software',
     title: 'Custom Software vs Off-the-Shelf Software: Which Is Right for Your Business?',
+    seoTitle: 'Custom Software vs Off-the-Shelf Software',
     excerpt:
       'Off-the-shelf tools are fast to launch but rarely fit forever. Here is how to decide when custom software development actually pays off.',
     category: 'Software Development',
@@ -242,6 +251,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'complete-website-redesign-checklist-2026',
     title: 'The Complete Website Redesign Checklist for 2026',
+    seoTitle: 'Website Redesign Checklist for 2026',
     excerpt:
       'A practical, no-fluff checklist covering everything worth reviewing before you commit to a website redesign in 2026.',
     category: 'Web Design',
@@ -364,6 +374,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'why-small-business-websites-dont-generate-leads',
     title: "Why Most Small Business Websites Don't Generate Leads",
+    seoTitle: "Why Small Business Websites Don't Get Leads",
     excerpt:
       'Traffic is not the problem for most small business websites. Conversion is. Here is why good-looking sites still fail to generate leads.',
     category: 'Conversion & Leads',
@@ -418,6 +429,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'website-speed-seo-conversions',
     title: 'How Website Speed Impacts SEO and Conversions',
+    seoTitle: 'Website Speed, SEO and Conversions',
     excerpt:
       'Page speed affects more than user patience - it directly shapes your search rankings and how many visitors convert. Here is how the two connect.',
     category: 'SEO & Performance',
@@ -583,6 +595,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'ai-chatbots-for-service-businesses',
     title: '5 AI Chatbots Every Service Business Should Consider',
+    seoTitle: '5 AI Chatbots for Service Businesses',
     excerpt:
       'The right AI chatbot can answer questions, qualify leads, and book appointments around the clock. Here is what to look for and where to start.',
     category: 'AI & Automation',
@@ -637,6 +650,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'landing-pages-vs-full-websites',
     title: 'Landing Pages vs Full Websites: Which Converts Better?',
+    seoTitle: 'Landing Pages vs Full Websites',
     excerpt:
       'Landing pages and full websites solve different problems. Here is how to choose the right one for your next campaign or business goal.',
     category: 'Conversion & Leads',
@@ -686,6 +700,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'when-to-redesign-your-website',
     title: "How to Know When It's Time to Redesign Your Website",
+    seoTitle: 'When to Redesign Your Website',
     excerpt:
       "Not sure if your site needs a refresh or a full rebuild? Here are the clearest signs it's time for a website redesign.",
     category: 'Web Design',
@@ -745,6 +760,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'how-to-choose-a-web-design-agency',
     title: 'How to Choose the Right Web Design Agency for Your Business',
+    seoTitle: 'How to Choose a Web Design Agency',
     excerpt:
       'Most businesses pick an agency on price and portfolio alone, then wonder why the site underperforms. Here is a more reliable way to judge who will actually deliver.',
     category: 'Strategy',
@@ -847,6 +863,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'web-design-vs-web-development',
     title: "Web Design vs Web Development: What's the Difference?",
+    seoTitle: 'Web Design vs Web Development',
     excerpt:
       'The two words get used interchangeably, and it causes real problems when scoping a project. Here is what each actually covers and why it matters to your quote.',
     category: 'Web Design',
@@ -1233,6 +1250,7 @@ const allPosts: BlogPostInput[] = [
   {
     slug: 'bespoke-website-vs-template-website',
     title: 'Bespoke Website vs Template Website: Which Is Better?',
+    seoTitle: 'Bespoke Website vs Template Website',
     excerpt:
       'Templates are cheaper and faster, and sometimes they are the right call. Here is an honest comparison of where each one wins.',
     category: 'Web Design',

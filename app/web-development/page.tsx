@@ -24,7 +24,7 @@ import { graph, serviceSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'Web Development Agency | Custom Web Development',
+  title: 'Custom Web Development Agency',
   description:
     'A UK web development agency building custom functionality, web applications, dashboards and integrations - for businesses that have outgrown a brochure website.',
   path: '/web-development',

@@ -136,6 +136,39 @@ export const customSoftwareFaqs: Faq[] = [
   },
 ]
 
+export const whyUsFaqs: Faq[] = [
+  {
+    question: 'What makes Nexiora different from other web design agencies?',
+    answer:
+      'Two things, mainly. We design around your sales process rather than a template, and we build the systems behind the website as well as the website itself - so when a project needs bookings, a client portal or an integration, that stays a business decision rather than becoming "out of scope".',
+  },
+  {
+    question: 'Who will actually be working on my project?',
+    answer:
+      'The people who build it. You are not handed to an account manager who relays messages to a team you never speak to. It means fewer layers, faster answers, and someone on the call who can tell you straight away whether something is easy or expensive.',
+  },
+  {
+    question: 'Do you only build websites, or the systems behind them too?',
+    answer:
+      'Both. Plenty of projects start as a website and end up needing custom web development or bespoke software - quoting tools, dashboards, automated follow-up. Because we build across that whole range, you are not forced to change agency the moment the requirement grows.',
+  },
+  {
+    question: 'What happens if the site does not perform once it is live?',
+    answer:
+      'We look at what visitors actually do rather than guessing. Launch is the point where you start getting real data, and most meaningful gains come from acting on it - fixing the step where people drop off, sharpening a weak page, improving speed. A website is an asset you maintain, not a thing you buy once.',
+  },
+  {
+    question: 'How do you measure whether a website is working?',
+    answer:
+      'By enquiries and their quality, not traffic. A site that halves your traffic while doubling booked work has done its job. We set up analytics properly at launch so those numbers are visible to you, not just to us.',
+  },
+  {
+    question: 'Are you the right fit for every business?',
+    answer:
+      'No, and we will say so early. If you need a simple presence so people can check you exist, a template will do it for a fraction of the cost and we would rather tell you that than take the work. We are a good fit when the website is expected to generate enquiries and the difference between a good one and a poor one is worth real money to you.',
+  },
+]
+
 export const aiSeoFaqs: Faq[] = [
   {
     question: 'What is AI SEO?',

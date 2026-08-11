@@ -72,7 +72,7 @@ export async function generateMetadata({
   }
 
   return buildMetadata({
-    title: post.title,
+    title: post.seoTitle ?? post.title,
     description: post.excerpt,
     path: `/blog/${post.slug}`,
     ogType: 'article',

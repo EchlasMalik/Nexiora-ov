@@ -9,7 +9,7 @@ import { blogPosts, formatBlogDate } from '@/lib/blog-posts'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'Blog | Web Design, SEO & AI Automation Insights',
+  title: 'Blog | Web Design, SEO & AI Insights',
   description:
     'Practical guides on web design, website conversion optimisation, SEO, and AI automation for service businesses - from the team building high-converting websites at Nexiora.',
   path: '/blog',
