@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      'Bespoke Web Design & Development Agency UK | Nexiora Studio',
+      'Nexiora Studio | Bespoke Web Design & Development Agency UK',
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    title: 'Bespoke Web Design & Development Agency UK | Nexiora Studio',
+    title: 'Nexiora Studio | Bespoke Web Design & Development Agency UK',
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bespoke Web Design & Development Agency UK | Nexiora Studio',
+    title: 'Nexiora Studio | Bespoke Web Design & Development Agency UK',
     description: SITE_DESCRIPTION,
   },
   icons: {

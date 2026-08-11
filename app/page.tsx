@@ -13,7 +13,7 @@ import { buildMetadata } from '@/lib/seo'
 import { graph, localBusinessSchema } from '@/lib/schema'
 
 export const metadata = buildMetadata({
-  title: 'Bespoke Web Design & Development Agency UK | Nexiora Studio',
+  title: 'Nexiora Studio | Bespoke Web Design & Development Agency UK',
   titleAbsolute: true,
   description:
     'Nexiora Studio is a UK web design and development agency building bespoke, high-converting websites, custom software and AI-powered systems. Book a free consultation.',
