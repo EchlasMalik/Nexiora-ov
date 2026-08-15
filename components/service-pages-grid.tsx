@@ -15,11 +15,14 @@ type ServicePagesGridProps = {
  * Thumbnail grid of the dedicated service pages, shared by the home page and
  * /services so the two cannot drift apart.
  *
- * The artwork is a transparent PNG of a browser mock with a blue outline that
- * runs right up to the edge of the canvas, so the frame is sized with
- * object-contain plus padding - cropping it (object-cover) would slice the
- * outline off. Every illustration is portrait-ish (~0.9), so all of them are
- * height-bound in this container and land on the same rendered height.
+ * The artwork is a transparent PNG of a browser mock with a blue outline, taller
+ * than it is wide (~0.9). Showing it whole makes for a very tall card, so only
+ * the top ~60% is shown and the mock bleeds off the bottom edge.
+ *
+ * That means object-cover (width binds, bottom overflows) with object-top, and
+ * padding on three sides only - a bottom pad would leave a strip of panel under
+ * the mock and break the bleed. 8/5 is deliberate: it clears the main graphic in
+ * every illustration, where a true half-height crop cut straight through them.
  */
 export function ServicePagesGrid({ className, stagger = false }: ServicePagesGridProps) {
   return (
@@ -41,14 +44,13 @@ export function ServicePagesGrid({ className, stagger = false }: ServicePagesGri
             href={`/${page.slug}`}
             className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
           >
-            <div className="relative aspect-9/8 overflow-hidden bg-linear-to-b from-secondary/70 to-secondary/20">
-              <div className="pointer-events-none absolute inset-x-10 bottom-3 h-14 rounded-full bg-primary/15 blur-2xl" />
+            <div className="relative aspect-8/5 overflow-hidden bg-linear-to-b from-secondary/70 to-secondary/20">
               <Image
                 src={page.image}
                 alt=""
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
-                className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.04]"
+                className="origin-top object-cover object-top px-3 pt-3 transition-transform duration-300 group-hover:scale-[1.03]"
               />
             </div>
 
