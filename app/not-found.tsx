@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { servicePages } from '@/lib/services-data'
 
 export const metadata = {
@@ -12,8 +10,6 @@ export const metadata = {
 export default function NotFound() {
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         <section className="relative overflow-hidden bg-secondary/40 py-20 md:py-28">
           <div className="pointer-events-none absolute -right-24 -top-24 size-[28rem] rounded-full bg-primary/10 blur-3xl" />
@@ -78,8 +74,6 @@ export default function NotFound() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </>
   )
 }

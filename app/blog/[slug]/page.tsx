@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, Clock, User } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { BlogContent } from '@/components/blog-content'
 import { BlogCard } from '@/components/blog-card'
@@ -98,8 +96,6 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-20">
@@ -203,8 +199,6 @@ export default async function BlogPostPage({
           </section>
         )}
       </main>
-
-      <SiteFooter />
       <JsonLd data={graph(articleSchema(post))} />
     </>
   )

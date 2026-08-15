@@ -49,6 +49,23 @@ export function SiteHeader() {
     setMobileServicesOpen(false)
   }
 
+  /**
+   * Clicking the nav link for the page you are already on doesn't change the
+   * route, so the router has nothing to re-render and nothing scrolls - you sit
+   * wherever you were. Take the user to the top instead, which is what they
+   * were reaching for.
+   *
+   * Instant, not smooth: 'auto' would inherit the global
+   * `scroll-behavior: smooth` and crawl all the way up from deep in a page.
+   */
+  function scrollToTopIfCurrent(href: string) {
+    return (event: React.MouseEvent<HTMLAnchorElement>) => {
+      if (pathname !== href) return
+      event.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
+  }
+
   function isActive(link: NavLink) {
     if (link.href === '/') return pathname === '/'
     if (pathname === link.href || pathname.startsWith(`${link.href}/`)) return true
@@ -103,7 +120,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" aria-label="Nexiora home">
+        <Link href="/" aria-label="Nexiora home" onClick={scrollToTopIfCurrent('/')}>
           <Logo />
         </Link>
 
@@ -175,6 +192,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={scrollToTopIfCurrent(link.href)}
                 className={cn(
                   'text-sm font-medium transition-colors',
                   isActive(link)
@@ -279,7 +297,10 @@ export function SiteHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={closeMobileMenu}
+                  onClick={(event) => {
+                    scrollToTopIfCurrent(link.href)(event)
+                    closeMobileMenu()
+                  }}
                   className={cn(
                     'rounded-lg px-3 py-3 text-base font-medium transition-colors',
                     isActive(link)

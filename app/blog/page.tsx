@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { BlogCard } from '@/components/blog-card'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { blogPosts, formatBlogDate } from '@/lib/blog-posts'
@@ -20,8 +18,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-24">
@@ -140,8 +136,6 @@ export default function BlogPage() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </>
   )
 }

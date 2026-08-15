@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { ContactForm } from '@/components/contact-form'
 import { FaqSection } from '@/components/faq-section'
 import { JsonLd } from '@/components/json-ld'
@@ -20,8 +18,6 @@ export const metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-24">
@@ -166,8 +162,6 @@ export default function ContactPage() {
           intro="A few things people often ask before getting started."
         />
       </main>
-
-      <SiteFooter />
       <JsonLd data={graph(localBusinessSchema())} />
     </>
   )

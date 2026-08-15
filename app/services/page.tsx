@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, LayoutTemplate, Code2, Megaphone, Server } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { ServicesExplorer } from '@/components/services-explorer'
 import { ServicePagesGrid } from '@/components/service-pages-grid'
 import { Breadcrumbs } from '@/components/breadcrumbs'
@@ -93,8 +91,6 @@ const services: ServiceCard[] = [
 export default function ServicesPage() {
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-24">
@@ -256,8 +252,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </>
   )
 }

@@ -4,6 +4,8 @@ import Script from 'next/script'
 import { Geist, Poppins } from 'next/font/google'
 import { ContactModalProvider } from '@/components/contact-modal'
 import { JsonLd } from '@/components/json-ld'
+import { SiteHeader } from '@/components/site-header'
+import { SiteFooter } from '@/components/site-footer'
 import { graph, organizationSchema, websiteSchema } from '@/lib/schema'
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site-config'
 import './globals.css'
@@ -68,7 +70,19 @@ export default function RootLayout({
         </a>
 
         <JsonLd data={graph(organizationSchema(), websiteSchema())} />
-        <ContactModalProvider>{children}</ContactModalProvider>
+
+        {/* Header and footer live here rather than in each page on purpose.
+            Rendered inside the page, the sticky header was the first DOM node
+            of the routed segment, and Next skips its scroll-to-top when that
+            node's top edge is already in the viewport - which for a `top-0`
+            sticky element is always true. Every cross-page navigation kept the
+            old scroll position as a result. With them hoisted, <main> is the
+            segment's first node and the scroll lands at the top. */}
+        <ContactModalProvider>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </ContactModalProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
 
         {/* Loaded after the page is interactive so it does not compete with LCP. */}

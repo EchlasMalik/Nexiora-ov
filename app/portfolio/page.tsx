@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { ProjectCard } from '@/components/project-card'
 import { ComingSoonProjectCard } from '@/components/coming-soon-project-card'
 import { ContactTrigger } from '@/components/contact-trigger'
@@ -23,8 +21,6 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-24">
@@ -127,8 +123,6 @@ export default function PortfolioPage() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </>
   )
 }

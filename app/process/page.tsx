@@ -1,7 +1,5 @@
 import { Fragment } from 'react'
 import { ArrowDown, ArrowRight, Search, PencilRuler, Rocket } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { ProcessExplorer } from '@/components/process-explorer'
 import { Breadcrumbs } from '@/components/breadcrumbs'
@@ -38,8 +36,6 @@ const steps = [
 export default function ProcessPage() {
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-24">
@@ -175,8 +171,6 @@ export default function ProcessPage() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </>
   )
 }

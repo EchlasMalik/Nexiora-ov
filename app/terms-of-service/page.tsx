@@ -1,5 +1,3 @@
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { BlogContent } from '@/components/blog-content'
 import type { BlogBlock } from '@/lib/blog-posts'
 import { buildMetadata } from '@/lib/seo'
@@ -108,8 +106,6 @@ const content: BlogBlock[] = [
 export default function TermsOfServicePage() {
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         {/* HERO */}
         <section className="relative overflow-hidden bg-secondary/40 py-16 md:py-20">
@@ -142,8 +138,6 @@ export default function TermsOfServicePage() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </>
   )
 }

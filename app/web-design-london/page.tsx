@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import { Mail, MapPin, Phone, Building2, Users, Video } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { ServiceHero } from '@/components/service/service-hero'
 import { ServiceSplit } from '@/components/service/service-split'
 import { ServiceFeatureGrid } from '@/components/service/service-feature-grid'
@@ -50,8 +48,6 @@ const workingWithUs = [
 export default function WebDesignLondonPage() {
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         <ServiceHero
           eyebrow="Web Design London"
@@ -194,8 +190,6 @@ export default function WebDesignLondonPage() {
           ]}
         />
       </main>
-
-      <SiteFooter />
 
       <JsonLd
         data={graph(

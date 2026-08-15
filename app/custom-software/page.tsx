@@ -9,8 +9,6 @@ import {
   PencilRuler,
   Rocket,
 } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { ServiceHero } from '@/components/service/service-hero'
 import { ServiceSplit } from '@/components/service/service-split'
 import { ServiceFeatureGrid } from '@/components/service/service-feature-grid'
@@ -101,8 +99,6 @@ const steps = [
 export default function CustomSoftwarePage() {
   return (
     <>
-      <SiteHeader />
-
       <main id="main">
         <ServiceHero
           eyebrow="Custom Software"
@@ -191,8 +187,6 @@ export default function CustomSoftwarePage() {
           ]}
         />
       </main>
-
-      <SiteFooter />
 
       <JsonLd
         data={graph(
