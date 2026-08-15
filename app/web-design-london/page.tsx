@@ -20,9 +20,15 @@ export const metadata = buildMetadata({
   path: '/web-design-london',
 })
 
-const londonProjects = featuredProjects.filter((project) =>
-  project.location.includes('London'),
-)
+/**
+ * Capped at one row. Six London projects filled two rows and buried the rest of
+ * the page - and ServiceProof already links out to the full portfolio below the
+ * grid, which is where the remainder belong. Three also matches what every other
+ * service page shows.
+ */
+const londonProjects = featuredProjects
+  .filter((project) => project.location.includes('London'))
+  .slice(0, 3)
 
 const workingWithUs = [
   {
