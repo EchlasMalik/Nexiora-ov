@@ -30,10 +30,10 @@ export default function Page() {
           <MarqueeStrip />
         </div>
         <PortfolioSection />
+        <ServicesSection />
         <WhyChooseUs />
         <Comparison />
         <ProcessSection />
-        <ServicesSection />
         <Testimonials />
       </main>
       <SiteFooter />

@@ -119,8 +119,8 @@ export default function WebDevelopmentPage() {
           image={{
             src: '/web-development.png',
             alt: 'Browser window showing a dark code editor with syntax-highlighted source code',
-            width: 355,
-            height: 453,
+            width: 1199,
+            height: 1312,
           }}
         />
 

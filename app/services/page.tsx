@@ -4,9 +4,9 @@ import { ArrowRight, LayoutTemplate, Code2, Megaphone, Server } from 'lucide-rea
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ServicesExplorer } from '@/components/services-explorer'
+import { ServicePagesGrid } from '@/components/service-pages-grid'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { buildMetadata } from '@/lib/seo'
-import { servicePages } from '@/lib/services-data'
 
 export const metadata = buildMetadata({
   title: 'Web Design & Development Services UK',
@@ -131,8 +131,8 @@ export default function ServicesPage() {
                 <Image
                   src="/all-services.png"
                   alt="Browser window showing a services menu with tiles for web design, development, ecommerce, custom software, AI SEO and maintenance"
-                  width={364}
-                  height={466}
+                  width={1214}
+                  height={1295}
                   className="h-auto w-full"
                   sizes="(max-width: 640px) 340px, 380px"
                   priority
@@ -158,38 +158,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {servicePages.map((page) => (
-                <Link
-                  key={page.slug}
-                  href={`/${page.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-md"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-secondary/40">
-                    <Image
-                      src={page.image}
-                      alt=""
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-top transition-transform duration-200 group-hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-heading text-base font-bold text-foreground transition-colors group-hover:text-primary">
-                      {page.title}
-                    </h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                      {page.description}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                      Learn more
-                      <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <ServicePagesGrid className="mt-10" />
           </div>
         </section>
 

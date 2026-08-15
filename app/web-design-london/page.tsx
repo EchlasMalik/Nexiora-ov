@@ -67,8 +67,8 @@ export default function WebDesignLondonPage() {
           image={{
             src: '/web-design-london.png',
             alt: 'Browser window showing a London skyline with Big Ben, the London Eye and Tower Bridge, marked with a location pin',
-            width: 367,
-            height: 457,
+            width: 1191,
+            height: 1320,
           }}
         />
 

@@ -118,8 +118,8 @@ export default function EcommerceWebDesignPage() {
           image={{
             src: '/ecommerce-web-design.png',
             alt: 'Browser window showing an online store product grid with ratings and an add to cart button',
-            width: 365,
-            height: 464,
+            width: 1226,
+            height: 1283,
           }}
         />
 

@@ -174,8 +174,8 @@ export default function AiSeoAgencyLondonPage() {
           image={{
             src: '/ai-seo-geo.png',
             alt: 'Browser window showing a central AI icon connected to search, location, global and analytics icons',
-            width: 361,
-            height: 462,
+            width: 1180,
+            height: 1333,
           }}
         />
 

@@ -118,8 +118,8 @@ export default function CustomSoftwarePage() {
           image={{
             src: '/custom-software.png',
             alt: 'Browser window showing a business dashboard with a growth chart and summary figures for users, revenue and orders',
-            width: 378,
-            height: 456,
+            width: 1224,
+            height: 1285,
           }}
         />
 

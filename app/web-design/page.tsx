@@ -119,8 +119,8 @@ export default function WebDesignPage() {
           image={{
             src: '/bespoke-web-design.png',
             alt: 'Browser window showing a website layout being designed, with an image block selected on the canvas',
-            width: 360,
-            height: 459,
+            width: 1214,
+            height: 1295,
           }}
         />
 
