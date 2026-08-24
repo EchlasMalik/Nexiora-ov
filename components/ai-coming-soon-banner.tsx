@@ -5,7 +5,7 @@ export function AiComingSoonBanner() {
   return (
     <div className="relative z-10 mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
       <a
-        href="https://nexiora-ai-agent.vercel.app/"
+        href="https://nexiora-ai.app/"
         target="_blank"
         rel="noopener noreferrer"
         className="animate-banner-in group flex flex-col items-center justify-center gap-3 rounded-2xl border border-primary/20 bg-linear-to-r from-primary/5 via-card to-gold/5 px-6 py-4 text-center shadow-sm backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:flex-row sm:gap-4 sm:rounded-full"

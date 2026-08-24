@@ -87,7 +87,7 @@ export default function RootLayout({
 
         {/* Loaded after the page is interactive so it does not compete with LCP. */}
         <Script
-          src="https://nexiora-ai-agent.vercel.app/widget.js"
+          src="https://nexiora-ai.app/widget.js"
           data-chatbot-id="bot_b31bh7tlkw"
           data-avoid-selector="#marquee-strip"
           strategy="lazyOnload"
