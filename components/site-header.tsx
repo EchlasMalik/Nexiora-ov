@@ -7,7 +7,6 @@ import { ChevronDown, Menu, X } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import { useContactModal } from '@/components/contact-modal'
 import { servicePages } from '@/lib/services-data'
-import { CALENDLY_URL } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
 
 type NavChild = { label: string; href: string }
@@ -42,7 +41,6 @@ export function SiteHeader() {
   const mobileToggleRef = useRef<HTMLButtonElement>(null)
   const { open: openContactModal } = useContactModal()
   const pathname = usePathname()
-  const isHome = pathname === '/'
 
   function closeMobileMenu() {
     setOpen(false)
@@ -207,24 +205,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          {isHome ? (
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
-            >
-              Get Free Quote
-            </a>
-          ) : (
-            <button
-              type="button"
-              onClick={openContactModal}
-              className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
-            >
-              Get Free Quote
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={openContactModal}
+            className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
+          >
+            Get My Free Mockup
+          </button>
 
           <button
             type="button"
@@ -313,28 +300,16 @@ export function SiteHeader() {
               ),
             )}
 
-            {isHome ? (
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMobileMenu}
-                className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
-              >
-                Get Free Quote
-              </a>
-            ) : (
-              <button
-                type="button"
-                onClick={() => {
-                  closeMobileMenu()
-                  openContactModal()
-                }}
-                className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
-              >
-                Get Free Quote
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={() => {
+                closeMobileMenu()
+                openContactModal()
+              }}
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
+            >
+              Get My Free Mockup
+            </button>
           </nav>
         </div>
       )}

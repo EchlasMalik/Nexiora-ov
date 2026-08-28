@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Select } from '@base-ui/react/select'
 import { ArrowRight, Check, CheckCircle2, ChevronDown } from 'lucide-react'
+import { CALENDLY_URL } from '@/lib/site-config'
 
 const services = [
   'New Website',
@@ -94,11 +95,29 @@ export function ContactForm() {
         </h3>
 
         <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
-          Thanks for reaching out. We’ve received your enquiry and will get
-          back to you within 24 hours.
+          Thanks for reaching out. We’ve received your enquiry and will come
+          back to you within 24 hours with your free mockup.
         </p>
 
-        <div className="mt-8 flex w-full max-w-xs flex-col gap-3">
+        <p className="mt-5 max-w-sm text-sm leading-relaxed text-foreground">
+          Want to talk it through first? Grab a free consultation and we’ll
+          walk through your mockup together.
+        </p>
+
+        {/* Calendly is the primary next step here rather than on the button
+            that opened this form - the enquiry is already captured, so booking
+            is a bonus rather than a hurdle in front of the lead. */}
+        <div className="mt-6 flex w-full max-w-xs flex-col gap-3">
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
+          >
+            Book a Free Consultation
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </a>
+
           <a
             href="https://wa.me/447835385699?text=Hi%20Nexiora%20Studio,%20I%20just%20submitted%20your%20website%20form%20and%20would%20love%20to%20chat%20about%20my%20project."
             target="_blank"

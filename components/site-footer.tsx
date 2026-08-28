@@ -103,7 +103,7 @@ export function SiteFooter() {
               </li>
             </ul>
             <ContactTrigger className="mt-5 inline-flex rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground transition-transform hover:-translate-y-0.5">
-              Get Free Quote
+              Get My Free Mockup
             </ContactTrigger>
           </div>
         </div>
