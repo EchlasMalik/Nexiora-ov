@@ -3,6 +3,7 @@ import {
   DEFAULT_OG_IMAGE,
   NAP,
   SITE_NAME,
+  SOCIAL_LINKS,
   SITE_URL,
   absoluteUrl,
 } from '@/lib/site-config'
@@ -28,6 +29,7 @@ export function organizationSchema() {
       url: absoluteUrl('/favicon1.png'),
     },
     image: absoluteUrl(DEFAULT_OG_IMAGE.url),
+    sameAs: SOCIAL_LINKS.map((social) => social.href),
     address: {
       '@type': 'PostalAddress',
       addressLocality: NAP.locality,
@@ -68,6 +70,7 @@ export function localBusinessSchema() {
     email: NAP.email,
     telephone: NAP.phone,
     image: absoluteUrl(DEFAULT_OG_IMAGE.url),
+    sameAs: SOCIAL_LINKS.map((social) => social.href),
     priceRange: '££',
     address: {
       '@type': 'PostalAddress',

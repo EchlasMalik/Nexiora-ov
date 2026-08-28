@@ -48,3 +48,27 @@ export const CALENDLY_URL =
 export function absoluteUrl(path = '/') {
   return new URL(path, SITE_URL).toString()
 }
+
+/** Public social profiles. Rendered in the footer and mirrored into the
+ *  `sameAs` of the Organization / LocalBusiness schema. */
+export const SOCIAL_LINKS = [
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/nexiorastudio/',
+    brand: '#E1306C',
+    gradient:
+      'linear-gradient(45deg, #F58529 0%, #DD2A7B 45%, #8134AF 75%, #515BD4 100%)',
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@NexioraStudio',
+    brand: '#FF0033',
+    gradient: 'linear-gradient(45deg, #FF0033 0%, #FF4E45 100%)',
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@nexroast',
+    brand: '#25F4EE',
+    gradient: 'linear-gradient(45deg, #25F4EE 0%, #FE2C55 100%)',
+  },
+] as const

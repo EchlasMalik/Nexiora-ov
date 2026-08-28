@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ContactTrigger } from '@/components/contact-trigger'
 import { Logo } from '@/components/logo'
+import { SocialLinks } from '@/components/social-links'
 import { servicePages } from '@/lib/services-data'
 import { NAP } from '@/lib/site-config'
 
@@ -31,6 +32,7 @@ export function SiteFooter() {
               high-converting websites, custom software and smart AI systems for
               growing businesses.
             </p>
+            <SocialLinks className="mt-6" />
           </div>
 
           <div>
