@@ -10,6 +10,16 @@ export type Project = {
 
 export const featuredProjects: Project[] = [
   {
+    title: 'Cliporium - SAAS',
+    category: 'Content Creation & AI',
+    location: 'England, UK',
+    description:
+      'An AI clipping platform that turns long podcasts, streams and videos into captioned vertical clips, then schedules and posts them across social channels automatically.',
+    image: '/portfolio/Cliporium.png',
+    tags: ['SaaS Platform', 'AI Video Clipping', 'Auto Captions', 'Social Scheduling', 'Credit Billing'],
+    url: 'https://cliporium.com/',
+  },
+  {
     title: 'OmniControl - SAAS',
     category: 'Gaming & Entertainment',
     location: 'England, UK',
@@ -59,6 +69,12 @@ export const featuredProjects: Project[] = [
     tags: ['Landing Page', 'Booking System', 'Advertising', 'Local SEO'],
     url: 'https://modestmoves.com/',
   },
+
+
+
+]
+
+export const moreProjects: Project[] = [
   {
     title: 'Nexiora Talent',
     category: 'Recruitment & Staffing',
@@ -69,12 +85,6 @@ export const featuredProjects: Project[] = [
     tags: ['Website Design', 'Booking System', 'Lead Forms', 'Local SEO'],
     url: 'https://www.nexioratalent.com/',
   },
-
-
-
-]
-
-export const moreProjects: Project[] = [
   {
     title: 'Echlas Malik',
     category: 'Personal Project Portfolio',
