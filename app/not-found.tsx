@@ -31,14 +31,14 @@ export default function NotFound() {
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5"
+                className="press inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5"
               >
                 Back to home
                 <ArrowRight className="size-4" />
               </Link>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+                className="press inline-flex items-center justify-center rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary hover:bg-primary/5"
               >
                 View our work
               </Link>

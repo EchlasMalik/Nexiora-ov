@@ -208,7 +208,7 @@ export default function WhyUsPage() {
               </p>
 
               <div className="mt-4">
-                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                <ContactTrigger className="press inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5 hover:shadow-md">
                   Get Your High-Converting Website
                   <ArrowRight className="size-4" />
                 </ContactTrigger>

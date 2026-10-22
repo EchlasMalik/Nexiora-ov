@@ -9,7 +9,7 @@ export function ProjectCard({ project }: { project: Project }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Visit the live ${project.title} website (opens in a new tab)`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+      className="press group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl hover:shadow-navy/10 active:scale-[0.99]"
     >
       <div className="relative aspect-[16/11] overflow-hidden border-b border-border bg-muted">
         <Image
@@ -17,14 +17,14 @@ export function ProjectCard({ project }: { project: Project }) {
           alt={`${project.title} website design by Nexiora`}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover object-top transition-transform duration-200 group-hover:scale-105"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
-        <span className="absolute right-3 top-3 inline-flex size-9 -translate-y-1 items-center justify-center rounded-full bg-background/90 text-foreground opacity-0 shadow-sm backdrop-blur-sm transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
+        <span className="absolute right-3 top-3 inline-flex size-9 -translate-y-1 items-center justify-center rounded-full bg-background/90 text-foreground opacity-0 shadow-sm backdrop-blur-sm transition-[opacity,translate] duration-200 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
           <ArrowUpRight className="size-4" />
         </span>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-heading text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+        <h3 className="font-heading text-lg font-bold text-foreground transition-colors duration-200 group-hover:text-primary">
           {project.title}
         </h3>
         <p className="mt-1 text-sm font-medium text-primary">

@@ -6,6 +6,7 @@ import { Comparison } from '@/components/comparison'
 import { ProcessSection } from '@/components/process-section'
 import { ServicesSection } from '@/components/services-section'
 import { Testimonials } from '@/components/testimonials'
+import { HomeCta } from '@/components/home-cta'
 import { JsonLd } from '@/components/json-ld'
 import { buildMetadata } from '@/lib/seo'
 import { graph, localBusinessSchema } from '@/lib/schema'
@@ -32,6 +33,7 @@ export default function Page() {
         <Comparison />
         <ProcessSection />
         <Testimonials />
+        <HomeCta />
       </main>
       <JsonLd data={graph(localBusinessSchema())} />
     </>

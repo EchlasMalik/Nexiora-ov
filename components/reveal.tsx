@@ -60,12 +60,15 @@ export function Reveal({
     <div
       ref={ref}
       style={{ ...(delay ? { transitionDelay: `${delay}ms` } : undefined), ...style }}
+      // Exposed so children can stage their own entrance off the same trigger,
+      // e.g. `group-data-[visible=true]/reveal:scale-x-100`.
+      data-visible={visible}
       className={cn(
-        'transition-all duration-500 ease-out',
+        'group/reveal transition-[opacity,translate] duration-700 ease-out',
         visible
           ? 'translate-y-0 opacity-100'
           : direction === 'up'
-            ? 'translate-y-8 opacity-0'
+            ? 'translate-y-6 opacity-0'
             : 'opacity-0',
         className,
       )}

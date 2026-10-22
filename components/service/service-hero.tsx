@@ -68,7 +68,7 @@ export function ServiceHero({
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md">
+              <ContactTrigger className="press inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5 hover:shadow-md">
                 {primaryCta}
                 <ArrowRight className="size-4" />
               </ContactTrigger>
@@ -76,7 +76,7 @@ export function ServiceHero({
               {secondaryCta ? (
                 <a
                   href={secondaryCta.href}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+                  className="press inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary hover:bg-primary/5"
                 >
                   {secondaryCta.label}
                 </a>
@@ -85,7 +85,7 @@ export function ServiceHero({
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+                  className="press inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary hover:bg-primary/5"
                 >
                   Book a Call
                 </a>

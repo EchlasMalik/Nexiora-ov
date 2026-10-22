@@ -1,9 +1,10 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
-import { ContactTrigger } from '@/components/contact-trigger'
 import { Reveal } from '@/components/reveal'
+import { Accent, SectionHeading } from '@/components/section-heading'
+import { NAP } from '@/lib/site-config'
 
 const reviews = [
   {
@@ -64,11 +65,16 @@ const reviews = [
 ]
 
 const count = reviews.length
+const AUTOPLAY_MS = 7000
+// Either distance or a quick flick advances - a flick shouldn't need to travel.
+const SWIPE_DISTANCE = 50
+const SWIPE_VELOCITY = 0.11
 
 export function Testimonials() {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
   const [reducedMotion, setReducedMotion] = useState(false)
+  const swipe = useRef<{ x: number; y: number; t: number } | null>(null)
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -86,24 +92,42 @@ export function Testimonials() {
     if (paused || reducedMotion) return
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % count)
-    }, 7000)
+    }, AUTOPLAY_MS)
     return () => clearInterval(id)
   }, [paused, reducedMotion])
+
+  function onPointerDown(event: React.PointerEvent) {
+    // Mouse drags are text selection, not swipes. Also ignore a second finger
+    // landing mid-swipe.
+    if (event.pointerType === 'mouse' || swipe.current) return
+    swipe.current = { x: event.clientX, y: event.clientY, t: performance.now() }
+  }
+
+  function onPointerUp(event: React.PointerEvent) {
+    const start = swipe.current
+    swipe.current = null
+    if (!start) return
+    const dx = event.clientX - start.x
+    const dy = event.clientY - start.y
+    if (Math.abs(dy) > Math.abs(dx)) return
+    const velocity = Math.abs(dx) / (performance.now() - start.t)
+    if (Math.abs(dx) >= SWIPE_DISTANCE || (Math.abs(dx) > 10 && velocity > SWIPE_VELOCITY)) {
+      goTo(dx < 0 ? index + 1 : index - 1)
+    }
+  }
 
   return (
     <section id="reviews" className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Client Reviews
-          </p>
-          <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground text-balance sm:text-4xl">
-            What Our Clients Are Saying
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Real feedback from real service businesses we work with.
-          </p>
-        </Reveal>
+        <SectionHeading
+          eyebrow="Client Reviews"
+          title={
+            <>
+              Don&apos;t Just Take <Accent>Our Word</Accent> for It
+            </>
+          }
+          description="Real feedback from real service businesses we've worked with."
+        />
 
         {/* Pauses on focus as well as hover, so keyboard users don't have the
             slide change under them mid-read (WCAG 2.2.2). */}
@@ -125,7 +149,7 @@ export function Testimonials() {
             type="button"
             onClick={() => goTo(index - 1)}
             aria-label="Previous review"
-            className="absolute left-0 top-1/2 z-30 -translate-y-1/2 rounded-full border border-border bg-card p-2.5 text-foreground shadow-sm transition hover:-translate-x-0.5 hover:shadow-md sm:left-2 md:-left-4"
+            className="absolute left-0 top-1/2 z-30 -translate-y-1/2 rounded-full border border-border bg-card p-2.5 text-foreground shadow-sm press hover:-translate-x-0.5 hover:border-primary/30 hover:text-primary hover:shadow-md sm:left-2 md:-left-4"
           >
             <ChevronLeft className="size-5" />
           </button>
@@ -134,13 +158,18 @@ export function Testimonials() {
             type="button"
             onClick={() => goTo(index + 1)}
             aria-label="Next review"
-            className="absolute right-0 top-1/2 z-30 -translate-y-1/2 rounded-full border border-border bg-card p-2.5 text-foreground shadow-sm transition hover:translate-x-0.5 hover:shadow-md sm:right-2 md:-right-4"
+            className="absolute right-0 top-1/2 z-30 -translate-y-1/2 rounded-full border border-border bg-card p-2.5 text-foreground shadow-sm press hover:translate-x-0.5 hover:border-primary/30 hover:text-primary hover:shadow-md sm:right-2 md:-right-4"
           >
             <ChevronRight className="size-5" />
           </button>
 
           <div
-            className="relative h-115 overflow-hidden sm:h-100"
+            className="relative h-115 touch-pan-y overflow-hidden sm:h-100"
+            onPointerDown={onPointerDown}
+            onPointerUp={onPointerUp}
+            onPointerCancel={() => {
+              swipe.current = null
+            }}
             aria-live="polite"
             aria-atomic="false"
           >
@@ -157,7 +186,7 @@ export function Testimonials() {
                 <figure
                   key={review.name}
                   aria-hidden={!isActive}
-                  className="absolute top-0 left-1/2 flex h-full w-[82%] max-w-xl flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-500 ease-out"
+                  className="absolute top-0 left-1/2 flex h-full w-[82%] max-w-xl flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-[transform,opacity,filter] duration-600 ease-in-out"
                   style={{
                     transform: `translateX(calc(-50% + ${offset * 80}%)) scale(${isActive ? 1 : 0.9})`,
                     opacity: isActive ? 1 : 0.4,
@@ -206,27 +235,39 @@ export function Testimonials() {
               >
                 <span
                   aria-hidden="true"
-                  className={`h-2 rounded-full transition-all duration-200 ${
-                    i === index ? 'w-6 bg-primary' : 'w-2 bg-border'
+                  className={`relative h-2 overflow-hidden rounded-full transition-[width,background-color] duration-300 ease-out ${
+                    i === index ? 'w-8 bg-primary/25' : 'w-2 bg-border hover:bg-primary/40'
                   }`}
-                />
+                >
+                  {/* Autoplay progress. Keyed on index so it restarts per slide,
+                      and paused rather than reset while the user is reading. */}
+                  {i === index && !reducedMotion ? (
+                    <span
+                      key={index}
+                      className="animate-progress absolute inset-0 origin-left rounded-full bg-primary"
+                      style={{
+                        animationDuration: `${AUTOPLAY_MS}ms`,
+                        animationPlayState: paused ? 'paused' : 'running',
+                      }}
+                    />
+                  ) : i === index ? (
+                    <span className="absolute inset-0 rounded-full bg-primary" />
+                  ) : null}
+                </span>
               </button>
             ))}
           </div>
         </Reveal>
 
-        <Reveal delay={200} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <ContactTrigger className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95">
-            Book a Free Strategy Consultation
-          </ContactTrigger>
-
+        <Reveal className="mt-8 flex justify-center">
           <a
-            href="https://g.page/r/CYIj1G3GZSO-EAI/review"
+            href={NAP.reviewUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3.5 text-sm font-semibold text-primary transition-all hover:-translate-y-1 hover:bg-primary/5"
+            className="press inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/5"
           >
-            Leave a Review
+            <Star className="size-4 fill-gold text-gold" />
+            Worked with us? Leave a review
           </a>
         </Reveal>
       </div>

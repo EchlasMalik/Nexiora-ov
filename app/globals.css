@@ -7,6 +7,13 @@
 @theme inline {
   --font-heading: var(--font-poppins), var(--font-sans);
   --font-sans: var(--font-geist-sans), "Geist Fallback";
+  --font-accent: var(--font-instrument-serif), Georgia, serif;
+
+  /* Tailwind's stock curves are too weak to feel intentional. Overriding them
+     here upgrades every `ease-out` / `ease-in-out` utility across the site. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -60,6 +67,100 @@
   --animate-fade-in: fade-in 0.5s ease-out both;
   --animate-arrow-flow-x: arrow-flow-x 1.6s ease-in-out infinite;
   --animate-arrow-flow-y: arrow-flow-y 1.6s ease-in-out infinite;
+  --animate-hero-in: hero-in 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-hero-visual-in: hero-visual-in 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-chip-in: chip-in 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-draw: draw 0.9s cubic-bezier(0.77, 0, 0.175, 1) both;
+  --animate-dropdown-in: dropdown-in 180ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-menu-in: menu-in 220ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  --animate-progress: progress linear both;
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes hero-visual-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes chip-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.94);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  /* Used with pathLength="1" on the SVG so the dash maths is size-independent. */
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes dropdown-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
 
   @keyframes arrow-flow-x {
     0%,
@@ -258,5 +359,43 @@
       opacity: 0;
       transform: translateY(14px) scale(0.96);
     }
+  }
+
+  /* Exits are faster than entrances - the user has already decided. Base UI
+     waits for these transitions before unmounting. */
+  .modal-fade[data-ending-style] {
+    opacity: 0;
+    transition-duration: 150ms;
+  }
+
+  .modal-pop[data-ending-style] {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+    transition-duration: 150ms;
+  }
+
+  /* Faint blueprint grid, faded out towards the edges. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--primary) 9%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--primary) 9%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 75%);
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+}
+
+/* Press feedback for anything clickable. Uses the standalone `scale` property
+   so it composes with Tailwind v4's `translate-*` hover lifts. */
+@utility press {
+  transition-property: color, background-color, border-color, box-shadow, translate, scale;
+  transition-duration: 160ms;
+  transition-timing-function: var(--ease-out);
+
+  &:active {
+    scale: 0.97;
   }
 }

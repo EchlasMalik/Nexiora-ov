@@ -32,7 +32,7 @@ export function ServiceCta({
             {body}
           </p>
 
-          <ContactTrigger className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md">
+          <ContactTrigger className="press mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5 hover:shadow-md">
             {buttonLabel}
             <ArrowRight className="size-4" />
           </ContactTrigger>

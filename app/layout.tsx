@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Geist, Poppins } from 'next/font/google'
+import { Geist, Instrument_Serif, Poppins } from 'next/font/google'
 import { ContactModalProvider } from '@/components/contact-modal'
 import { JsonLd } from '@/components/json-ld'
 import { SiteHeader } from '@/components/site-header'
@@ -14,6 +14,13 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const poppins = Poppins({
   variable: '--font-poppins',
   weight: ['500', '600', '700', '800'],
+  subsets: ['latin'],
+})
+// Accent face for the odd emphasised word in headings - never body copy.
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument-serif',
+  weight: '400',
+  style: ['normal', 'italic'],
   subsets: ['latin'],
 })
 
@@ -59,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${geistSans.variable} ${poppins.variable} bg-background`}
+      className={`${geistSans.variable} ${poppins.variable} ${instrumentSerif.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         <a

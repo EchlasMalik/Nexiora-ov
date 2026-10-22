@@ -36,6 +36,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const servicesRef = useRef<HTMLDivElement>(null)
   const servicesTriggerRef = useRef<HTMLButtonElement>(null)
   const mobileToggleRef = useRef<HTMLButtonElement>(null)
@@ -99,6 +100,15 @@ export function SiteHeader() {
     }
   }, [servicesOpen])
 
+  // Lift the header off the page once content scrolls beneath it. Only sets
+  // state when the boolean flips, not on every scroll event.
+  useEffect(() => {
+    const sync = () => setScrolled(window.scrollY > 8)
+    sync()
+    window.addEventListener('scroll', sync, { passive: true })
+    return () => window.removeEventListener('scroll', sync)
+  }, [])
+
   // The mobile panel had no Escape handling at all - the listener above is
   // gated on servicesOpen, not the menu itself.
   useEffect(() => {
@@ -116,7 +126,14 @@ export function SiteHeader() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
+    <header
+      className={cn(
+        'sticky top-0 z-50 border-b backdrop-blur-md transition-[background-color,border-color,box-shadow] duration-300 ease-out',
+        scrolled || open
+          ? 'border-border/70 bg-background/85 shadow-lg shadow-navy/5'
+          : 'border-transparent bg-background/60',
+      )}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" aria-label="Nexiora home" onClick={scrollToTopIfCurrent('/')}>
           <Logo />
@@ -166,7 +183,7 @@ export function SiteHeader() {
                     id="services-menu"
                     className="absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3"
                   >
-                    <div className="animate-fade-in-up overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-lg">
+                    <div className="animate-dropdown-in origin-top overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-xl shadow-navy/10">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
@@ -208,7 +225,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={openContactModal}
-            className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
+            className="press hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
           >
             Get My Free Mockup
           </button>
@@ -217,7 +234,7 @@ export function SiteHeader() {
             type="button"
             ref={mobileToggleRef}
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-muted lg:hidden"
+            className="press inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground hover:bg-muted lg:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -232,7 +249,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-border bg-background lg:hidden">
+        <div id="mobile-menu" className="animate-menu-in max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border bg-background lg:hidden">
           <nav
             className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6"
             aria-label="Mobile"
@@ -261,7 +278,7 @@ export function SiteHeader() {
                   </button>
 
                   {mobileServicesOpen && (
-                    <div className="ml-3 border-l border-border pl-3">
+                    <div className="animate-menu-in ml-3 border-l border-border pl-3">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
@@ -306,7 +323,7 @@ export function SiteHeader() {
                 closeMobileMenu()
                 openContactModal()
               }}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
+              className="press mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-base font-semibold text-gold-foreground"
             >
               Get My Free Mockup
             </button>

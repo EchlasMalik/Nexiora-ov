@@ -8,7 +8,7 @@ export function AiComingSoonBanner() {
         href="https://nexiora-ai.app/"
         target="_blank"
         rel="noopener noreferrer"
-        className="animate-banner-in group flex flex-col items-center justify-center gap-3 rounded-2xl border border-primary/20 bg-linear-to-r from-primary/5 via-card to-gold/5 px-6 py-4 text-center shadow-sm backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:flex-row sm:gap-4 sm:rounded-full"
+        className="animate-banner-in group flex flex-col items-center justify-center gap-3 rounded-2xl border border-primary/20 bg-linear-to-r from-primary/5 via-card to-gold/5 px-6 py-4 text-center shadow-sm backdrop-blur-sm press hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:flex-row sm:gap-4 sm:rounded-full"
       >
         <div className="relative flex size-10 shrink-0 items-center justify-center rounded-full bg-card shadow-sm ring-1 ring-border">
           <Image
@@ -29,7 +29,7 @@ export function AiComingSoonBanner() {
           {' '}- A smart AI chatbot built right into your website.{' '}
           <span className="inline-flex items-center gap-1 font-semibold text-primary">
             Try it now
-            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="size-3.5 transition-transform duration-200 ease-out group-hover:translate-x-0.5" />
           </span>
         </p>
       </a>

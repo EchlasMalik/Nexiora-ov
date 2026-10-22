@@ -72,7 +72,7 @@ export function ContactModalProvider({
 
                 <Dialog.Close
                   aria-label="Close"
-                  className="inline-flex size-11 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className="press inline-flex size-11 shrink-0 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground"
                 >
                   <X className="size-5" />
                 </Dialog.Close>

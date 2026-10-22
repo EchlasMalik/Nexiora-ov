@@ -35,14 +35,14 @@ export function ServicePagesGrid({ className, stagger = false }: ServicePagesGri
       {servicePages.map((page, i) => (
         <Reveal
           key={page.slug}
-          delay={stagger ? (i % 3) * 100 : 0}
+          delay={stagger ? (i % 3) * 90 : 0}
           direction={stagger ? 'up' : 'none'}
           immediate={!stagger}
           className="h-full"
         >
           <Link
             href={`/${page.slug}`}
-            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+            className="press group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-navy/10 active:scale-[0.99]"
           >
             <div className="relative aspect-8/5 overflow-hidden bg-linear-to-b from-secondary/70 to-secondary/20">
               <Image
@@ -50,7 +50,7 @@ export function ServicePagesGrid({ className, stagger = false }: ServicePagesGri
                 alt=""
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
-                className="origin-top object-cover object-top px-3 pt-3 transition-transform duration-300 group-hover:scale-[1.03]"
+                className="origin-top object-cover object-top px-3 pt-3 transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               />
             </div>
 
@@ -63,7 +63,7 @@ export function ServicePagesGrid({ className, stagger = false }: ServicePagesGri
               </p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
                 Learn more
-                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="size-3.5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
               </span>
             </div>
           </Link>

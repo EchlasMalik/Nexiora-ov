@@ -52,7 +52,7 @@ export function ServiceProof({
         <Reveal className="mt-12 flex justify-center">
           <Link
             href="/portfolio"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary shadow-sm transition-colors hover:bg-primary/5"
+            className="press inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-6 py-3.5 text-sm font-semibold text-primary shadow-sm hover:bg-primary/5"
           >
             View the full portfolio
             <ArrowRight className="size-4" />

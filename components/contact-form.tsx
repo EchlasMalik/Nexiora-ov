@@ -112,7 +112,7 @@ export function ContactForm() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md"
+            className="press inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5 hover:shadow-md"
           >
             Book a Free Consultation
             <ArrowRight className="size-4" aria-hidden="true" />
@@ -252,7 +252,7 @@ export function ContactForm() {
         type="submit"
         disabled={loading}
         aria-busy={loading}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+        className="press inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
       >
         {loading ? 'Sending...' : 'Submit Request'}
         {!loading && <ArrowRight className="size-4" />}

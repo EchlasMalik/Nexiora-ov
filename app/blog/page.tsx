@@ -127,7 +127,7 @@ export default function BlogPage() {
               </p>
 
               <div className="mt-6">
-                <ContactTrigger className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md active:scale-95">
+                <ContactTrigger className="press inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5 hover:shadow-md">
                   Book a Free Consultation
                   <ArrowRight className="size-4" />
                 </ContactTrigger>

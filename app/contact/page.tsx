@@ -139,7 +139,7 @@ export default function ContactPage() {
                     href="https://maps.app.goo.gl/qqJCMBc42c6YjcM37"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-md active:scale-95"
+                    className="press inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground shadow-sm hover:-translate-y-0.5 hover:shadow-md"
                   >
                     <Image
                       src="/google-maps.png"
